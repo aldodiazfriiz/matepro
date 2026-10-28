@@ -7,9 +7,9 @@ export default function Ticker() {
         {[...items, ...items].map((item, i) => (
           <span
             key={i}
-            className="flex items-center gap-8 pr-8 text-lg font-semibold text-off/40 sm:text-xl"
+            className={`flex items-center gap-8 pr-8 text-lg font-semibold sm:text-xl ${item.lime ? "text-lime" : "text-off/55"}`}
           >
-            {item}
+            {item.text}
             <span className="h-1.5 w-1.5 rounded-full bg-lime" />
           </span>
         ))}

@@ -15,14 +15,22 @@ export const nav = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const ticker = [
-  "Prime movers",
-  "Trailers",
-  "B-doubles",
-  "Rigid trucks",
-  "Fleets",
-  "Overnight at your depot",
-];
+// The scrolling strip under the hero. lime: true makes an item stand out.
+export const ticker: { text: string; lime?: boolean }[] = [
+  { text: "First truck free", lime: true },
+  { text: "Prime movers" },
+  { text: "Hand wash, no brushes" },
+  { text: "Trailers" },
+  { text: "Overnight at your depot" },
+  { text: "B-doubles" },
+  { text: "Defect check every wash" },
+  { text: "Rigid trucks" },
+  { text: "Before and after photos" },
+  { text: "Free rain rinse", lime: true },
+  { text: "Whole fleets" },
+  { text: "EPA compliant" },
+  { text: "Melbourne-wide" },
+]
 
 // Per wash, GST included. fleetPrice applies to each truck when 3 or more are washed in one visit.
 export const washServices: {
