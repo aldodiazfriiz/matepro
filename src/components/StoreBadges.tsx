@@ -23,7 +23,7 @@ export default function StoreBadges({ dark = false }: { dark?: boolean }) {
             <path d={s.path} />
           </svg>
           <div className="leading-tight">
-            <div className="text-[10px] font-medium uppercase tracking-wide text-off/55">Coming soon on</div>
+            <div className="text-[10px] font-medium uppercase tracking-wide text-off">Coming soon on</div>
             <div className="text-sm font-semibold sm:text-base">{s.name}</div>
           </div>
         </div>

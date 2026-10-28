@@ -7,7 +7,7 @@ export default function Faq() {
     <section id="faq" className="mx-auto max-w-3xl px-5 py-24 sm:px-8 sm:py-32">
       <Reveal className="text-center">
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{faq.title}</h2>
-        <p className="mt-4 text-lg text-off/60">{faq.text}</p>
+        <p className="mt-4 text-lg text-off">{faq.text}</p>
       </Reveal>
 
       <div className="mt-12 space-y-3">
@@ -20,7 +20,7 @@ export default function Faq() {
                   <Icon name="chevron" className="h-4 w-4" />
                 </span>
               </summary>
-              <p className="px-6 pb-6 text-off/65 sm:px-7">{item.a}</p>
+              <p className="px-6 pb-6 text-off sm:px-7">{item.a}</p>
             </details>
           </Reveal>
         ))}

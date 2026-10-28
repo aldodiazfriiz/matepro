@@ -49,7 +49,7 @@ export default function Nav() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-4 py-2 text-off/70 transition hover:bg-off/10 hover:text-off"
+              className="rounded-full px-4 py-2 text-off transition hover:bg-off/10 hover:text-off"
             >
               {item.label}
             </a>

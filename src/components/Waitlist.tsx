@@ -75,7 +75,7 @@ export default function Waitlist({ onLime = false, anchors = true }: { onLime?: 
         <button
           type="submit"
           disabled={status === "sending"}
-          className={`h-14 rounded-full px-7 text-base font-semibold transition disabled:opacity-60 ${
+          className={`h-14 whitespace-nowrap rounded-full px-7 text-base font-semibold transition disabled:opacity-60 ${
             onLime ? "bg-night text-off hover:bg-black" : "bg-lime text-night hover:brightness-95"
           }`}
         >
@@ -83,7 +83,7 @@ export default function Waitlist({ onLime = false, anchors = true }: { onLime?: 
         </button>
       </div>
       {status === "error" && (
-        <p className={`mt-3 text-sm ${onLime ? "text-night/70" : "text-off/70"}`}>
+        <p className={`mt-3 text-sm ${onLime ? "text-night" : "text-off"}`}>
           That didn&rsquo;t go through. Try again in a minute.
         </p>
       )}

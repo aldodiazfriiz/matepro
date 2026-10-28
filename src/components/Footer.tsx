@@ -13,7 +13,7 @@ export default function Footer() {
             width={140}
             height={40}
           />
-          <p className="mt-4 max-w-xs text-off/60">
+          <p className="mt-4 max-w-xs text-off">
             {site.tagline} Built by a working truck driver.
           </p>
           <div className="mt-6">
@@ -25,7 +25,7 @@ export default function Footer() {
           <ul className="mt-2">
             {[...nav, { label: "Join the list", href: "#waitlist" }].map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="flex min-h-11 items-center text-off/70 hover:text-off">
+                <a href={item.href} className="flex min-h-11 items-center text-off hover:text-lime">
                   {item.label}
                 </a>
               </li>
@@ -36,13 +36,13 @@ export default function Footer() {
           <h3 className="font-semibold text-off">Contact</h3>
           <a
             href={`mailto:${site.email}`}
-            className="mt-2 flex min-h-11 items-center text-off/70 hover:text-lime"
+            className="mt-2 flex min-h-11 items-center text-off hover:text-lime"
           >
             {site.email}
           </a>
         </div>
       </div>
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-10 text-xs text-off/40 sm:flex-row sm:justify-between sm:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-10 text-xs text-off sm:flex-row sm:justify-between sm:px-8">
         <p>&copy; 2026 MatePro. All rights reserved.</p>
       </div>
     </footer>

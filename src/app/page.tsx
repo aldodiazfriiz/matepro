@@ -19,7 +19,7 @@ export default function Page() {
           <div className="glow-lime glow-hero" aria-hidden="true" />
           <div className="relative grid items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
             <div>
-              <span className="rise inline-flex items-center gap-2 rounded-full border border-off/10 bg-charcoal/70 py-1.5 pl-1.5 pr-4 text-sm text-off/80">
+              <span className="rise inline-flex items-center gap-2 rounded-full border border-off/10 bg-charcoal/70 py-1.5 pl-1.5 pr-4 text-sm text-off">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-night">
                   <Icon name="truck" className="h-4 w-4" />
                 </span>
@@ -27,12 +27,12 @@ export default function Page() {
               </span>
               <h1 className="rise rise-2 mt-7 text-5xl font-extrabold leading-[1.04] tracking-tight sm:text-6xl xl:text-7xl">
                 <span className="block">{hero.title[0]}</span>
-                <span className="block text-off/55">{hero.title[1]}</span>
+                <span className="block">{hero.title[1]}</span>
                 <span className="block">
                   <span className="underline-lime">{hero.title[2]}</span>
                 </span>
               </h1>
-              <p className="rise rise-2 mt-6 max-w-lg text-lg text-off/70 sm:text-xl">{hero.text}</p>
+              <p className="rise rise-2 mt-6 max-w-lg text-lg text-off sm:text-xl">{hero.text}</p>
               <div id="waitlist" className="rise rise-3 mt-9 max-w-lg scroll-mt-32">
                 <Waitlist />
               </div>
@@ -62,7 +62,7 @@ export default function Page() {
         <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{why.title}</h2>
-            <p className="mt-4 text-lg text-off/60">{why.text}</p>
+            <p className="mt-4 text-lg text-off">{why.text}</p>
           </Reveal>
           <ul className="mt-14 grid gap-4 sm:mt-16 md:grid-cols-3">
             {why.items.map((w, i) => (
@@ -72,7 +72,7 @@ export default function Page() {
                     <Icon name={w.icon} className="h-6 w-6" />
                   </span>
                   <h3 className="relative mt-6 text-xl font-semibold">{w.title}</h3>
-                  <p className="relative mt-2 text-off/60">{w.text}</p>
+                  <p className="relative mt-2 text-off">{w.text}</p>
                 </Spotlight>
               </Reveal>
             ))}
@@ -83,16 +83,9 @@ export default function Page() {
 
         <section className="px-4 pb-24 sm:px-6 sm:pb-32">
           <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-[40px] bg-lime px-6 py-16 text-night sm:px-12 sm:py-20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/matepro-mark-black.svg"
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 opacity-[0.07] sm:h-96 sm:w-96"
-            />
             <div className="relative mx-auto max-w-2xl text-center">
               <h2 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">{cta.title}</h2>
-              <p className="mt-4 text-lg text-night/70">{cta.text}</p>
+              <p className="mt-4 text-lg text-night">{cta.text}</p>
               <div className="mx-auto mt-9 max-w-lg text-left">
                 <Waitlist onLime anchors={false} />
               </div>

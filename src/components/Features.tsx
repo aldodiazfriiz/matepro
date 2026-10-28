@@ -32,7 +32,7 @@ export default function Features() {
     <section id="features" className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">What&rsquo;s in MatePro?</h2>
-        <p className="mt-4 text-lg text-off/60">Everything you reach for on a run, in one app.</p>
+        <p className="mt-4 text-lg text-off">Everything you reach for on a run, in one app.</p>
       </Reveal>
 
       <div className="mt-14 grid items-start gap-10 sm:mt-20 lg:grid-cols-2 lg:gap-16">
@@ -71,7 +71,7 @@ export default function Features() {
                     <Icon name={f.icon} className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 text-xl font-semibold">{f.title}</h3>
-                  <p className="mt-2 text-off/60">{f.text}</p>
+                  <p className="mt-2 text-off">{f.text}</p>
                 </button>
               </li>
             );

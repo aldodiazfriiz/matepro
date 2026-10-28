@@ -25,7 +25,7 @@ function Row({ children, lime = false }: { children: React.ReactNode; lime?: boo
 }
 
 function Tag({ children }: { children: React.ReactNode }) {
-  return <span className="rounded-full bg-off/10 px-2 py-0.5 text-[10px] font-medium text-off/70">{children}</span>;
+  return <span className="rounded-full bg-off/10 px-2 py-0.5 text-[10px] font-medium text-off">{children}</span>;
 }
 
 function Stops() {
@@ -36,7 +36,7 @@ function Stops() {
   ];
   return (
     <div className="space-y-2.5">
-      <div className="rounded-2xl border border-off/10 px-3.5 py-2.5 text-xs text-off/50">Hume Hwy, northbound</div>
+      <div className="rounded-2xl border border-off/10 px-3.5 py-2.5 text-xs text-off">Hume Hwy, northbound</div>
       {stops.map((s) => (
         <div key={s.name} className="rounded-2xl bg-charcoal px-3.5 py-3">
           <div className="flex items-center justify-between">
@@ -67,11 +67,11 @@ function Diesel() {
         <Row key={i} lime={p.best}>
           <div>
             <div className="text-sm font-semibold">{p.name}</div>
-            <div className={`text-xs ${p.best ? "text-night/70" : "text-off/50"}`}>{p.km}</div>
+            <div className={`text-xs ${p.best ? "text-night" : "text-off"}`}>{p.km}</div>
           </div>
           <div className="text-right">
             <div className="text-lg font-bold leading-none">{p.price}</div>
-            <div className={`mt-1 text-[10px] ${p.best ? "text-night/70" : "text-off/50"}`}>
+            <div className={`mt-1 text-[10px] ${p.best ? "text-night" : "text-off"}`}>
               {p.best ? "Cheapest" : "c/L"}
             </div>
           </div>
@@ -99,7 +99,7 @@ function Prestart() {
           )}
         </Row>
       ))}
-      <div className="rounded-2xl border border-dashed border-off/20 px-3.5 py-3 text-center text-xs text-off/50">
+      <div className="rounded-2xl border border-dashed border-off/20 px-3.5 py-3 text-center text-xs text-off">
         + Add a photo
       </div>
     </div>
@@ -116,14 +116,14 @@ function Expenses() {
   return (
     <div className="space-y-2.5">
       <div className="rounded-2xl bg-lime px-4 py-3.5 text-night">
-        <div className="text-xs font-medium text-night/70">Spent this week</div>
+        <div className="text-xs font-medium text-night">Spent this week</div>
         <div className="mt-1 text-2xl font-extrabold">$474.30</div>
       </div>
       {items.map((e) => (
         <Row key={e.name + e.note}>
           <div>
             <div className="text-sm font-semibold">{e.name}</div>
-            <div className="text-xs text-off/50">{e.note}</div>
+            <div className="text-xs text-off">{e.note}</div>
           </div>
           <span className="text-sm font-semibold">{e.amount}</span>
         </Row>
@@ -142,7 +142,7 @@ function Community() {
     <div className="space-y-2.5">
       {posts.map((p) => (
         <div key={p.who} className="rounded-2xl bg-charcoal px-3.5 py-3">
-          <div className="flex items-center gap-2 text-[11px] text-off/50">
+          <div className="flex items-center gap-2 text-[11px] text-off">
             <span className="h-5 w-5 rounded-full bg-off/15" />
             {p.who}
           </div>
@@ -195,7 +195,7 @@ export default function Phone({ screen, className = "" }: { screen: Screen; clas
             <Icon
               key={t.screen}
               name={t.icon}
-              className={`h-5 w-5 ${t.screen === screen ? "text-lime" : "text-off/35"}`}
+              className={`h-5 w-5 ${t.screen === screen ? "text-lime" : "text-off"}`}
             />
           ))}
         </div>
