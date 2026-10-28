@@ -9,7 +9,7 @@ npm run dev
 
 Opens at http://localhost:3000.
 
-All copy, plans, wash prices and store links are in `src/lib/content.ts`. Wash prices are `null` until set, which shows "Get a quote". Store links are `null` until the app is live, which sends the store buttons to the sign-up form.
+All copy, plans, wash prices and store links are in `src/lib/content.ts`. Store links are `null` until the app is live, which sends the store buttons to the sign-up form.
 
 Sign-ups post to `src/app/api/waitlist/route.ts`. It only validates and logs for now; connect it to a mailing list or database before launch.
 

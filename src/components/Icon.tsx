@@ -14,6 +14,9 @@ const paths: Record<string, string> = {
     "M4 20V8a4 4 0 0 1 8 0M9 8h6M11 12v1M14 12v1M17 12v1M11 16v1M14 16v1M17 16v1",
   parking: "M5 3h14v18H5zM10 17V7h3a3 3 0 0 1 0 6h-3",
   calendar: "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4",
+  alert: "M12 3 2.5 20h19L12 3ZM12 10v4M12 17.2v.3",
+  rain: "M7 15a4 4 0 0 1-.5-8A5.5 5.5 0 0 1 17 8a3.5 3.5 0 0 1 0 7M8 18l-1 2.5M12 18l-1 2.5M16 18l-1 2.5",
+  shield: "M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3ZM9 12l2 2 4-4.5",
 };
 
 export default function Icon({

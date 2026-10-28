@@ -61,16 +61,54 @@ export const fleet = {
   ],
 };
 
-// Set price to a string like "from $120" once you have fixed prices. null shows "Get a quote".
+// Per wash, GST included. fleetPrice applies to each truck when 3 or more are washed in one visit.
 export const washServices: {
   name: string;
   detail: string;
-  price: string | null;
+  price: number;
+  fleetPrice: number;
 }[] = [
-  { name: "Prime mover", detail: "Cab, chassis and wheels", price: null },
-  { name: "Trailer", detail: "Full exterior, including the rear", price: null },
-  { name: "B-double", detail: "Prime mover plus both trailers", price: null },
-  { name: "Depot wash", detail: "Your whole fleet, at your yard", price: null },
+  { name: "Prime mover", detail: "Cab, chassis and wheels", price: 130, fleetPrice: 115 },
+  { name: "Trailer", detail: "Full exterior, including the rear", price: 105, fleetPrice: 95 },
+  { name: "Semi", detail: "Prime mover plus trailer", price: 225, fleetPrice: 200 },
+  { name: "B-double", detail: "Prime mover plus both trailers", price: 290, fleetPrice: 260 },
+];
+
+export const washOffer = {
+  name: "Zero-Downtime Truck Wash",
+  free: "Your first truck is free",
+  guarantee: "Not clean? We wash it again free within 24 hours.",
+  late: "Late for a booked wash? $30 off.",
+  extras: [
+    "Bonneted truck +$30",
+    "Chassis degrease +$40",
+    "Cab interior from $80",
+    "Very dirty trucks quoted first",
+    "$150 minimum call-out",
+  ],
+};
+
+export const washIncludes = [
+  "Hand wash, no brushes",
+  "Done while it's parked",
+  "Before and after photos",
+  "Defect check on every truck",
+  "Wash water captured, EPA compliant",
+  "Wash history for audits",
+];
+
+// The live wash report cards in the animation, in the order they appear
+export const washReport = [
+  { icon: "check", title: "Wash done, 2:14am", text: "8 photos saved to your wash history" },
+  { icon: "alert", title: "Defect flagged", text: "Rear left marker light out, photo attached" },
+  { icon: "rain", title: "Rain Thursday", text: "Free rinse booked for Friday morning" },
+];
+
+export const washBonuses = [
+  { title: "First truck free", text: "See the job before you pay a cent." },
+  { title: "Rain rinse", text: "Rains within 48 hours? We come back and rinse it free." },
+  { title: "One-tap rebook", text: "Book the next wash in the app in ten seconds." },
+  { title: "3 months of Fleet free", text: "When you book 3 or more trucks." },
 ];
 
 export const washSteps = [
