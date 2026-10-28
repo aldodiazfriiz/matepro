@@ -17,7 +17,7 @@ export default function Page() {
       <main className="overflow-x-clip">
         <section id="top" className="relative mx-auto max-w-7xl px-5 pt-32 sm:px-8 sm:pt-40 lg:pb-16">
           <div className="glow-lime glow-hero" aria-hidden="true" />
-          <div className="relative grid items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
+          <div className="relative grid items-center gap-12 lg:grid-cols-[0.9fr_1.25fr] lg:gap-6">
             <div>
               <span className="rise inline-flex items-center gap-2 rounded-full border border-off/10 bg-charcoal/70 py-1.5 pl-1.5 pr-4 text-sm text-off">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-night">
@@ -49,8 +49,8 @@ export default function Page() {
                   width={2048}
                   height={1360}
                   priority
-                  sizes="(min-width: 1024px) 640px, 100vw"
-                  className="app-shot -mx-5 h-auto w-[calc(100%+2.5rem)] max-w-none sm:mx-0 sm:w-full"
+                  sizes="(min-width: 1024px) 860px, 120vw"
+                  className="app-shot -ml-[10%] h-auto w-[120%] max-w-none sm:-ml-[6%] sm:w-[112%] lg:-ml-[4%] lg:w-[118%]"
                 />
               </div>
             </div>
