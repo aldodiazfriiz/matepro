@@ -1,6 +1,6 @@
 # MatePro landing page
 
-Landing page for MatePro mobile pressure washing (trucks, buses, machinery, concrete). Next.js 16, Tailwind 4, TypeScript.
+Landing page for MatePro, a mobile truck wash in Melbourne. Next.js 16, Tailwind 4, TypeScript.
 
 ```bash
 npm install

@@ -13,8 +13,8 @@ export default function Footer() {
             height={40}
           />
           <p className="mt-4 max-w-xs text-off/60">
-            Mobile pressure washing for trucks, buses, machinery and
-            concrete. {site.area}, run by a working truck driver.
+            Mobile truck wash, hand washed at your depot overnight.{" "}
+            {site.area}, run by a working truck driver.
           </p>
         </div>
         <div>
@@ -36,11 +36,11 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="font-semibold text-off">
-            Services
+            Truck wash
           </h3>
           <p className="mt-4 text-off/70">
-            Truck and bus washing, heavy machinery, concrete, car parks,
-            bin areas and house washing. {site.area}, 7 days.
+            Prime movers, trailers, B-doubles, rigids and whole fleets.{" "}
+            {site.area}, 7 nights.
           </p>
         </div>
       </div>

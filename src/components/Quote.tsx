@@ -55,8 +55,8 @@ export default function Quote() {
                 Get a free quote.
               </h2>
               <p className="mt-4 max-w-md text-lg text-night/70">
-                Tell us what needs a clean and where. We&rsquo;ll get back to
-                you the same day, usually within the hour.
+                Tell us about your trucks and where they park. We&rsquo;ll get
+                back to you the same day, usually within the hour.
               </p>
               <a
                 href={site.phoneHref}
@@ -106,7 +106,7 @@ export default function Quote() {
                 <input
                   name="suburb"
                   required
-                  placeholder="Suburb"
+                  placeholder="Depot suburb"
                   autoComplete="address-level2"
                   className={field}
                 />
@@ -138,7 +138,7 @@ export default function Quote() {
                 <textarea
                   name="details"
                   rows={3}
-                  placeholder="How many trucks, machines or square metres? Anything we should know?"
+                  placeholder="How many trucks, and how often? Anything we should know?"
                   className="rounded-3xl border border-night/15 bg-off px-6 py-4 text-base text-night placeholder:text-night/40 focus:border-night focus:outline-none"
                 />
                 <button

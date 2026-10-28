@@ -73,7 +73,7 @@ function layout(preheader: string, body: string) {
         </tr>
         <tr>
           <td style="padding:28px 4px 0;font:400 13px/1.6 ${FONT};color:#8A8A8A">
-            MatePro &middot; Mobile pressure washing, ${site.area}<br>
+            MatePro &middot; Mobile truck wash, ${site.area}<br>
             <a href="${site.phoneHref}" style="color:#8A8A8A;text-decoration:none">${site.phone}</a> &middot;
             <a href="mailto:${site.email}" style="color:#8A8A8A;text-decoration:none">${site.email}</a>
           </td>
@@ -97,12 +97,12 @@ export function customerEmail(q: Quote) {
     <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">Thanks, ${escape(first)}.<br>We've got your request.</h1>
     <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
       We'll give you a call on <strong style="color:${WHITE}">${escape(q.phone)}</strong> soon, usually within the hour,
-      to sort out a time and a fixed price. No obligation.
+      to sort out a night that suits and a fixed price. Your first truck is on us.
     </p>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;border-top:1px solid #333333">
       ${rows([
-        ["Service", q.service || "Pressure washing"],
-        ["Suburb", q.suburb],
+        ["Truck", q.service || "Truck wash"],
+        ["Depot", q.suburb],
         ...(q.details ? ([["Details", q.details]] as [string, string][]) : []),
       ])}
     </table>
@@ -113,15 +113,15 @@ export function customerEmail(q: Quote) {
   const text = [
     `Thanks, ${first}. We've got your request.`,
     "",
-    `We'll give you a call on ${q.phone} soon, usually within the hour, to sort out a time and a fixed price.`,
+    `We'll give you a call on ${q.phone} soon, usually within the hour, to sort out a night that suits and a fixed price. Your first truck is on us.`,
     "",
-    `Service: ${q.service || "Pressure washing"}`,
-    `Suburb: ${q.suburb}`,
+    `Truck: ${q.service || "Truck wash"}`,
+    `Depot: ${q.suburb}`,
     ...(q.details ? [`Details: ${q.details}`] : []),
     "",
     `Need us sooner? Call ${site.phone}.`,
     "",
-    `MatePro, mobile pressure washing, ${site.area}`,
+    `MatePro, mobile truck wash, ${site.area}`,
   ].join("\n");
   return { subject, html, text };
 }
@@ -129,20 +129,20 @@ export function customerEmail(q: Quote) {
 // Sent to MatePro for every new request
 export function teamEmail(q: Quote) {
   const tel = `tel:${q.phone.replace(/[^\d+]/g, "")}`;
-  const subject = `New quote: ${q.service || "Pressure washing"}, ${q.suburb}`;
+  const subject = `New quote: ${q.service || "Truck wash"}, ${q.suburb}`;
   const html = layout(
     `${q.name}, ${q.suburb}, ${q.phone}`,
     `
     <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">New quote request</span>
     <h1 style="margin:18px 0 0;font:800 28px/1.15 ${FONT};color:${WHITE}">${escape(q.name)}</h1>
-    <p style="margin:8px 0 24px;font:500 16px/1.5 ${FONT};color:${MUTED}">${escape(q.service || "Pressure washing")} in ${escape(q.suburb)}</p>
+    <p style="margin:8px 0 24px;font:500 16px/1.5 ${FONT};color:${MUTED}">${escape(q.service || "Truck wash")} in ${escape(q.suburb)}</p>
     ${button(tel, `Call ${escape(q.phone)}`)}
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;border-top:1px solid #333333">
       ${rows([
         ["Phone", q.phone],
         ["Email", q.email || "-"],
-        ["Suburb", q.suburb],
-        ["Service", q.service || "-"],
+        ["Depot", q.suburb],
+        ["Truck", q.service || "-"],
         ["Details", q.details || "-"],
       ])}
     </table>
@@ -159,8 +159,8 @@ export function teamEmail(q: Quote) {
     `Name: ${q.name}`,
     `Phone: ${q.phone}`,
     `Email: ${q.email || "-"}`,
-    `Suburb: ${q.suburb}`,
-    `Service: ${q.service || "-"}`,
+    `Depot: ${q.suburb}`,
+    `Truck: ${q.service || "-"}`,
     `Details: ${q.details || "-"}`,
   ].join("\n");
   return { subject, html, text };

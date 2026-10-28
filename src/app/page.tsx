@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import Wash from "@/components/Wash";
 import Quote from "@/components/Quote";
 import Footer from "@/components/Footer";
@@ -13,7 +12,6 @@ export default function Page() {
       <main>
         <Hero />
         <Ticker />
-        <Services />
         <Wash />
         <Quote />
       </main>

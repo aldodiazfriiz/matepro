@@ -18,11 +18,11 @@ export default function Hero() {
 
       <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-20 pt-32 sm:px-8 lg:justify-center lg:pb-32">
         <h1 className="rise rise-2 max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
-          Mobile pressure washing, done <span className="underline-lime">properly.</span>
+          Mobile truck wash, done <span className="underline-lime">properly.</span>
         </h1>
         <p className="rise rise-2 mt-6 max-w-xl text-lg text-off/75 sm:text-xl">
-          Trucks, buses, heavy machinery and concrete, washed on site{" "}
-          {site.area}. We bring the water and the gear, day or night.
+          Hand washed at your depot overnight, {site.area}. We bring the
+          water and the gear, you get clean trucks by morning.
         </p>
         <div className="rise rise-3 mt-10 flex flex-col gap-3 sm:flex-row">
           <a

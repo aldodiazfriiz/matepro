@@ -2,7 +2,7 @@
 
 export const site = {
   name: "MatePro",
-  tagline: "Mobile pressure washing, done properly.",
+  tagline: "Mobile truck wash, done properly.",
   phone: "0494 733 274",
   phoneHref: "tel:+61494733274",
   email: "hello@matepro.com.au",
@@ -10,92 +10,21 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Services", href: "#services" },
-  { label: "Truck Wash", href: "#wash" },
+  { label: "How it works", href: "#wash" },
+  { label: "Prices", href: "#prices" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const ticker = [
-  "Truck wash",
-  "Bus wash",
-  "Heavy machinery",
-  "Concrete",
-  "Car parks",
-  "Bin areas",
-  "House washing",
+  "Prime movers",
+  "Trailers",
+  "B-doubles",
+  "Rigid trucks",
+  "Fleets",
+  "Overnight at your depot",
 ];
 
-// "from" prices, GST included. Every job is confirmed after a quick look or a few photos.
-export const services: {
-  icon: string;
-  title: string;
-  text: string;
-  from: number | null;
-  unit?: string;
-}[] = [
-  {
-    icon: "truck",
-    title: "Trucks and fleets",
-    text: "Prime movers, trailers, rigids and B-doubles, hand washed at your depot overnight.",
-    from: 105,
-    unit: "per unit",
-  },
-  {
-    icon: "bus",
-    title: "Buses and coaches",
-    text: "School buses, coaches and minibuses washed in the yard between runs.",
-    from: 110,
-    unit: "per bus",
-  },
-  {
-    icon: "digger",
-    title: "Heavy machinery",
-    text: "Excavators, loaders, tractors and plant. Mud and grease off before service, sale or hire return.",
-    from: 150,
-    unit: "per machine",
-  },
-  {
-    icon: "drive",
-    title: "Concrete and driveways",
-    text: "Oil, tyre marks, moss and grime lifted with a surface cleaner. No stripes.",
-    from: 180,
-  },
-  {
-    icon: "store",
-    title: "Commercial and car parks",
-    text: "Shopfronts, footpaths, forecourts, loading docks and gum. Before opening or after close.",
-    from: null,
-  },
-  {
-    icon: "bin",
-    title: "Bin areas and drive-thrus",
-    text: "Grease and stink removed with hot degreaser. Weekly or monthly runs.",
-    from: 120,
-  },
-  {
-    icon: "home",
-    title: "House soft wash",
-    text: "Brick, render and weatherboard. Low pressure and the right chemicals, safe on paint.",
-    from: 350,
-  },
-  {
-    icon: "spray",
-    title: "Graffiti and stains",
-    text: "Tags, rust, oil and paint overspray removed from brick, concrete and metal.",
-    from: 150,
-  },
-];
-
-export const promises = [
-  "Fully insured",
-  "We bring our own water",
-  "Wash water captured, EPA compliant",
-  "Before and after photos",
-  "Fixed quote before we start",
-  "Not happy? We come back free",
-];
-
-// Per wash, GST included. fleetPrice applies to each vehicle when 3 or more are washed in one visit.
+// Per wash, GST included. fleetPrice applies to each truck when 3 or more are washed in one visit.
 export const washServices: {
   name: string;
   detail: string;
@@ -107,7 +36,6 @@ export const washServices: {
   { name: "Semi", detail: "Prime mover plus trailer", price: 225, fleetPrice: 200 },
   { name: "B-double", detail: "Prime mover plus both trailers", price: 290, fleetPrice: 260 },
   { name: "Rigid truck", detail: "Body, cab, chassis and wheels", price: 140, fleetPrice: 125 },
-  { name: "Bus or coach", detail: "Full exterior, wheels and windows", price: 180, fleetPrice: 160 },
 ];
 
 export const washOffer = {
@@ -142,27 +70,25 @@ export const washBonuses = [
 
 export const washSteps = [
   {
-    title: "Call or text",
-    text: "Tell us what needs a clean, or send a few photos for a quote.",
+    title: "Book it",
+    text: "Call, text or send a quote request. Pick a night that suits the run.",
   },
   {
     title: "We come to you",
-    text: "Home, shop, depot or job site. We bring the water and the gear.",
+    text: "Depot, yard or job site. We bring the water and the gear.",
   },
   {
     title: "Done",
-    text: "Before and after photos sent to your phone. Pay when you're happy.",
+    text: "Clean truck by morning, before and after photos sent to your phone.",
   },
 ];
 
 export const quoteTypes = [
-  "Trucks or fleet",
-  "Buses or coaches",
-  "Heavy machinery",
-  "Concrete or driveway",
-  "Commercial or car park",
-  "Bin area or drive-thru",
-  "House wash",
-  "Graffiti or stains",
+  "Prime mover",
+  "Semi (prime mover and trailer)",
+  "B-double",
+  "Rigid truck",
+  "Trailers only",
+  "Fleet of 3 or more",
   "Something else",
 ];

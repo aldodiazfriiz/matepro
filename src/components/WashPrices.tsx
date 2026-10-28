@@ -31,17 +31,17 @@ export default function WashPrices() {
   const [fleet, setFleet] = useState(false);
 
   return (
-    <div>
+    <div id="prices" className="scroll-mt-28">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
           <h3 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Pay per wash. No lock-in.
           </h3>
-          <p className="mt-2 text-off/60">Per vehicle, GST included.</p>
+          <p className="mt-2 text-off/60">Per truck, GST included.</p>
         </div>
         <div
           role="radiogroup"
-          aria-label="Vehicles per visit"
+          aria-label="Trucks per visit"
           className="relative grid grid-cols-2 rounded-full border border-off/15 p-1 text-sm font-semibold"
         >
           <span
@@ -57,7 +57,7 @@ export default function WashPrices() {
               onClick={() => setFleet(f)}
               className={`relative rounded-full px-5 py-2.5 transition-colors ${fleet === f ? "text-night" : "text-off/70 hover:text-off"}`}
             >
-              {f ? "3+ vehicles" : "1–2 vehicles"}
+              {f ? "3+ trucks" : "1–2 trucks"}
             </button>
           ))}
         </div>

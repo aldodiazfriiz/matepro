@@ -29,7 +29,7 @@ export default function Wash() {
             {washOffer.free}
           </span>
           <h2 className="mt-5 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
-            Clean trucks and buses. Zero downtime.
+            Clean trucks. Zero downtime.
           </h2>
           <p className="mt-5 max-w-xl text-lg text-off/75">
             MatePro {washOffer.name}. Hand washed at your depot while it&apos;s
