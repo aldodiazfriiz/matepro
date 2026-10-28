@@ -91,7 +91,8 @@ export default function Quote() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email (optional)"
+                  required
+                  placeholder="Email"
                   autoComplete="email"
                   className={field}
                 />
