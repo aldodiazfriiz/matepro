@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 
 type Status = "idle" | "sending" | "done" | "error";
 
-export default function Waitlist() {
+// onLime styles it for the lime band. Only one form on the page should own the result anchors.
+export default function Waitlist({ onLime = false, anchors = true }: { onLime?: boolean; anchors?: boolean }) {
   const [status, setStatus] = useState<Status>("idle");
 
   // A submit before the page's JS loads posts natively; the API redirects back to #waitlist-done or #waitlist-error
@@ -33,7 +34,11 @@ export default function Waitlist() {
 
   if (status === "done") {
     return (
-      <p className="rounded-3xl border border-lime/40 bg-lime/[0.06] p-6 text-lg font-semibold">
+      <p
+        className={`rounded-3xl border p-6 text-lg font-semibold ${
+          onLime ? "border-night/20 bg-night/[0.06] text-night" : "border-lime/40 bg-lime/[0.06]"
+        }`}
+      >
         You&rsquo;re on the list. We&rsquo;ll email you the day it&rsquo;s out.
       </p>
     );
@@ -41,8 +46,12 @@ export default function Waitlist() {
 
   return (
     <form method="post" action="/api/waitlist" onSubmit={submit} className="relative">
-      <span id="waitlist-done" className="absolute -top-32" />
-      <span id="waitlist-error" className="absolute -top-32" />
+      {anchors && (
+        <>
+          <span id="waitlist-done" className="absolute -top-32" />
+          <span id="waitlist-error" className="absolute -top-32" />
+        </>
+      )}
       <div className="flex flex-col gap-3 sm:flex-row">
         <input
           type="email"
@@ -50,7 +59,11 @@ export default function Waitlist() {
           required
           placeholder="Your email"
           autoComplete="email"
-          className="h-14 rounded-full border sm:flex-1 border-off/15 bg-charcoal px-6 text-base text-off placeholder:text-off/40 focus:border-lime focus:outline-none"
+          className={`h-14 rounded-full border px-6 text-base focus:outline-none sm:flex-1 ${
+            onLime
+              ? "border-night/20 bg-off text-night placeholder:text-night/45 focus:border-night"
+              : "border-off/15 bg-charcoal text-off placeholder:text-off/40 focus:border-lime"
+          }`}
         />
         <input
           name="company"
@@ -62,13 +75,15 @@ export default function Waitlist() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="h-14 rounded-full bg-lime px-7 text-base font-semibold text-night transition hover:brightness-95 disabled:opacity-60"
+          className={`h-14 rounded-full px-7 text-base font-semibold transition disabled:opacity-60 ${
+            onLime ? "bg-night text-off hover:bg-black" : "bg-lime text-night hover:brightness-95"
+          }`}
         >
           {status === "sending" ? "One sec..." : "Tell me when it's out"}
         </button>
       </div>
       {status === "error" && (
-        <p className="mt-3 text-sm text-off/70">
+        <p className={`mt-3 text-sm ${onLime ? "text-night/70" : "text-off/70"}`}>
           That didn&rsquo;t go through. Try again in a minute.
         </p>
       )}

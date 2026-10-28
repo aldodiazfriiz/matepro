@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { site } from "@/lib/content";
+import StoreBadges from "@/components/StoreBadges";
+import { nav, site } from "@/lib/content";
 
 export default function Footer() {
   return (
     <footer id="contact" className="border-t border-off/10">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:gap-12 sm:py-16 sm:px-8 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:gap-12 sm:py-16 sm:px-8 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Image
             src="/brand/matepro-horizontal-on-dark.svg"
@@ -15,14 +16,27 @@ export default function Footer() {
           <p className="mt-4 max-w-xs text-off/60">
             {site.tagline} Built by a working truck driver.
           </p>
+          <div className="mt-6">
+            <StoreBadges />
+          </div>
         </div>
         <div>
-          <h3 className="font-semibold text-off">
-            Contact
-          </h3>
+          <h3 className="font-semibold text-off">App</h3>
+          <ul className="mt-2">
+            {[...nav, { label: "Join the list", href: "#waitlist" }].map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="flex min-h-11 items-center text-off/70 hover:text-off">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-semibold text-off">Contact</h3>
           <a
             href={`mailto:${site.email}`}
-            className="mt-2 flex min-h-11 items-center text-xl font-semibold hover:text-lime"
+            className="mt-2 flex min-h-11 items-center text-off/70 hover:text-lime"
           >
             {site.email}
           </a>

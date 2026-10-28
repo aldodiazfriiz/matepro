@@ -157,10 +157,45 @@ body {
   opacity: 1;
 }
 
+.glow-lime {
+  position: absolute;
+  inset: 10% -20% 10% -20%;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(203, 231, 51, 0.16), transparent);
+  filter: blur(30px);
+}
+
+.glow-hero {
+  inset: -10% -10% auto auto;
+  width: 70%;
+  height: 90%;
+  background: radial-gradient(closest-side, rgba(203, 231, 51, 0.1), transparent);
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.screen-in {
+  animation: screen-in 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise,
   .settle,
   .float-card,
+  .screen-in,
   .underline-lime::after {
     animation: none;
   }

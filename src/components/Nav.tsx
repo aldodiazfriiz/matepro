@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { nav } from "@/lib/content";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,6 +43,18 @@ export default function Nav() {
             className="w-[112px] sm:w-[126px]"
           />
         </a>
+
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 text-sm font-medium sm:flex">
+          {nav.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-full px-4 py-2 text-off/70 transition hover:bg-off/10 hover:text-off"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
         <a
           href="#waitlist"
