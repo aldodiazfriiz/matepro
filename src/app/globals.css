@@ -174,38 +174,6 @@ body {
   opacity: 1;
 }
 
-@keyframes wash-drop {
-  from {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-  to {
-    transform: translate(-26px, 14px);
-    opacity: 0;
-  }
-}
-
-.wash-drop {
-  animation: wash-drop 0.55s ease-out infinite;
-}
-
-@keyframes wash-ping {
-  from {
-    transform: scale(1);
-    opacity: 0.9;
-  }
-  to {
-    transform: scale(2.6);
-    opacity: 0;
-  }
-}
-
-.wash-ping {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: wash-ping 1.4s ease-out infinite;
-}
-
 @keyframes wash-sheen {
   from {
     transform: translateX(-120%) skewX(-18deg);
@@ -226,8 +194,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wash-drop,
-  .wash-ping,
   .wash-guarantee::after {
     animation: none;
   }

@@ -133,13 +133,6 @@ export const washIncludes = [
   "Wash records emailed for audits",
 ];
 
-// The wash report cards in the animation, in the order they appear
-export const washReport = [
-  { icon: "check", title: "Wash done, 2:14am", text: "8 photos sent to your phone" },
-  { icon: "alert", title: "Defect flagged", text: "Rear left marker light out, photo attached" },
-  { icon: "rain", title: "Rain Thursday", text: "Free rinse booked for Friday morning" },
-];
-
 export const washBonuses = [
   { title: "First truck free", text: "See the job before you pay a cent." },
   { title: "Rain rinse", text: "Rains within 48 hours? We come back and rinse it free." },

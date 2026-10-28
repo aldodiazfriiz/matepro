@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
-import WashDemo from "./WashDemo";
 import WashPrices from "./WashPrices";
 import {
   site,
@@ -58,19 +57,7 @@ export default function Wash() {
           ))}
         </ol>
 
-        <Reveal className="mt-20 sm:mt-28">
-          <h3 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Every wash, on the record.
-          </h3>
-          <p className="mt-2 max-w-xl text-off/60">
-            You&apos;re asleep. We wash it, check it and send you the proof.
-          </p>
-          <div className="mt-8">
-            <WashDemo />
-          </div>
-        </Reveal>
-
-        <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {washIncludes.map((item, i) => (
             <Reveal
               as="li"
