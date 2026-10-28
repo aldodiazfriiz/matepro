@@ -64,11 +64,6 @@ body {
   border-color: rgba(250, 250, 250, 0.06);
 }
 
-.nav-line {
-  filter: drop-shadow(0 0 6px rgba(203, 231, 51, 0.55));
-  transition: stroke-dashoffset 0.15s linear;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(28px);

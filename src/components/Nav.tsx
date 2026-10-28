@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
 
 export default function Nav() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState({ w: 0, h: 0 });
-  const [progress, setProgress] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -19,22 +16,9 @@ export default function Nav() {
   }, [open]);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    // clientWidth/Height is the padding box, which is what the absolutely positioned SVG fills
-    const measure = () => setSize({ w: el.clientWidth, h: el.clientHeight });
-    const ro = new ResizeObserver(measure);
-    measure();
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-
-  useEffect(() => {
     let frame = 0;
     const update = () => {
       frame = 0;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? Math.min(window.scrollY / max, 1) : 0);
       setScrolled(window.scrollY > 24);
     };
     const onScroll = () => {
@@ -50,41 +34,13 @@ export default function Nav() {
     };
   }, []);
 
-  const stroke = 1.5;
-
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6">
       <div
-        ref={ref}
         className={`nav-glass relative mx-auto flex max-w-4xl items-center justify-between rounded-full py-1.5 pl-4 pr-1.5 transition-all sm:pl-5 duration-500 ${
           scrolled ? "nav-glass-scrolled" : ""
         }`}
       >
-        {size.w > 0 && (
-          <svg
-            className={`pointer-events-none absolute inset-0 h-full w-full overflow-visible transition-opacity duration-500 ${
-              scrolled ? "opacity-100" : "opacity-0"
-            }`}
-            aria-hidden="true"
-          >
-            <rect
-              x={stroke / 2}
-              y={stroke / 2}
-              width={size.w - stroke}
-              height={size.h - stroke}
-              rx={(size.h - stroke) / 2}
-              pathLength={1}
-              fill="none"
-              stroke="var(--color-lime)"
-              strokeWidth={stroke}
-              strokeDasharray="1 1"
-              strokeDashoffset={1 - progress}
-              strokeLinecap="round"
-              className="nav-line"
-            />
-          </svg>
-        )}
-
         <a
           href="#top"
           aria-label="MatePro home"
