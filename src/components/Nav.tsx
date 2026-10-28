@@ -41,10 +41,10 @@ export default function Nav() {
   }, []);
 
   const link = (active: boolean) =>
-    `rounded-full px-4 py-2 transition hover:bg-off/10 hover:text-off ${active ? "text-off" : "text-off/70"}`;
+    `rounded-full px-4 py-2 transition hover:text-off ${active ? "bg-off/10 text-off" : "text-off/70 hover:bg-off/10"}`;
 
   const links = [
-    { ...nav.app, href: nav.app.href, active: !home },
+    { ...nav.app, active: !home },
     { ...nav.wash, href: washHref, active: home },
   ];
 
@@ -55,31 +55,28 @@ export default function Nav() {
           scrolled ? "nav-glass-scrolled" : ""
         }`}
       >
-        <div className="relative flex items-center gap-2 text-sm font-medium">
-          <a
-            href={home ? "#top" : "/"}
-            aria-label="MatePro home"
-            className="flex h-11 items-center"
-            onClick={() => setOpen(false)}
-          >
-            <Image
-              src="/brand/matepro-horizontal-on-dark.svg"
-              alt="MatePro"
-              width={126}
-              height={36}
-              priority
-              className="w-[112px] sm:w-[126px]"
-            />
-          </a>
-          <a href={nav.app.href} className={`hidden md:block ${link(!home)}`}>
-            {nav.app.label}
-          </a>
-        </div>
+        <a
+          href={home ? "#top" : "/"}
+          aria-label="MatePro home"
+          className="relative flex h-11 items-center"
+          onClick={() => setOpen(false)}
+        >
+          <Image
+            src="/brand/matepro-horizontal-on-dark.svg"
+            alt="MatePro"
+            width={126}
+            height={36}
+            priority
+            className="w-[112px] sm:w-[126px]"
+          />
+        </a>
 
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 text-sm font-medium md:block">
-          <a href={washHref} className={link(home)}>
-            {nav.wash.label}
-          </a>
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 text-sm font-medium md:flex">
+          {links.map((item) => (
+            <a key={item.label} href={item.href} className={link(item.active)}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <div className="relative flex items-center gap-1">
