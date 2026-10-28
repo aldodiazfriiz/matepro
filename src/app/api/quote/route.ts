@@ -1,6 +1,7 @@
 // Quote requests are emailed to QUOTE_TO_EMAIL through Resend, and the customer gets a confirmation.
 
 import { customerEmail, teamEmail, type Quote } from "@/lib/emails";
+import { send, team } from "@/lib/resend";
 
 const text = (v: unknown) => (typeof v === "string" ? v.trim().slice(0, 1000) : "");
 
@@ -35,32 +36,12 @@ export async function POST(req: Request) {
     return reply(false, "Invalid email", 400);
   }
 
-  const { RESEND_API_KEY, QUOTE_TO_EMAIL, QUOTE_FROM_EMAIL } = process.env;
-  if (!RESEND_API_KEY || !QUOTE_TO_EMAIL) {
-    console.error("quote request not sent: RESEND_API_KEY or QUOTE_TO_EMAIL missing", quote);
-    return reply(false, "Not configured", 500);
-  }
-
-  const from = QUOTE_FROM_EMAIL || "MatePro Quotes <onboarding@resend.dev>";
-  const team = QUOTE_TO_EMAIL.split(",").map((s) => s.trim());
-
   // One request: the lead to MatePro, and the "we've got your request" confirmation to the customer
-  const res = await fetch("https://api.resend.com/emails/batch", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify([
-      { from, to: team, reply_to: quote.email, ...teamEmail(quote) },
-      { from, to: [quote.email], reply_to: team[0], ...customerEmail(quote) },
-    ]),
-  }).catch(() => null);
+  const [to] = team();
+  const sent = await send([
+    { to: team(), reply_to: quote.email, ...teamEmail(quote) },
+    { to: [quote.email], reply_to: to, ...customerEmail(quote) },
+  ]);
 
-  if (!res?.ok) {
-    console.error("resend failed", res?.status, await res?.text().catch(() => ""));
-    return reply(false, "Send failed", 502);
-  }
-
-  return reply(true);
+  return sent ? reply(true) : reply(false, "Send failed", 502);
 }

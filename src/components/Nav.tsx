@@ -1,12 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const home = usePathname() === "/";
+
+  // On the home page these scroll in place; from other pages they go home first
+  const washHref = home ? "#top" : nav.wash.href;
+  const quoteHref = home ? "#quote" : "/#quote";
 
   useEffect(() => {
     if (!open) return;
@@ -34,6 +40,14 @@ export default function Nav() {
     };
   }, []);
 
+  const link = (active: boolean) =>
+    `rounded-full px-4 py-2 transition hover:bg-off/10 hover:text-off ${active ? "text-off" : "text-off/70"}`;
+
+  const links = [
+    { ...nav.app, href: nav.app.href, active: !home },
+    { ...nav.wash, href: washHref, active: home },
+  ];
+
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6">
       <div
@@ -41,37 +55,36 @@ export default function Nav() {
           scrolled ? "nav-glass-scrolled" : ""
         }`}
       >
-        <a
-          href="#top"
-          aria-label="MatePro home"
-          className="relative flex h-11 items-center"
-          onClick={() => setOpen(false)}
-        >
-          <Image
-            src="/brand/matepro-horizontal-on-dark.svg"
-            alt="MatePro"
-            width={126}
-            height={36}
-            priority
-            className="w-[112px] sm:w-[126px]"
-          />
-        </a>
+        <div className="relative flex items-center gap-2 text-sm font-medium">
+          <a
+            href={home ? "#top" : "/"}
+            aria-label="MatePro home"
+            className="flex h-11 items-center"
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              src="/brand/matepro-horizontal-on-dark.svg"
+              alt="MatePro"
+              width={126}
+              height={36}
+              priority
+              className="w-[112px] sm:w-[126px]"
+            />
+          </a>
+          <a href={nav.app.href} className={`hidden md:block ${link(!home)}`}>
+            {nav.app.label}
+          </a>
+        </div>
 
-        <nav className="relative hidden items-center gap-1 text-sm font-medium md:flex">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-4 py-2 text-off/70 transition hover:bg-off/10 hover:text-off"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 text-sm font-medium md:block">
+          <a href={washHref} className={link(home)}>
+            {nav.wash.label}
+          </a>
         </nav>
 
         <div className="relative flex items-center gap-1">
           <a
-            href="#quote"
+            href={quoteHref}
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
@@ -110,12 +123,12 @@ export default function Nav() {
         }`}
       >
         <ul className="p-2">
-          {nav.map((item) => (
-            <li key={item.href}>
+          {links.map((item) => (
+            <li key={item.label}>
               <a
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex h-14 items-center rounded-2xl px-4 text-lg font-semibold text-off transition hover:bg-off/10"
+                className={`flex h-14 items-center rounded-2xl px-4 text-lg font-semibold transition hover:bg-off/10 ${item.active ? "text-lime" : "text-off"}`}
               >
                 {item.label}
               </a>

@@ -5,8 +5,8 @@ import { useEffect } from "react";
 // Section links (href="#wash" etc.) scroll to their section without putting the hash in the URL.
 export default function SectionLinks() {
   useEffect(() => {
-    // Quote handles its own #quote-sent / #quote-error and clears it
-    if (location.hash && !location.hash.startsWith("#quote-")) {
+    // Quote and Waitlist handle their own result hashes (#quote-sent, #waitlist-done...) and clear them
+    if (location.hash && !/^#(quote|waitlist)-/.test(location.hash)) {
       // Keep Next's history state, or the router restores the old URL
       history.replaceState(
         history.state,

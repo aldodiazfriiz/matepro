@@ -11,7 +11,7 @@ Opens at http://localhost:3000.
 
 All copy, services and prices are in `src/lib/content.ts`.
 
-Quote requests post to `src/app/api/quote/route.ts`, which emails them through Resend. Set these in `.env.local` (and in your host's environment settings):
+Two pages: the truck wash (`/`) and the app coming-soon page (`/app`). Quote requests (`src/app/api/quote`) and app waitlist sign-ups (`src/app/api/waitlist`) are emailed through Resend, with a confirmation to the person. Set these in `.env.local` (and in your host's environment settings):
 
 ```
 RESEND_API_KEY=re_...

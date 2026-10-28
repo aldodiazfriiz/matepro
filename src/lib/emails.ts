@@ -165,3 +165,45 @@ export function teamEmail(q: Quote) {
   ].join("\n");
   return { subject, html, text };
 }
+
+// Sent to someone who joins the app waitlist
+export function waitlistEmail() {
+  const subject = "You're on the MatePro app list";
+  const html = layout(
+    "We'll email you the day the app is out.",
+    `
+    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
+    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">You're on the list.</h1>
+    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
+      Thanks for signing up. We'll email you the day the MatePro app hits the App Store and Google Play.
+      Truck stops, diesel prices, pre-starts and expenses in one place, free for every driver.
+    </p>
+    <p style="margin:28px 0 20px;font:400 15px/1.6 ${FONT};color:${MUTED}">Need a truck washed in the meantime?</p>
+    ${button(SITE_URL, "Book a MatePro wash")}
+    `,
+  );
+  const text = [
+    "You're on the list.",
+    "",
+    "Thanks for signing up. We'll email you the day the MatePro app hits the App Store and Google Play.",
+    "",
+    `Need a truck washed in the meantime? ${SITE_URL}`,
+  ].join("\n");
+  return { subject, html, text };
+}
+
+// Sent to MatePro for every waitlist sign-up
+export function teamWaitlistEmail(email: string) {
+  return {
+    subject: `App waitlist sign-up: ${email}`,
+    html: layout(
+      email,
+      `
+      <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">App waitlist</span>
+      <h1 style="margin:18px 0 0;font:800 24px/1.2 ${FONT};color:${WHITE}">${escape(email)}</h1>
+      <p style="margin:8px 0 0;font:500 15px/1.5 ${FONT};color:${MUTED}">Signed up for the app launch.</p>
+      `,
+    ),
+    text: `App waitlist sign-up: ${email}`,
+  };
+}
