@@ -97,7 +97,7 @@ export function customerEmail(q: Quote) {
     <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">Thanks, ${escape(first)}.<br>We've got your request.</h1>
     <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
       We'll give you a call on <strong style="color:${WHITE}">${escape(q.phone)}</strong> soon, usually within the hour,
-      to sort out a night that suits and a fixed price. Your first truck is on us.
+      to sort out a night that suits and a fixed price.
     </p>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;border-top:1px solid #333333">
       ${rows([
@@ -113,7 +113,7 @@ export function customerEmail(q: Quote) {
   const text = [
     `Thanks, ${first}. We've got your request.`,
     "",
-    `We'll give you a call on ${q.phone} soon, usually within the hour, to sort out a night that suits and a fixed price. Your first truck is on us.`,
+    `We'll give you a call on ${q.phone} soon, usually within the hour, to sort out a night that suits and a fixed price.`,
     "",
     `Truck: ${q.service || "Truck wash"}`,
     `Depot: ${q.suburb}`,

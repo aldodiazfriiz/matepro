@@ -16,7 +16,7 @@ export const nav = {
 
 // The scrolling strip under the hero. lime: true makes an item stand out.
 export const ticker: { text: string; lime?: boolean }[] = [
-  { text: "First truck free", lime: true },
+  { text: "Fixed prices", lime: true },
   { text: "Prime movers" },
   { text: "Hand wash, no brushes" },
   { text: "Trailers" },
@@ -25,7 +25,7 @@ export const ticker: { text: string; lime?: boolean }[] = [
   { text: "Defect check every wash" },
   { text: "Rigid trucks" },
   { text: "Before and after photos" },
-  { text: "Free rain rinse", lime: true },
+  { text: "Fleet rates from 3 trucks", lime: true },
   { text: "Whole fleets" },
   { text: "EPA compliant" },
   { text: "Melbourne-wide" },
@@ -47,8 +47,8 @@ export const washServices: {
 
 export const washOffer = {
   name: "Zero-Downtime Truck Wash",
-  free: "Your first truck is free",
-  guarantee: "Not clean? We wash it again free within 24 hours.",
+  badge: "Overnight, at your depot",
+  guarantee: "A fixed price, agreed before we start. No surprises on the invoice.",
   late: "Late for a booked wash? $30 off.",
   extras: [
     "Bonneted truck +$30",
@@ -69,10 +69,10 @@ export const washIncludes = [
 ];
 
 export const washBonuses = [
-  { title: "First truck free", text: "See the job before you pay a cent." },
-  { title: "Rain rinse", text: "Rains within 48 hours? We come back and rinse it free." },
+  { title: "Same crew every time", text: "We get to know your trucks and your yard." },
+  { title: "Photo report", text: "Before and after photos of every truck, sent to your phone." },
   { title: "Regular slot", text: "Weekly or fortnightly, same night, no chasing." },
-  { title: "Yard thrown in", text: "Book 3 or more trucks and we hose the wash bay free." },
+  { title: "Fleet rates", text: "Book 3 or more trucks in one visit and every truck costs less." },
 ];
 
 export const washSteps = [

@@ -85,7 +85,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
-            Free quote
+            Get a quote
           </a>
           <button
             type="button"

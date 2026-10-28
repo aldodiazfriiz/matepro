@@ -52,7 +52,7 @@ export default function Quote() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                Get a free quote.
+                Get a quote.
               </h2>
               <p className="mt-4 max-w-md text-lg text-night/70">
                 Tell us about your trucks and where they park. We&rsquo;ll get

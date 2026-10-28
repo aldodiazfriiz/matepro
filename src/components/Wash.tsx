@@ -26,22 +26,22 @@ export default function Wash() {
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-night via-night/60 to-transparent sm:h-56" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-5 py-24 sm:px-8">
           <span className="w-fit rounded-full bg-lime px-4 py-1.5 text-sm font-semibold text-night">
-            {washOffer.free}
+            {washOffer.badge}
           </span>
           <h2 className="mt-5 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
             Clean trucks. Zero downtime.
           </h2>
           <p className="mt-5 max-w-xl text-lg text-off/75">
             MatePro {washOffer.name}. Hand washed at your depot while it&apos;s
-            parked, {site.area}. Photos of every wash, a defect check, and if
-            it&apos;s not clean we wash it again free.
+            parked, {site.area}. Photos of every wash, a defect check, and a
+            fixed price agreed before we start.
           </p>
           <a
             href={site.phoneHref}
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-lime px-7 py-4 font-semibold text-night transition hover:brightness-95"
           >
             <Icon name="phone" className="h-5 w-5" />
-            Book your free wash
+            Book a wash
           </a>
         </div>
       </div>
@@ -94,7 +94,7 @@ export default function Wash() {
                 delay={i * 80}
                 className="rounded-3xl border border-off/10 bg-charcoal/40 p-6 transition duration-300 hover:-translate-y-1 hover:border-off/25"
               >
-                <span className="text-sm font-semibold text-lime">Bonus 0{i + 1}</span>
+                <span className="text-sm font-semibold text-lime">0{i + 1}</span>
                 <h4 className="mt-2 text-lg font-semibold">{b.title}</h4>
                 <p className="mt-1 text-off/60">{b.text}</p>
               </Reveal>

@@ -29,7 +29,7 @@ export default function Hero() {
             href="#quote"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-4 text-base font-semibold text-night transition hover:brightness-95"
           >
-            Get a free quote
+            Get a quote
           </a>
           <a
             href={site.phoneHref}
