@@ -4,11 +4,7 @@ const paths: Record<string, string> = {
   note: "M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6",
   users:
     "M16 19v-1.5a3.5 3.5 0 0 0-7 0V19M12.5 10.5a3 3 0 1 0-6 0 3 3 0 0 0 6 0ZM18 13.5a2.5 2.5 0 1 0 0-5M20.5 19v-1a3 3 0 0 0-2.5-3",
-  drop: "M12 3s-6 6.5-6 11a6 6 0 0 0 12 0c0-4.5-6-11-6-11Z",
   check: "M9 11.5l2 2 4-4.5M5 4h14v16H5zM8 4V2M16 4V2",
-  phone:
-    "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z",
-  shield: "M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3ZM9 12l2 2 4-4.5",
 };
 
 export default function Icon({

@@ -50,7 +50,7 @@ export default function Waitlist() {
           required
           placeholder="Your email"
           autoComplete="email"
-          className="h-14 flex-1 rounded-full border border-off/15 bg-charcoal px-6 text-base text-off placeholder:text-off/40 focus:border-lime focus:outline-none"
+          className="h-14 rounded-full border sm:flex-1 border-off/15 bg-charcoal px-6 text-base text-off placeholder:text-off/40 focus:border-lime focus:outline-none"
         />
         <input
           name="company"

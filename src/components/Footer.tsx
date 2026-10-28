@@ -13,8 +13,7 @@ export default function Footer() {
             height={40}
           />
           <p className="mt-4 max-w-xs text-off/60">
-            Mobile truck wash, hand washed at your depot overnight.{" "}
-            {site.area}, run by a working truck driver.
+            {site.tagline} Built by a working truck driver.
           </p>
         </div>
         <div>
@@ -22,26 +21,11 @@ export default function Footer() {
             Contact
           </h3>
           <a
-            href={site.phoneHref}
-            className="mt-2 flex min-h-11 items-center text-2xl font-semibold hover:text-lime"
-          >
-            {site.phone}
-          </a>
-          <a
             href={`mailto:${site.email}`}
-            className="flex min-h-11 items-center text-off/70 hover:text-off"
+            className="mt-2 flex min-h-11 items-center text-xl font-semibold hover:text-lime"
           >
             {site.email}
           </a>
-        </div>
-        <div>
-          <h3 className="font-semibold text-off">
-            Truck wash
-          </h3>
-          <p className="mt-4 text-off/70">
-            Prime movers, trailers, B-doubles, rigids and whole fleets.{" "}
-            {site.area}, 7 nights.
-          </p>
         </div>
       </div>
       <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-10 text-xs text-off/40 sm:flex-row sm:justify-between sm:px-8">

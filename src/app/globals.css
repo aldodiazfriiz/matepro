@@ -115,23 +115,6 @@ body {
   animation: underline 0.9s 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-@keyframes ticker {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.ticker {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker 75s linear infinite;
-}
-
 @keyframes float-card {
   0%,
   100% {
@@ -174,39 +157,11 @@ body {
   opacity: 1;
 }
 
-@keyframes wash-sheen {
-  from {
-    transform: translateX(-120%) skewX(-18deg);
-  }
-  to {
-    transform: translateX(320%) skewX(-18deg);
-  }
-}
-
-.wash-guarantee::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 35%;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(203, 231, 51, 0.12), transparent);
-  animation: wash-sheen 4.5s 1s ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .wash-guarantee::after {
-    animation: none;
-  }
-
-  .wash-guarantee::after {
-    display: none;
-  }
-
   .rise,
   .settle,
   .float-card,
-  .underline-lime::after,
-  .ticker-track {
+  .underline-lime::after {
     animation: none;
   }
 
