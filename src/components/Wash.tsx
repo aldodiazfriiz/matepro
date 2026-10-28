@@ -24,14 +24,13 @@ export default function Wash() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/30 lg:bg-gradient-to-r lg:from-night lg:via-night/70 lg:to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night to-transparent" />
-        {/* Fleet section above is charcoal/40 over night, which composites to #181818 */}
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#181818] via-[#181818]/60 to-transparent sm:h-56" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-night via-night/60 to-transparent sm:h-56" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-center px-5 py-24 sm:px-8">
           <span className="w-fit rounded-full bg-lime px-4 py-1.5 text-sm font-semibold text-night">
             {washOffer.free}
           </span>
           <h2 className="mt-5 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
-            Clean trucks. Zero downtime.
+            Clean trucks and buses. Zero downtime.
           </h2>
           <p className="mt-5 max-w-xl text-lg text-off/75">
             MatePro {washOffer.name}. Hand washed at your depot while it&apos;s
@@ -43,7 +42,7 @@ export default function Wash() {
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-lime px-7 py-4 font-semibold text-night transition hover:brightness-95"
           >
             <Icon name="phone" className="h-5 w-5" />
-            Book your free truck
+            Book your free wash
           </a>
         </div>
       </div>

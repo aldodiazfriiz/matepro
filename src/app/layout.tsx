@@ -10,14 +10,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MatePro - Your fleet's best mate.",
+  title: "MatePro - Mobile pressure washing, Melbourne",
   description:
-    "The free app for Australian truck drivers and small fleets, plus mobile truck washing Melbourne-wide. Built by a working truck driver.",
+    "Mobile pressure washing Melbourne-wide. Truck, bus and heavy machinery washing, concrete and driveway cleaning, car parks and commercial. Free quotes.",
   metadataBase: new URL("https://www.matepro.com.au"),
   openGraph: {
-    title: "MatePro - Your fleet's best mate.",
+    title: "MatePro - Mobile pressure washing, Melbourne",
     description:
-      "Free app for truck drivers. Fleet tools for owners. Mobile truck wash, Melbourne-wide.",
+      "Truck, bus, machinery and concrete washing. We come to you, Melbourne-wide.",
     locale: "en_AU",
     type: "website",
   },

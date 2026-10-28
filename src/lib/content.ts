@@ -2,7 +2,7 @@
 
 export const site = {
   name: "MatePro",
-  tagline: "Your fleet's best mate.",
+  tagline: "Mobile pressure washing, done properly.",
   phone: "0494 733 274",
   phoneHref: "tel:+61494733274",
   email: "hello@matepro.com.au",
@@ -10,58 +10,92 @@ export const site = {
 };
 
 export const nav = [
-  { label: "App", href: "#app" },
+  { label: "Services", href: "#services" },
   { label: "Truck Wash", href: "#wash" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const freeFeatures = [
-  {
-    icon: "pin",
-    title: "Truck stops and rest areas",
-    text: "Find a bay, a shower or a feed on your route.",
-  },
-  {
-    icon: "fuel",
-    title: "Diesel prices",
-    text: "See who's cheapest before you pull in.",
-  },
-  {
-    icon: "check",
-    title: "Daily pre-start",
-    text: "Tick it off, add photos, done before you roll.",
-  },
-  {
-    icon: "note",
-    title: "Trip and expense notes",
-    text: "Jot it down now, sort it out later.",
-  },
-  {
-    icon: "users",
-    title: "Driver community",
-    text: "Road conditions, tips and a yarn with other drivers.",
-  },
-  {
-    icon: "drop",
-    title: "Book a truck wash",
-    text: "Book it in the app, wash history kept for you.",
-  },
-] as const;
+export const ticker = [
+  "Truck wash",
+  "Bus wash",
+  "Heavy machinery",
+  "Concrete",
+  "Car parks",
+  "Bin areas",
+  "House washing",
+];
 
-export const fleet = {
-  name: "Fleet",
-  price: "Per truck",
-  per: "per month, 2 to 50 trucks",
-  who: "For fleet owners",
-  features: [
-    "Pre-starts and defects dashboard",
-    "Document and service reminders",
-    "Proof of delivery",
-    "Fleet AI assistant",
-  ],
-};
+// "from" prices, GST included. Every job is confirmed after a quick look or a few photos.
+export const services: {
+  icon: string;
+  title: string;
+  text: string;
+  from: number | null;
+  unit?: string;
+}[] = [
+  {
+    icon: "truck",
+    title: "Trucks and fleets",
+    text: "Prime movers, trailers, rigids and B-doubles, hand washed at your depot overnight.",
+    from: 105,
+    unit: "per unit",
+  },
+  {
+    icon: "bus",
+    title: "Buses and coaches",
+    text: "School buses, coaches and minibuses washed in the yard between runs.",
+    from: 110,
+    unit: "per bus",
+  },
+  {
+    icon: "digger",
+    title: "Heavy machinery",
+    text: "Excavators, loaders, tractors and plant. Mud and grease off before service, sale or hire return.",
+    from: 150,
+    unit: "per machine",
+  },
+  {
+    icon: "drive",
+    title: "Concrete and driveways",
+    text: "Oil, tyre marks, moss and grime lifted with a surface cleaner. No stripes.",
+    from: 180,
+  },
+  {
+    icon: "store",
+    title: "Commercial and car parks",
+    text: "Shopfronts, footpaths, forecourts, loading docks and gum. Before opening or after close.",
+    from: null,
+  },
+  {
+    icon: "bin",
+    title: "Bin areas and drive-thrus",
+    text: "Grease and stink removed with hot degreaser. Weekly or monthly runs.",
+    from: 120,
+  },
+  {
+    icon: "home",
+    title: "House soft wash",
+    text: "Brick, render and weatherboard. Low pressure and the right chemicals, safe on paint.",
+    from: 350,
+  },
+  {
+    icon: "spray",
+    title: "Graffiti and stains",
+    text: "Tags, rust, oil and paint overspray removed from brick, concrete and metal.",
+    from: 150,
+  },
+];
 
-// Per wash, GST included. fleetPrice applies to each truck when 3 or more are washed in one visit.
+export const promises = [
+  "Fully insured",
+  "We bring our own water",
+  "Wash water captured, EPA compliant",
+  "Before and after photos",
+  "Fixed quote before we start",
+  "Not happy? We come back free",
+];
+
+// Per wash, GST included. fleetPrice applies to each vehicle when 3 or more are washed in one visit.
 export const washServices: {
   name: string;
   detail: string;
@@ -72,6 +106,8 @@ export const washServices: {
   { name: "Trailer", detail: "Full exterior, including the rear", price: 105, fleetPrice: 95 },
   { name: "Semi", detail: "Prime mover plus trailer", price: 225, fleetPrice: 200 },
   { name: "B-double", detail: "Prime mover plus both trailers", price: 290, fleetPrice: 260 },
+  { name: "Rigid truck", detail: "Body, cab, chassis and wheels", price: 140, fleetPrice: 125 },
+  { name: "Bus or coach", detail: "Full exterior, wheels and windows", price: 180, fleetPrice: 160 },
 ];
 
 export const washOffer = {
@@ -94,12 +130,12 @@ export const washIncludes = [
   "Before and after photos",
   "Defect check on every truck",
   "Wash water captured, EPA compliant",
-  "Wash history for audits",
+  "Wash records emailed for audits",
 ];
 
-// The live wash report cards in the animation, in the order they appear
+// The wash report cards in the animation, in the order they appear
 export const washReport = [
-  { icon: "check", title: "Wash done, 2:14am", text: "8 photos saved to your wash history" },
+  { icon: "check", title: "Wash done, 2:14am", text: "8 photos sent to your phone" },
   { icon: "alert", title: "Defect flagged", text: "Rear left marker light out, photo attached" },
   { icon: "rain", title: "Rain Thursday", text: "Free rinse booked for Friday morning" },
 ];
@@ -107,27 +143,33 @@ export const washReport = [
 export const washBonuses = [
   { title: "First truck free", text: "See the job before you pay a cent." },
   { title: "Rain rinse", text: "Rains within 48 hours? We come back and rinse it free." },
-  { title: "One-tap rebook", text: "Book the next wash in the app in ten seconds." },
-  { title: "3 months of Fleet free", text: "When you book 3 or more trucks." },
+  { title: "Regular slot", text: "Weekly or fortnightly, same night, no chasing." },
+  { title: "Yard thrown in", text: "Book 3 or more trucks and we hose the wash bay free." },
 ];
 
 export const washSteps = [
   {
-    title: "Book it",
-    text: "Call, or book in the app. Pick a time that suits the run.",
+    title: "Call or text",
+    text: "Tell us what needs a clean, or send a few photos for a quote.",
   },
   {
     title: "We come to you",
-    text: "Depot, yard or job site. We bring the water and the gear.",
+    text: "Home, shop, depot or job site. We bring the water and the gear.",
   },
   {
-    title: "Back on the road",
-    text: "Clean truck, wash record saved in the app.",
+    title: "Done",
+    text: "Before and after photos sent to your phone. Pay when you're happy.",
   },
 ];
 
-// Paste the real store links here at launch. While null, the buttons go to the sign-up form.
-export const stores: { appStore: string | null; googlePlay: string | null } = {
-  appStore: null,
-  googlePlay: null,
-};
+export const quoteTypes = [
+  "Trucks or fleet",
+  "Buses or coaches",
+  "Heavy machinery",
+  "Concrete or driveway",
+  "Commercial or car park",
+  "Bin area or drive-thru",
+  "House wash",
+  "Graffiti or stains",
+  "Something else",
+];

@@ -71,11 +71,11 @@ export default function Nav() {
 
         <div className="relative flex items-center gap-1">
           <a
-            href="#waitlist"
+            href="#quote"
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
-            Get the app
+            Free quote
           </a>
           <button
             type="button"

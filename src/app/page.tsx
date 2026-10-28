@@ -1,10 +1,8 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import AppSection from "@/components/AppSection";
-import AppPreview from "@/components/AppPreview";
-import Fleet from "@/components/Fleet";
+import Services from "@/components/Services";
 import Wash from "@/components/Wash";
-import Waitlist from "@/components/Waitlist";
+import Quote from "@/components/Quote";
 import Footer from "@/components/Footer";
 import Ticker from "@/components/Ticker";
 
@@ -15,11 +13,9 @@ export default function Page() {
       <main>
         <Hero />
         <Ticker />
-        <AppSection />
-        <AppPreview />
-        <Fleet />
+        <Services />
         <Wash />
-        <Waitlist />
+        <Quote />
       </main>
       <Footer />
     </>

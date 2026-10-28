@@ -1,11 +1,4 @@
-const items = [
-  "Truck stops",
-  "Diesel prices",
-  "Pre-starts",
-  "Truck wash",
-  "Driver community",
-  "Fleet dashboard",
-];
+import { ticker as items } from "@/lib/content";
 
 export default function Ticker() {
   return (

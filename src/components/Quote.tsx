@@ -1,11 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Icon from "./Icon";
 import Reveal from "./Reveal";
+import { quoteTypes, site } from "@/lib/content";
 
 type Status = "idle" | "sending" | "done" | "error";
 
-export default function Waitlist() {
+const field =
+  "h-14 w-full rounded-full border border-night/15 bg-off px-6 text-base text-night placeholder:text-night/40 focus:border-night focus:outline-none";
+
+export default function Quote() {
   const [status, setStatus] = useState<Status>("idle");
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
@@ -13,12 +18,12 @@ export default function Waitlist() {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
     setStatus("sending");
-    const res = await fetch("/api/waitlist", {
+    const res = await fetch("/api/quote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    });
-    if (res.ok) {
+    }).catch(() => null);
+    if (res?.ok) {
       setStatus("done");
       form.reset();
     } else {
@@ -27,48 +32,64 @@ export default function Waitlist() {
   }
 
   return (
-    <section
-      id="waitlist"
-      className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32"
-    >
+    <section id="quote" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
       <Reveal>
         <div className="rounded-3xl bg-lime px-5 py-10 text-night sm:px-14 sm:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-                Be first in the cab.
+                Get a free quote.
               </h2>
               <p className="mt-4 max-w-md text-lg text-night/70">
-                Leave your email and we&rsquo;ll let you know the day the app
-                hits the App Store and Google Play. No spam, no junk.
+                Tell us what needs a clean and where. We&rsquo;ll get back to
+                you the same day, usually within the hour.
               </p>
+              <a
+                href={site.phoneHref}
+                className="mt-6 inline-flex items-center gap-2 text-2xl font-bold hover:underline"
+              >
+                <Icon name="phone" className="h-6 w-6" />
+                {site.phone}
+              </a>
             </div>
 
             {status === "done" ? (
               <p className="text-2xl font-semibold">
-                You&rsquo;re on the list. See you on the road.
+                Thanks, we&rsquo;ve got it. We&rsquo;ll be in touch shortly.
               </p>
             ) : (
               <form onSubmit={submit} className="flex flex-col gap-3">
                 <input
-                  type="email"
-                  name="email"
+                  name="name"
                   required
-                  placeholder="Your email"
-                  autoComplete="email"
-                  className="h-14 rounded-full border border-night/15 bg-off px-6 text-base text-night placeholder:text-night/40 focus:border-night focus:outline-none"
+                  placeholder="Your name"
+                  autoComplete="name"
+                  className={field}
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  placeholder="Phone"
+                  autoComplete="tel"
+                  className={field}
+                />
+                <input
+                  name="suburb"
+                  required
+                  placeholder="Suburb"
+                  autoComplete="address-level2"
+                  className={field}
                 />
                 <div className="relative">
                   <select
-                    name="role"
-                    defaultValue="driver"
-                    className="h-14 w-full appearance-none rounded-full border border-night/15 bg-off px-6 pr-12 text-base text-night focus:border-night focus:outline-none"
+                    name="service"
+                    defaultValue={quoteTypes[0]}
+                    className={`${field} appearance-none pr-12`}
                   >
-                    <option value="driver">I drive for someone</option>
-                    <option value="owner-driver">
-                      I&rsquo;m an owner-driver
-                    </option>
-                    <option value="fleet">I run a fleet</option>
+                    {quoteTypes.map((t) => (
+                      <option key={t}>{t}</option>
+                    ))}
                   </select>
                   <svg
                     viewBox="0 0 20 20"
@@ -85,16 +106,22 @@ export default function Waitlist() {
                     />
                   </svg>
                 </div>
+                <textarea
+                  name="details"
+                  rows={3}
+                  placeholder="How many trucks, machines or square metres? Anything we should know?"
+                  className="rounded-3xl border border-night/15 bg-off px-6 py-4 text-base text-night placeholder:text-night/40 focus:border-night focus:outline-none"
+                />
                 <button
                   type="submit"
                   disabled={status === "sending"}
                   className="h-14 rounded-full bg-night px-6 text-base font-semibold text-off transition hover:bg-charcoal disabled:opacity-60"
                 >
-                  {status === "sending" ? "One sec..." : "Get the app"}
+                  {status === "sending" ? "One sec..." : "Send my quote request"}
                 </button>
                 {status === "error" && (
                   <p className="text-sm font-medium">
-                    That didn&rsquo;t go through. Try again in a minute.
+                    That didn&rsquo;t go through. Call us on {site.phone} instead.
                   </p>
                 )}
               </form>
