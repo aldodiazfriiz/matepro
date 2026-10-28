@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
 import { quoteTypes, site } from "@/lib/content";
@@ -12,6 +12,17 @@ const field =
 
 export default function Quote() {
   const [status, setStatus] = useState<Status>("idle");
+
+  // A submit before the page's JS loads posts the form natively; the API redirects back to #quote-sent or #quote-error
+  useEffect(() => {
+    const result = location.hash;
+    if (result !== "#quote-sent" && result !== "#quote-error") return;
+    const timer = setTimeout(() => {
+      setStatus(result === "#quote-sent" ? "done" : "error");
+      history.replaceState(history.state, "", location.pathname + location.search);
+    });
+    return () => clearTimeout(timer);
+  }, []);
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -32,7 +43,10 @@ export default function Quote() {
   }
 
   return (
-    <section id="quote" className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+    <section id="quote" className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+      {/* Scroll targets for the redirect after a native form post */}
+      <span id="quote-sent" className="absolute top-0" />
+      <span id="quote-error" className="absolute top-0" />
       <Reveal>
         <div className="rounded-3xl bg-lime px-5 py-10 text-night sm:px-14 sm:py-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -58,7 +72,7 @@ export default function Quote() {
                 Thanks, we&rsquo;ve got it. We&rsquo;ll be in touch shortly.
               </p>
             ) : (
-              <form onSubmit={submit} className="flex flex-col gap-3">
+              <form method="post" action="/api/quote" onSubmit={submit} className="flex flex-col gap-3">
                 <input
                   name="name"
                   required
@@ -73,6 +87,20 @@ export default function Quote() {
                   placeholder="Phone"
                   autoComplete="tel"
                   className={field}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email (optional)"
+                  autoComplete="email"
+                  className={field}
+                />
+                <input
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute -left-[9999px] h-0 w-0 opacity-0"
                 />
                 <input
                   name="suburb"
