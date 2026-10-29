@@ -43,16 +43,25 @@ export default function Footer() {
           <h3 className="font-semibold text-off">Follow</h3>
           <ul className="mt-2 flex gap-2">
             {socials.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`MatePro on ${item.label}`}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-off/20 text-off hover:border-lime hover:text-lime"
-                >
-                  <Icon name={item.icon} className="h-5 w-5" />
-                </a>
+              <li key={item.label}>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`MatePro on ${item.label}`}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-off/20 text-off hover:border-lime hover:text-lime"
+                  >
+                    <Icon name={item.icon} className="h-5 w-5" />
+                  </a>
+                ) : (
+                  <span
+                    aria-label={`MatePro on ${item.label}, coming soon`}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-off/20 text-off"
+                  >
+                    <Icon name={item.icon} className="h-5 w-5" />
+                  </span>
+                )}
               </li>
             ))}
           </ul>

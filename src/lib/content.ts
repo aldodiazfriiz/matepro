@@ -9,10 +9,12 @@ export const site = {
   email: "hello@matepro.com.au",
 };
 
+// Leave href empty until the account is live; the icon shows without a link
 export const socials = [
   { label: "Facebook", icon: "facebook", href: "https://www.facebook.com/mateprocardetailing" },
   { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/mateprocardetailing" },
   { label: "TikTok", icon: "tiktok", href: "https://www.tiktok.com/@mateprocardetailing" },
+  { label: "YouTube", icon: "youtube", href: "" },
 ];
 
 export const nav = [
