@@ -10,7 +10,7 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Mobile", href: "/mobile" },
+  { label: "Mobile Wash", href: "/mobile" },
   { label: "App", href: "/app" },
   { label: "Wash Bays", href: "/wash-bays" },
   { label: "Products", href: "/products" },
