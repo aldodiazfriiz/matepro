@@ -13,6 +13,11 @@ const paths: Record<string, string> = {
   check: "M9 11.5l2 2 4-4.5M5 4h14v16H5zM8 4V2M16 4V2",
   card: "M3 6h18v12H3zM3 10h18M7 15h4",
   chevron: "M6 9l6 6 6-6",
+  facebook: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+  instagram:
+    "M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4ZM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM17.5 6.5h.01",
+  tiktok:
+    "M16 3c.5 2.5 2 4 5 4.5V11c-2 0-3.7-.6-5-1.6V16a6 6 0 1 1-6-6v3.6a2.5 2.5 0 1 0 2.5 2.5V3H16Z",
 };
 
 export default function Icon({

@@ -9,6 +9,12 @@ export const site = {
   email: "hello@matepro.com.au",
 };
 
+export const socials = [
+  { label: "Facebook", icon: "facebook", href: "https://www.facebook.com/mateprocardetailing" },
+  { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/mateprocardetailing" },
+  { label: "TikTok", icon: "tiktok", href: "https://www.tiktok.com/@mateprocardetailing" },
+];
+
 export const nav = [
   { label: "Mobile Wash", href: "/mobile-wash" },
   { label: "App", href: "/app" },
