@@ -6,7 +6,9 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   async redirects() {
     return [
-      { source: "/", destination: "/mobile", permanent: false },
+      { source: "/", destination: "/mobile-wash", permanent: false },
+      { source: "/mobile", destination: "/mobile-wash", permanent: true },
+      { source: "/mobilewash", destination: "/mobile-wash", permanent: true },
       { source: "/car-wash", destination: "/wash-bays", permanent: true },
       { source: "/shop", destination: "/products", permanent: true },
     ];

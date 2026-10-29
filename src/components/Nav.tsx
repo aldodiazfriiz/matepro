@@ -46,12 +46,12 @@ export default function Nav() {
         }`}
       >
         <Link
-          href="/mobile"
+          href="/mobile-wash"
           aria-label="MatePro home"
           onClick={(e) => {
             setOpen(false);
             // Already home: just glide back to the top
-            if (pathname === "/mobile") {
+            if (pathname === "/mobile-wash") {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
@@ -82,7 +82,7 @@ export default function Nav() {
 
         <div className="flex items-center gap-1.5">
           <Link
-            href="/mobile#book"
+            href="/mobile-wash#book"
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center whitespace-nowrap rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
