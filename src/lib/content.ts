@@ -298,3 +298,97 @@ export const app = {
     text: "Leave your email and we'll send you the link the day the MatePro app is out.",
   },
 };
+
+// Terms and privacy pages
+export const legal = {
+  updated: "30 October 2026",
+  terms: {
+    title: "Terms of service",
+    text: "The basics of booking a wash or detail with MatePro.",
+    sections: [
+      {
+        h: "Who we are",
+        p: [
+          "MatePro is a mobile car wash and detailing service based in Melbourne's south east. We come to your home anywhere in Melbourne. You can reach us on 0494 733 274 or hello@matepro.com.au.",
+        ],
+      },
+      {
+        h: "Bookings",
+        p: [
+          "Sending the booking form is a request, not a confirmed booking. We'll contact you to confirm the package, price, day and time.",
+          "We only wash cars at home, in your driveway. You need to be allowed to have the car washed there, and the car needs to be unlocked or the keys available for interior work.",
+          "If you need to change or cancel, let us know as early as you can.",
+        ],
+      },
+      {
+        h: "Prices and payment",
+        p: [
+          "Prices on this site are starting prices and include GST. A very dirty car, a lot of pet hair or an oversized vehicle costs more. If so, we'll tell you the price before we start, not after.",
+          "Payment is due when the job is done, by card at the car or by invoice.",
+        ],
+      },
+      {
+        h: "Your car",
+        p: [
+          "Please take out valuables and anything you don't want moved before we arrive. Let us know about any existing damage, loose trims or aftermarket parts.",
+          "If you're not happy with something, tell us on the day or soon after and we'll do our best to put it right.",
+        ],
+      },
+      {
+        h: "Your rights",
+        p: [
+          "Nothing in these terms takes away your rights under the Australian Consumer Law.",
+        ],
+      },
+      {
+        h: "Changes",
+        p: [
+          "We may update these terms from time to time. The date at the top shows when they last changed.",
+        ],
+      },
+    ],
+  },
+  privacy: {
+    title: "Privacy policy",
+    text: "What we collect when you use this site, and what we do with it.",
+    sections: [
+      {
+        h: "What we collect",
+        p: [
+          "When you book a wash we collect your name, phone, email, suburb, the package and car size you pick, and anything you write in the details box, like your car's make and model.",
+          "When you sign up for updates we collect your email. When you send a franchise enquiry we collect your name, phone, email, suburb and message.",
+        ],
+      },
+      {
+        h: "How we use it",
+        p: [
+          "We use your details to reply to you, confirm and carry out your booking, and send the updates you asked for. We don't sell your details or share them with anyone for their own marketing.",
+        ],
+      },
+      {
+        h: "Who else handles it",
+        p: [
+          "Form messages are sent to us by email through Resend, and this site is hosted by Vercel. They handle your details only to provide those services to us.",
+        ],
+      },
+      {
+        h: "How long we keep it",
+        p: [
+          "We keep your details for as long as we need them to look after your bookings and our records, then delete them.",
+        ],
+      },
+      {
+        h: "Access and correction",
+        p: [
+          "You can ask to see, correct or delete the details we hold about you, or stop getting updates, by emailing hello@matepro.com.au.",
+        ],
+      },
+      {
+        h: "Complaints",
+        p: [
+          "If you have a privacy concern, email us first and we'll respond. If you're not happy with our answer, you can contact the Office of the Australian Information Commissioner at oaic.gov.au.",
+        ],
+      },
+    ],
+  },
+};
