@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MatePro - Mobile car wash and detailing, Melbourne",
     description:
-      "Your car detailed in your driveway, Melbourne-wide. Packages from $115.",
+      "Your car detailed in your driveway, Melbourne-wide. Packages from $89.",
     locale: "en_AU",
     type: "website",
   },
