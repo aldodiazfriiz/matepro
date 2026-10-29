@@ -31,9 +31,17 @@ function Price({ value }: { value: number }) {
 
 export default function Prices() {
   const [size, setSize] = useState<Size>("small");
+  const [active, setActive] = useState(0);
+
+  // On phones the cards swipe sideways; track which one is in view for the dots
+  function onScroll(e: React.UIEvent<HTMLUListElement>) {
+    const el = e.currentTarget;
+    const card = el.firstElementChild as HTMLElement | null;
+    if (card) setActive(Math.round(el.scrollLeft / (card.offsetWidth + 12)));
+  }
 
   return (
-    <section id="prices" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-24 sm:px-8 sm:py-32">
+    <section id="prices" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Prices</h2>
         <p className="mt-4 text-lg text-off">Pick your car size. Every price includes GST.</p>
@@ -43,7 +51,7 @@ export default function Prices() {
         <div
           role="radiogroup"
           aria-label="Car size"
-          className="grid w-full max-w-2xl grid-cols-3 gap-1 rounded-3xl border border-off/15 p-1 text-sm font-semibold sm:rounded-full"
+          className="grid w-full max-w-2xl grid-cols-3 gap-1 rounded-full border border-off/15 p-1 text-sm font-semibold"
         >
           {sizes.map((s) => (
             <button
@@ -52,19 +60,23 @@ export default function Prices() {
               role="radio"
               aria-checked={size === s.id}
               onClick={() => setSize(s.id)}
-              className={`min-h-11 rounded-[20px] px-3 py-2.5 leading-tight transition-colors sm:rounded-full ${
+              className={`min-h-11 rounded-full px-2 py-2.5 leading-tight transition-colors ${
                 size === s.id ? "bg-lime text-night" : "text-off hover:bg-off/10"
               }`}
             >
-              {s.label}
+              <span className="sm:hidden">{s.short}</span>
+              <span className="hidden sm:inline">{s.label}</span>
             </button>
           ))}
         </div>
       </Reveal>
 
-      <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul
+        onScroll={onScroll}
+        className="-mx-5 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-10 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+      >
         {packages.map((p, i) => (
-          <Reveal as="li" key={p.name} delay={i * 80}>
+          <Reveal as="li" key={p.name} delay={i * 80} className="w-[84%] shrink-0 snap-start sm:w-auto">
             <div
               className={`flex h-full flex-col rounded-[28px] p-7 ${
                 p.popular ? "bg-lime text-night" : "border border-off/10 bg-charcoal/60"
@@ -100,6 +112,15 @@ export default function Prices() {
           </Reveal>
         ))}
       </ul>
+
+      <div className="mt-5 flex justify-center gap-2 sm:hidden" aria-hidden="true">
+        {packages.map((p, i) => (
+          <span
+            key={p.name}
+            className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-lime" : "w-2 bg-off/25"}`}
+          />
+        ))}
+      </div>
 
       <ul className="mx-auto mt-8 flex max-w-3xl flex-col gap-1 text-center text-sm text-off">
         {priceNotes.map((n) => (

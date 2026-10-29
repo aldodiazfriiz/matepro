@@ -51,10 +51,10 @@ export default function Book() {
   }
 
   return (
-    <section id="book" className="relative scroll-mt-24 px-4 pb-24 sm:px-6 sm:pb-32">
+    <section id="book" className="relative scroll-mt-24 px-4 pb-16 sm:px-6 sm:pb-32">
       <span id="book-sent" className="absolute -top-24" />
       <span id="book-error" className="absolute -top-24" />
-      <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-[40px] bg-lime px-5 py-14 text-night sm:px-12 sm:py-20">
+      <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-[28px] bg-lime px-5 py-12 text-night sm:rounded-[40px] sm:px-12 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
             <h2 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">{book.title}</h2>

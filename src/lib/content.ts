@@ -34,9 +34,9 @@ export const ticker = [
 ];
 
 export const sizes = [
-  { id: "small", label: "Hatch / Sedan" },
-  { id: "mid", label: "Small SUV / Wagon" },
-  { id: "large", label: "Large SUV / 4WD / 7 seater" },
+  { id: "small", label: "Hatch / Sedan", short: "Sedan" },
+  { id: "mid", label: "Small SUV / Wagon", short: "SUV" },
+  { id: "large", label: "Large SUV / 4WD / 7 seater", short: "4WD" },
 ] as const;
 
 export type Size = (typeof sizes)[number]["id"];

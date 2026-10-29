@@ -39,7 +39,7 @@ export default function Footer() {
           <p className="flex min-h-11 items-center text-off">{site.area}</p>
         </div>
       </div>
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-10 text-xs text-off sm:flex-row sm:justify-between sm:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-28 text-xs sm:pb-10 text-off sm:flex-row sm:justify-between sm:px-8">
         <p>&copy; 2026 MatePro. All rights reserved.</p>
       </div>
     </footer>

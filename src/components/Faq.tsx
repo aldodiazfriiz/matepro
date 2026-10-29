@@ -4,13 +4,13 @@ import { faq } from "@/lib/content";
 
 export default function Faq() {
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-5 py-24 sm:px-8 sm:py-32">
+    <section id="faq" className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-32">
       <Reveal className="text-center">
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{faq.title}</h2>
         <p className="mt-4 text-lg text-off">{faq.text}</p>
       </Reveal>
 
-      <div className="mt-12 space-y-3">
+      <div className="mt-10 space-y-3 sm:mt-12">
         {faq.items.map((item, i) => (
           <Reveal key={item.q} delay={i * 40}>
             <details className="faq group rounded-3xl border border-off/10 bg-charcoal/60 transition open:bg-charcoal">

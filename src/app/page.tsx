@@ -8,6 +8,7 @@ import Ticker from "@/components/Ticker";
 import Prices from "@/components/Prices";
 import Book from "@/components/Book";
 import Faq from "@/components/Faq";
+import MobileBar from "@/components/MobileBar";
 import { hero, packages, site, steps, why } from "@/lib/content";
 
 const from = Math.min(...packages.map((p) => p.prices.small));
@@ -26,7 +27,7 @@ export default function Page() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/40 lg:bg-gradient-to-r lg:from-night/90 lg:via-night/60 lg:to-night/30" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night to-transparent" />
-          <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-32 sm:px-8 sm:pt-40 lg:pb-28">
+          <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-40 lg:pb-28">
             <div>
               <span className="rise inline-flex items-center gap-2 rounded-full border border-off/10 bg-charcoal/70 py-1.5 pl-1.5 pr-4 text-sm text-off">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-night">
@@ -34,15 +35,15 @@ export default function Page() {
                 </span>
                 {hero.badge}
               </span>
-              <h1 className="rise rise-2 mt-7 text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-7xl xl:text-8xl">
+              <h1 className="rise rise-2 mt-6 text-[clamp(2.4rem,11vw,3rem)] font-extrabold leading-[1.02] tracking-tight sm:mt-7 sm:text-7xl xl:text-8xl">
                 <span className="block">{hero.title[0]}</span>
                 <span className="block">{hero.title[1]}</span>
                 <span className="block">
                   <span className="underline-lime">{hero.title[2]}</span>
                 </span>
               </h1>
-              <p className="rise rise-2 mt-6 max-w-lg text-lg text-off sm:text-xl">{hero.text}</p>
-              <div className="rise rise-3 mt-9 flex flex-col gap-3 sm:flex-row">
+              <p className="rise rise-2 mt-5 max-w-lg text-base text-off sm:mt-6 sm:text-xl">{hero.text}</p>
+              <div className="rise rise-3 mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
                 <a
                   href="#book"
                   className="inline-flex h-14 items-center justify-center rounded-full bg-lime px-8 text-base font-semibold text-night transition hover:brightness-95"
@@ -63,13 +64,13 @@ export default function Page() {
 
         <Ticker />
 
-        <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32">
+        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-32">
           <Reveal className="max-w-2xl">
             <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{why.title}</h2>
             <p className="mt-4 text-lg text-off">{why.text}</p>
           </Reveal>
-          <div className="mt-12 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
-            <Reveal className="group relative min-h-[420px] overflow-hidden rounded-[32px] lg:col-span-2 lg:row-span-2 lg:min-h-[620px]">
+          <div className="mt-10 grid gap-3 sm:mt-16 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:grid-rows-2">
+            <Reveal className="group relative min-h-[380px] overflow-hidden rounded-[28px] sm:col-span-2 sm:min-h-[460px] sm:rounded-[32px] lg:row-span-2 lg:min-h-[620px]">
               <Image
                 src="/photos/ute-door.jpg"
                 alt="MatePro ute with the logo on the door, outside a client's home"
@@ -86,17 +87,17 @@ export default function Page() {
                 <p className="mt-2 max-w-md text-lg text-off">{why.home.text}</p>
               </div>
             </Reveal>
-            <Reveal delay={90} className="flex flex-col justify-between rounded-[32px] bg-lime p-7 text-night sm:p-9">
+            <Reveal delay={90} className="flex flex-col justify-between rounded-[28px] bg-lime p-7 text-night sm:rounded-[32px] sm:p-9">
               <div>
                 <p className="font-semibold">Packages from</p>
-                <p className="mt-1 text-7xl font-extrabold tracking-tight">${from}</p>
+                <p className="mt-1 text-6xl font-extrabold tracking-tight sm:text-7xl">${from}</p>
               </div>
-              <div className="mt-10">
+              <div className="mt-8 sm:mt-10">
                 <h3 className="text-2xl font-extrabold">{why.prices.title}</h3>
                 <p className="mt-2">{why.prices.text}</p>
               </div>
             </Reveal>
-            <Reveal delay={180} className="group relative min-h-[320px] overflow-hidden rounded-[32px]">
+            <Reveal delay={180} className="group relative min-h-[300px] overflow-hidden rounded-[28px] sm:rounded-[32px]">
               <Image
                 src="/photos/drone-foam.jpg"
                 alt="A supercar covered in snow foam in a Melbourne driveway"
@@ -115,12 +116,12 @@ export default function Page() {
 
         <Prices />
 
-        <section id="how" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-24 sm:px-8 sm:py-32">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <section id="how" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-32">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-20">
             <Reveal className="lg:sticky lg:top-32 lg:self-start">
               <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">How it works</h2>
               <p className="mt-4 max-w-md text-lg text-off">Three steps and your car&rsquo;s clean. You don&rsquo;t leave home.</p>
-              <div className="relative mt-10 aspect-[16/10] overflow-hidden rounded-[32px]">
+              <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-[28px] sm:mt-10 sm:rounded-[32px]">
                 <Image
                   src="/photos/ute-street.jpg"
                   alt="MatePro ute parked outside a red-brick house in Melbourne"
@@ -132,11 +133,11 @@ export default function Page() {
             </Reveal>
             <ol className="divide-y divide-off/10 border-y border-off/10">
               {steps.map((s, i) => (
-                <Reveal as="li" key={s.title} delay={i * 90} className="flex gap-6 py-10 sm:gap-10 sm:py-14">
-                  <span className="text-6xl font-extrabold leading-none tracking-tight text-lime sm:text-8xl">0{i + 1}</span>
+                <Reveal as="li" key={s.title} delay={i * 90} className="flex gap-5 py-7 sm:gap-10 sm:py-14">
+                  <span className="w-14 shrink-0 text-5xl font-extrabold leading-none tracking-tight text-lime sm:w-auto sm:text-8xl">0{i + 1}</span>
                   <div className="pt-1 sm:pt-3">
-                    <h3 className="text-2xl font-bold sm:text-3xl">{s.title}</h3>
-                    <p className="mt-3 text-lg text-off">{s.text}</p>
+                    <h3 className="text-xl font-bold sm:text-3xl">{s.title}</h3>
+                    <p className="mt-2 text-off sm:mt-3 sm:text-lg">{s.text}</p>
                   </div>
                 </Reveal>
               ))}
@@ -149,6 +150,7 @@ export default function Page() {
         <Book />
       </main>
       <Footer />
+      <MobileBar />
     </>
   );
 }
