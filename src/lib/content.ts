@@ -10,11 +10,11 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Mobile", href: "/#prices" },
-  { label: "Wash Bays", href: "/car-wash" },
-  { label: "Products", href: "/shop" },
+  { label: "Mobile", href: "/mobile" },
+  { label: "Wash Bays", href: "/wash-bays" },
+  { label: "Products", href: "/products" },
   { label: "Franchise", href: "/franchise" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export const hero = {

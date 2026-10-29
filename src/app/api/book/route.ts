@@ -14,7 +14,7 @@ export async function POST(req: Request) {
 
   const reply = (ok: boolean, error?: string, status = 200) =>
     native
-      ? Response.redirect(new URL(`/#book-${ok ? "sent" : "error"}`, req.url), 303)
+      ? Response.redirect(new URL(`/mobile#book-${ok ? "sent" : "error"}`, req.url), 303)
       : Response.json(ok ? { ok } : { ok, error }, { status });
 
   // Hidden field only bots fill in

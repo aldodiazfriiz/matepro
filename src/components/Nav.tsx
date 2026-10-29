@@ -43,7 +43,7 @@ export default function Nav() {
           scrolled || open ? "nav-glass-scrolled" : ""
         }`}
       >
-        <Link href="/#top" aria-label="MatePro home" className="relative flex h-11 items-center">
+        <Link href="/mobile" aria-label="MatePro home" className="relative flex h-11 items-center">
           <Image
             src="/brand/matepro-horizontal-on-dark.svg"
             alt="MatePro"
@@ -68,7 +68,7 @@ export default function Nav() {
 
         <div className="flex items-center gap-1.5">
           <Link
-            href="/#book"
+            href="/mobile#book"
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center whitespace-nowrap rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
