@@ -52,7 +52,7 @@ export const packages: {
   {
     name: "Mini Detail",
     text: "A quick freshen up inside and out.",
-    prices: { small: 116, mid: 134, large: 152 },
+    prices: { small: 115, mid: 130, large: 150 },
     includes: [
       "Hand wash and wax",
       "Chamois dry",
@@ -65,7 +65,7 @@ export const packages: {
   {
     name: "Interior Detail",
     text: "Kids, dogs, work gear. We get it all out.",
-    prices: { small: 152, mid: 170, large: 188 },
+    prices: { small: 150, mid: 170, large: 185 },
     includes: [
       "Seats, carpets and boot vacuumed",
       "Seats and carpets shampooed",
@@ -78,7 +78,7 @@ export const packages: {
   {
     name: "Full Detail",
     text: "The lot, inside and out.",
-    prices: { small: 224, mid: 260, large: 296 },
+    prices: { small: 220, mid: 260, large: 295 },
     popular: true,
     includes: [
       "Snow foam hand wash and wax",
@@ -92,7 +92,7 @@ export const packages: {
   {
     name: "Ultimate Detail",
     text: "Inside and out, plus a cut and polish.",
-    prices: { small: 314, mid: 359, large: 404 },
+    prices: { small: 310, mid: 355, large: 400 },
     includes: [
       "Snow foam hand wash and wax",
       "Bug and tar removal, paint decontamination",
