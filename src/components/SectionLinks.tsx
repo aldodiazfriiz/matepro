@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function SectionLinks() {
   useEffect(() => {
     // The forms handle their own result hashes (#book-sent, #interest-error etc.) and clear them
-    if (location.hash && !/^#(book|interest)-/.test(location.hash)) {
+    if (location.hash && !/^#(book|interest|notify|opening)-/.test(location.hash)) {
       // Keep Next's history state, or the router restores the old URL
       history.replaceState(
         history.state,

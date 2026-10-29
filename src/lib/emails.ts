@@ -232,3 +232,77 @@ export function teamFranchiseEmail(f: Interest) {
     ].join("\n"),
   };
 }
+
+// Sent to someone who asks to hear when the shop opens
+export function shopEmail() {
+  const subject = "You're on the MatePro shop list";
+  const html = layout(
+    "We'll email you the day the MatePro range goes on sale.",
+    `
+    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
+    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">You're on the list.</h1>
+    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
+      Thanks for signing up. We'll email you the day the MatePro range of wash products and accessories goes on sale.
+    </p>
+    `,
+  );
+  const text = [
+    "You're on the list.",
+    "",
+    "Thanks for signing up. We'll email you the day the MatePro range of wash products and accessories goes on sale.",
+  ].join("\n");
+  return { subject, html, text };
+}
+
+// Sent to MatePro for every shop sign-up
+export function teamShopEmail(email: string) {
+  return {
+    subject: `Shop sign-up: ${email}`,
+    html: layout(
+      email,
+      `
+      <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">Shop list</span>
+      <h1 style="margin:18px 0 0;font:800 24px/1.2 ${FONT};color:${WHITE}">${escape(email)}</h1>
+      <p style="margin:8px 0 0;font:500 15px/1.5 ${FONT};color:${MUTED}">Wants to hear when the MatePro range is on sale.</p>
+      `,
+    ),
+    text: `Shop sign-up: ${email}`,
+  };
+}
+
+// Sent to someone who asks to hear when the car wash site opens
+export function carWashEmail() {
+  const subject = "You're on the MatePro Car Wash list";
+  const html = layout(
+    "We'll email you when the MatePro Car Wash opens.",
+    `
+    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
+    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">You're on the list.</h1>
+    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
+      Thanks for signing up. We'll email you when the MatePro Car Wash opens, with the address and opening day.
+    </p>
+    `,
+  );
+  const text = [
+    "You're on the list.",
+    "",
+    "Thanks for signing up. We'll email you when the MatePro Car Wash opens, with the address and opening day.",
+  ].join("\n");
+  return { subject, html, text };
+}
+
+// Sent to MatePro for every car wash sign-up
+export function teamCarWashEmail(email: string) {
+  return {
+    subject: `Car wash sign-up: ${email}`,
+    html: layout(
+      email,
+      `
+      <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">Car wash list</span>
+      <h1 style="margin:18px 0 0;font:800 24px/1.2 ${FONT};color:${WHITE}">${escape(email)}</h1>
+      <p style="margin:8px 0 0;font:500 15px/1.5 ${FONT};color:${MUTED}">Wants to hear when the car wash opens.</p>
+      `,
+    ),
+    text: `Car wash sign-up: ${email}`,
+  };
+}

@@ -12,6 +12,8 @@ export const site = {
 export const nav = [
   { label: "Prices", href: "/#prices" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Shop", href: "/shop" },
+  { label: "Car wash", href: "/car-wash" },
   { label: "Franchise", href: "/franchise" },
 ];
 
@@ -195,5 +197,73 @@ export const franchise = {
   form: {
     title: "Register your interest",
     text: "No cost, no commitment. Leave your details and we'll call you for a chat.",
+  },
+};
+
+export const shop = {
+  badge: "Coming soon",
+  title: ["The MatePro", "range"],
+  text: "The same products we use on every wash, bottled under our own name. Leave your email and we'll tell you the day they're on sale.",
+  chemicals: {
+    title: "Wash and detail",
+    items: [
+      { slug: "snow-foam", name: "Snow Foam", text: "Thick foam that clings to the paint and loosens dirt before you touch it." },
+      { slug: "car-shampoo", name: "Car Shampoo", text: "Slick, gentle wash for a safe hand wash, bucket after bucket." },
+      { slug: "wheel-cleaner", name: "Wheel Cleaner", text: "Breaks down brake dust and road grime on wheels and arches." },
+      { slug: "glass-cleaner", name: "Glass Cleaner", text: "Clear, streak-free windows and mirrors, inside and out." },
+      { slug: "interior-detailer", name: "Interior Detailer", text: "Cleans and refreshes the dash, console, trims and plastics." },
+      { slug: "tyre-shine", name: "Tyre Shine", text: "Deep black finish for tyres, the last touch on every wash." },
+      { slug: "quick-detailer", name: "Quick Detailer", text: "Fast gloss and touch-ups between washes." },
+      { slug: "bug-tar-remover", name: "Bug & Tar Remover", text: "Lifts bug splatter and road tar from paint and glass." },
+    ],
+  },
+  accessories: {
+    title: "Accessories",
+    items: [
+      { slug: "wash-mitt", name: "Wash Mitt", text: "Plush chenille mitt that holds suds and glides over the paint." },
+      { slug: "drying-towel", name: "Drying Towel", text: "Thick microfibre that dries a whole car without streaks." },
+      { slug: "wheel-brush", name: "Wheel Brush", text: "Soft bristles that reach between spokes and behind the rim." },
+      { slug: "foam-cannon", name: "Foam Cannon", text: "Fits a pressure washer and lays down thick snow foam." },
+    ],
+  },
+  form: {
+    title: "Be first to know",
+    text: "Leave your email and we'll let you know the day the MatePro range goes on sale.",
+  },
+};
+
+export const carWash = {
+  badge: "Opening soon",
+  title: ["MatePro", "Car Wash"],
+  text: "Wash it yourself in a hand-wash bay, or stay in the car and drive through the touchless automatic. Coming soon to Melbourne.",
+  ways: {
+    title: "Two ways to wash",
+    items: [
+      {
+        image: "/carwash/bay.jpg",
+        title: "Hand-wash bays",
+        text: "Wash it your way. High-pressure wands, foam brushes and spot-free rinse in every bay.",
+        points: ["Pay by card or phone at the bay", "Snow foam, wash, rinse and wax settings", "Room for utes and 4WDs"],
+      },
+      {
+        image: "/carwash/auto.jpg",
+        title: "Touchless automatic",
+        text: "Stay in the car. Water and foam do the work, and no brushes touch your paint.",
+        points: ["Drive in, pick a wash, drive out", "No brushes, no swirl marks", "Done in a few minutes"],
+      },
+    ],
+  },
+  menu: {
+    title: "Automatic wash menu",
+    text: "Prices announced on opening day.",
+    items: [
+      { name: "Basic", includes: ["Pre-soak", "High-pressure wash", "Spot-free rinse"] },
+      { name: "Premium", includes: ["Everything in Basic", "Snow foam", "Wheel clean", "Underbody wash"], popular: true },
+      { name: "Ultimate", includes: ["Everything in Premium", "Wax protectant", "Tyre shine", "Blow dry"] },
+    ],
+  },
+  form: {
+    title: "Be there on opening day",
+    text: "Leave your email and we'll tell you when the MatePro Car Wash opens, and where.",
   },
 };
