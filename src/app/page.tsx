@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
@@ -6,7 +7,6 @@ import Spotlight from "@/components/Spotlight";
 import Waitlist from "@/components/Waitlist";
 import Features from "@/components/Features";
 import Faq from "@/components/Faq";
-import Phone from "@/components/Phone";
 import StoreBadges from "@/components/StoreBadges";
 import { cta, hero, map, why } from "@/lib/content";
 
@@ -42,8 +42,16 @@ export default function Page() {
             </div>
 
             <div className="rise rise-3 relative">
-              <div className="float-card mx-auto w-full max-w-[260px] sm:max-w-[320px]">
-                <Phone screen="map" />
+              <div className="float-card">
+                <Image
+                  src="/photos/app-map.jpg"
+                  alt="MatePro app: set up your rig, see your route reroute around a low bridge, and the warnings on your route"
+                  width={2048}
+                  height={1360}
+                  priority
+                  sizes="(min-width: 1024px) 860px, 120vw"
+                  className="app-shot -ml-[10%] h-auto w-[120%] max-w-none sm:-ml-[6%] sm:w-[112%] lg:-ml-[4%] lg:w-[118%]"
+                />
               </div>
             </div>
           </div>
