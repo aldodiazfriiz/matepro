@@ -10,14 +10,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MatePro - The free truck map for Aussie drivers",
+  title: "MatePro - Mobile car wash and detailing, Melbourne",
   description:
-    "The free truck map for Aussie drivers. Low bridges, load limits and truck routes, checked against your rig. Join the list for launch day.",
+    "Mobile car wash and detailing Melbourne-wide. Hand wash, interior and full details at your home or work. Clear prices by car size.",
   metadataBase: new URL("https://www.matepro.com.au"),
   openGraph: {
-    title: "MatePro - The free truck map for Aussie drivers",
+    title: "MatePro - Mobile car wash and detailing, Melbourne",
     description:
-      "Truck stops, diesel prices, pre-starts and expenses in one place. Free for every driver.",
+      "Your car detailed in your driveway, Melbourne-wide. Packages from $120.",
     locale: "en_AU",
     type: "website",
   },

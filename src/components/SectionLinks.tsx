@@ -2,11 +2,11 @@
 
 import { useEffect } from "react";
 
-// Section links (href="#waitlist" etc.) scroll to their section without putting the hash in the URL.
+// Section links (href="#book" etc.) scroll to their section without putting the hash in the URL.
 export default function SectionLinks() {
   useEffect(() => {
-    // Waitlist handles its own result hashes (#waitlist-done, #waitlist-error) and clears them
-    if (location.hash && !/^#waitlist-/.test(location.hash)) {
+    // Book handles its own result hashes (#book-sent, #book-error) and clears them
+    if (location.hash && !/^#book-/.test(location.hash)) {
       // Keep Next's history state, or the router restores the old URL
       history.replaceState(
         history.state,

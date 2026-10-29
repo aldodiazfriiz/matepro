@@ -2,122 +2,150 @@
 
 export const site = {
   name: "MatePro",
-  tagline: "The free truck map for Aussie drivers.",
+  tagline: "Mobile car wash and detailing, Melbourne-wide.",
+  area: "Melbourne-wide",
+  phone: "0494 733 274",
+  phoneHref: "tel:+61494733274",
   email: "hello@matepro.com.au",
 };
 
 export const nav = [
-  { label: "The map", href: "#map" },
-  { label: "Features", href: "#features" },
+  { label: "Prices", href: "#prices" },
+  { label: "How it works", href: "#how" },
   { label: "FAQ", href: "#faq" },
 ];
 
 export const hero = {
-  badge: "Coming soon to iPhone and Android",
-  title: ["The truck map", "that knows", "your rig"],
-  text: "Low bridges, load limits and truck routes on one map, checked against your truck's height and mass. Free for every driver, big enough to use with gloves on.",
+  badge: "We come to you, Melbourne-wide",
+  title: ["Your car,", "detailed in", "your driveway"],
+  text: "Hand wash, interior and full details at your home or work. Pick a package, book a time, and we turn up with everything we need.",
 };
 
-// What the truck map shows
-export const map = {
-  title: "One map for everything that can stop a truck",
-  text: "Put in your height, mass and combination once. MatePro warns you about anything on your route your rig won't fit.",
-  layers: [
-    { icon: "bridge", title: "Low bridges and clearances", text: "Every low bridge, tunnel and overhead on the route, flagged when it's lower than your load." },
-    { icon: "weight", title: "Bridge and road load limits", text: "Mass limits on bridges and roads, checked against your GVM before you're committed." },
-    { icon: "route", title: "B-double and road train routes", text: "See which roads are approved for your combination, from B-doubles up to road trains." },
-    { icon: "alert", title: "No-truck roads and curfews", text: "Local truck bans, time curfews and restricted streets, so you're not turning around in a cul-de-sac." },
-    { icon: "grade", title: "Steep grades and tight turns", text: "Long descents, steep climbs and corners that are tight for a long trailer, before you get there." },
-    { icon: "scale", title: "Weigh and checking stations", text: "Where the weighbridges and heavy vehicle checking stations are on your run." },
-  ],
-};
-
-// Each feature has a screen in Phone.tsx with the same id
-export const features = [
-  {
-    id: "map",
-    icon: "route",
-    title: "Truck map",
-    text: "Low bridges, load limits and truck routes on one map, with a warning before anything your rig won't clear.",
-  },
-  {
-    id: "stops",
-    icon: "pin",
-    title: "Truck stops and rest areas",
-    text: "Find a bay, a shower or a feed on your route, with what's there before you pull off.",
-  },
-  {
-    id: "diesel",
-    icon: "fuel",
-    title: "Diesel prices",
-    text: "See who's cheapest up the road before you pull in, not after you've filled up.",
-  },
-  {
-    id: "prestart",
-    icon: "check",
-    title: "Daily pre-start",
-    text: "Tick it off, add photos of anything that needs looking at, done before you roll.",
-  },
-  {
-    id: "expenses",
-    icon: "note",
-    title: "Trip and expense notes",
-    text: "Diesel, tolls, a feed. Jot it down now and sort it out at tax time.",
-  },
-  {
-    id: "community",
-    icon: "users",
-    title: "Driver community",
-    text: "Road conditions, tips and a yarn with other drivers who know the run.",
-  },
+export const sizes = [
+  { id: "small", label: "Hatch / Sedan" },
+  { id: "mid", label: "Small SUV / Wagon" },
+  { id: "large", label: "Large SUV / 4WD / 7 seater" },
 ] as const;
+
+export type Size = (typeof sizes)[number]["id"];
+
+// Prices in dollars, GST included, by car size
+export const packages: {
+  name: string;
+  text: string;
+  prices: Record<Size, number>;
+  includes: string[];
+  popular?: boolean;
+}[] = [
+  {
+    name: "Mini Detail",
+    text: "A quick freshen up inside and out.",
+    prices: { small: 120, mid: 139, large: 157 },
+    includes: [
+      "Hand wash and wax",
+      "Chamois dry",
+      "Seats, carpets and boot vacuumed",
+      "Windows inside and out",
+      "Dash, trims and tyres dressed",
+      "Interior deodorised",
+    ],
+  },
+  {
+    name: "Interior Detail",
+    text: "Kids, dogs, work gear. We get it all out.",
+    prices: { small: 157, mid: 176, large: 194 },
+    includes: [
+      "Seats, carpets and boot vacuumed",
+      "Seats and carpets shampooed",
+      "Trims cleaned and dressed",
+      "Windows and mirrors inside and out",
+      "Sun visors cleaned",
+      "Interior deodorised",
+    ],
+  },
+  {
+    name: "Full Detail",
+    text: "The lot, inside and out.",
+    prices: { small: 232, mid: 269, large: 306 },
+    popular: true,
+    includes: [
+      "Snow foam hand wash and wax",
+      "Wheels, tyres and brake dust",
+      "Door, boot and fuel jambs cleaned",
+      "Seats, carpets, boot and mats steam cleaned",
+      "Leather cleaned and conditioned",
+      "Dash, console, vents and trims detailed",
+    ],
+  },
+  {
+    name: "Ultimate Detail",
+    text: "Full Detail plus a cut and polish.",
+    prices: { small: 325, mid: 371, large: 418 },
+    includes: [
+      "Everything in the Full Detail",
+      "Bug and tar removal",
+      "Paint decontamination",
+      "Cut and polish for light swirls",
+      "Wheel arches and mud flaps dressed",
+      "Foot pedals cleaned and sanitised",
+    ],
+  },
+];
+
+export const priceNotes = [
+  "Prices include GST.",
+  "Very dirty cars and pet hair cost extra. We'll tell you before we start.",
+  "Ceramic coating and paint protection: ask for a quote.",
+];
+
+export const steps = [
+  { icon: "note", title: "Book online or call", text: "Pick a package and tell us your car and suburb." },
+  { icon: "check", title: "We confirm a time", text: "We call or text to lock in a day that suits you." },
+  { icon: "pin", title: "We come to you", text: "Home, work or the gym car park. You don't go anywhere." },
+];
 
 export const why = {
   title: "Why MatePro?",
-  text: "Made for the cab, not the office.",
+  text: "A proper detail without losing your Saturday.",
   items: [
-    { icon: "tag", title: "Free. No catch.", text: "Every feature, free for every driver. No trial that runs out halfway up the Hume." },
-    { icon: "truck", title: "Set to your rig", text: "Your height, mass and combination are saved once, so every warning is about your truck, not a car." },
-    { icon: "sun", title: "Easy in the cab", text: "Big buttons and clear screens, easy with gloves on, at 4am or in full sun." },
+    { icon: "pin", title: "We come to you", text: "Your driveway, your office car park, wherever the car is. No driving to a car wash and waiting around." },
+    { icon: "tag", title: "Clear prices", text: "Set prices by package and car size, listed right here. You know the cost before we start." },
+    { icon: "drop", title: "Done by hand", text: "Hand washed and detailed panel by panel. No machine brushes near your paint." },
   ],
 };
 
 export const faq = {
   title: "Frequently asked questions",
-  text: "The stuff drivers ask us most.",
+  text: "The stuff people ask us most.",
   items: [
     {
-      q: "Is MatePro really free?",
-      a: "Yes. MatePro is free for every driver.",
+      q: "Where do you go?",
+      a: "All over Melbourne. We come to your home or work. Tell us your suburb when you book.",
     },
     {
-      q: "When can I get it?",
-      a: "We're building it now. Join the list and we'll email you the day it's on the App Store and Google Play.",
+      q: "Which size is my car?",
+      a: "Hatches and sedans are the smallest price. Small SUVs and wagons are the middle. Large SUVs, 4WDs, utes and 7 seaters are the largest. Not sure? Put the make and model in the form.",
     },
     {
-      q: "Will it be on iPhone and Android?",
-      a: "Both. Same app, same features.",
+      q: "Can the price change?",
+      a: "Only if the car is very dirty or has a lot of pet hair. If so, we'll tell you the price before we start, not after.",
     },
     {
-      q: "Where does the map data come from?",
-      a: "From public road authority and NHVR network data, plus reports from drivers on the road. We keep adding to it before launch.",
+      q: "Do you do ceramic coating?",
+      a: "Yes. It depends on the car and the paint, so send us a booking request and we'll quote it.",
     },
     {
-      q: "Can I rely on it instead of the signs?",
-      a: "No. MatePro helps you plan, but always follow road signs, your permits and your own check of the clearance.",
+      q: "Do the prices include GST?",
+      a: "Yes. The price you see is the price you pay.",
     },
     {
-      q: "Does it replace my work diary?",
-      a: "No. MatePro isn't an NHVR-approved electronic work diary, so keep using your approved diary for fatigue records.",
-    },
-    {
-      q: "What will you email me?",
-      a: "Only news about the app launch. No spam.",
+      q: "How do I book?",
+      a: "Fill in the form below or call us. We'll get back to you to confirm a day and time.",
     },
   ],
 };
 
-export const cta = {
-  title: "Be first on the road with MatePro",
-  text: "Join the list and get it the day it's out.",
+export const book = {
+  title: "Book a wash",
+  text: "Tell us your car and suburb. We'll call or text to confirm a time.",
 };

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import StoreBadges from "@/components/StoreBadges";
 import { nav, site } from "@/lib/content";
 
 export default function Footer() {
@@ -16,14 +15,11 @@ export default function Footer() {
           <p className="mt-4 max-w-xs text-off">
             {site.tagline}
           </p>
-          <div className="mt-6">
-            <StoreBadges />
-          </div>
         </div>
         <div>
-          <h3 className="font-semibold text-off">App</h3>
+          <h3 className="font-semibold text-off">Car wash</h3>
           <ul className="mt-2">
-            {[...nav, { label: "Join the list", href: "#waitlist" }].map((item) => (
+            {[...nav, { label: "Book a wash", href: "#book" }].map((item) => (
               <li key={item.href}>
                 <a href={item.href} className="flex min-h-11 items-center text-off hover:text-lime">
                   {item.label}
@@ -34,12 +30,13 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="font-semibold text-off">Contact</h3>
-          <a
-            href={`mailto:${site.email}`}
-            className="mt-2 flex min-h-11 items-center text-off hover:text-lime"
-          >
+          <a href={site.phoneHref} className="mt-2 flex min-h-11 items-center text-off hover:text-lime">
+            {site.phone}
+          </a>
+          <a href={`mailto:${site.email}`} className="flex min-h-11 items-center text-off hover:text-lime">
             {site.email}
           </a>
+          <p className="flex min-h-11 items-center text-off">{site.area}</p>
         </div>
       </div>
       <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-10 text-xs text-off sm:flex-row sm:justify-between sm:px-8">

@@ -57,10 +57,10 @@ export default function Nav() {
         </nav>
 
         <a
-          href="#waitlist"
+          href="#book"
           className="inline-flex h-11 items-center rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
         >
-          Get the app
+          Book a wash
         </a>
       </div>
     </header>
