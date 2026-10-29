@@ -12,7 +12,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "MatePro - The free app for Aussie truck drivers",
   description:
-    "Truck stops, diesel prices, pre-starts and expenses in one place. Free for every driver, built by a working truck driver. Join the list for launch day.",
+    "Truck stops, diesel prices, pre-starts and expenses in one place. Free for every driver. Join the list for launch day.",
   metadataBase: new URL("https://www.matepro.com.au"),
   openGraph: {
     title: "MatePro - The free app for Aussie truck drivers",

@@ -12,7 +12,7 @@ export const nav = [
 ];
 
 export const hero = {
-  badge: "Built by a working truck driver",
+  badge: "Coming soon to iPhone and Android",
   title: ["Meet MatePro", "Your mate on", "every run"],
   text: "Truck stops, diesel prices, pre-starts and expenses in one place. Free for every driver, big enough to use with gloves on.",
 };
@@ -56,7 +56,7 @@ export const why = {
   text: "Made for the cab, not the office.",
   items: [
     { icon: "tag", title: "Free. No catch.", text: "Every feature, free for every driver. No trial that runs out halfway up the Hume." },
-    { icon: "truck", title: "Built by a truckie", text: "Made by a working truck driver who knows the job, not by people who've never done a pre-start." },
+    { icon: "truck", title: "Made for the job", text: "Built around a real day on the road, from the pre-start to the last drop." },
     { icon: "sun", title: "Easy in the cab", text: "Big buttons and clear screens, easy with gloves on, at 4am or in full sun." },
   ],
 };
@@ -80,10 +80,6 @@ export const faq = {
     {
       q: "Does it replace my work diary?",
       a: "No. MatePro isn't an NHVR-approved electronic work diary, so keep using your approved diary for fatigue records.",
-    },
-    {
-      q: "Who's behind MatePro?",
-      a: "A working truck driver from Melbourne. Got an idea for the app? Email hello@matepro.com.au.",
     },
     {
       q: "What will you email me?",

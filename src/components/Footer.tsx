@@ -14,7 +14,7 @@ export default function Footer() {
             height={40}
           />
           <p className="mt-4 max-w-xs text-off">
-            {site.tagline} Built by a working truck driver.
+            {site.tagline}
           </p>
           <div className="mt-6">
             <StoreBadges />
