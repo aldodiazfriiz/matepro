@@ -19,7 +19,7 @@ function Products({ title, items }: { title: string; items: { slug: string; name
       <Reveal>
         <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl">{title}</h2>
       </Reveal>
-      <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4">
+      <ul className="mt-8 grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:mt-10 sm:gap-4 lg:grid-cols-4">
         {items.map((p, i) => (
           <Reveal as="li" key={p.slug} delay={(i % 4) * 70}>
             <a
@@ -39,7 +39,7 @@ function Products({ title, items }: { title: string; items: { slug: string; name
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-4 sm:p-6">
-                <h3 className="text-lg font-semibold sm:text-xl">{p.name}</h3>
+                <h3 className="text-base font-semibold leading-snug sm:text-xl">{p.name}</h3>
                 <p className="mt-1.5 flex-1 text-sm text-off sm:text-base">{p.text}</p>
                 <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-lime">
                   Notify me

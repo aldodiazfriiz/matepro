@@ -86,7 +86,7 @@ export default function Nav() {
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center whitespace-nowrap rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
-            Book a wash
+            Book<span className="max-[379px]:hidden">&nbsp;a wash</span>
           </Link>
           <button
             type="button"

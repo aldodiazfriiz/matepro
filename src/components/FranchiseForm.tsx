@@ -46,7 +46,7 @@ export default function FranchiseForm() {
           <div>
             <h2 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">{franchise.form.title}</h2>
             <p className="mt-4 max-w-md text-lg text-night">{franchise.form.text}</p>
-            <a href={site.phoneHref} className="mt-6 inline-flex items-center gap-2 text-2xl font-bold hover:underline">
+            <a href={site.phoneHref} className="mt-6 inline-flex min-h-11 items-center gap-2 text-2xl font-bold hover:underline">
               <Icon name="phone" className="h-6 w-6" />
               {site.phone}
             </a>
