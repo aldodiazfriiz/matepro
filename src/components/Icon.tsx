@@ -4,7 +4,6 @@ const paths: Record<string, string> = {
   check: "M9 11.5l2 2 4-4.5M5 4h14v16H5zM8 4V2M16 4V2",
   tag: "M3 12V4h8l10 10-8 8L3 12ZM7.5 8.5h.01",
   drop: "M12 3s-6 6.6-6 11a6 6 0 0 0 12 0c0-4.4-6-11-6-11Z",
-  car: "M3 16v-4l2-5h14l2 5v4H3ZM3 12h18M3 16v2h3v-2M18 16v2h3v-2M7 14h.01M17 14h.01",
   phone:
     "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z",
   tick: "M5 12.5l4.5 4.5L19 7.5",

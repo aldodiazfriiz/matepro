@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav";
+import BgVideo from "@/components/BgVideo";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
@@ -6,18 +7,23 @@ import Spotlight from "@/components/Spotlight";
 import Prices from "@/components/Prices";
 import Book from "@/components/Book";
 import Faq from "@/components/Faq";
-import { hero, packages, site, steps, why } from "@/lib/content";
-
-const from = Math.min(...packages.map((p) => p.prices.small));
+import { hero, site, steps, why } from "@/lib/content";
 
 export default function Page() {
   return (
     <>
       <Nav />
       <main className="overflow-x-clip">
-        <section id="top" className="relative mx-auto max-w-7xl px-5 pt-32 sm:px-8 sm:pt-40 lg:pb-16">
-          <div className="glow-lime glow-hero" aria-hidden="true" />
-          <div className="relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <section id="top" className="relative flex min-h-[min(100svh,880px)] items-center overflow-hidden">
+          <BgVideo
+            webm="/video/hero.webm"
+            mp4="/video/hero.mp4"
+            poster="/video/hero-poster.jpg"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/40 lg:bg-gradient-to-r lg:from-night/90 lg:via-night/60 lg:to-night/30" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night to-transparent" />
+          <div className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-32 sm:px-8 sm:pt-40 lg:pb-28">
             <div>
               <span className="rise inline-flex items-center gap-2 rounded-full border border-off/10 bg-charcoal/70 py-1.5 pl-1.5 pr-4 text-sm text-off">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-night">
@@ -46,27 +52,6 @@ export default function Page() {
                 >
                   <Icon name="phone" className="h-5 w-5" />
                   {site.phone}
-                </a>
-              </div>
-            </div>
-
-            <div className="rise rise-3 relative">
-              <div className="float-card rounded-[32px] border border-off/10 bg-charcoal p-7 shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:p-9">
-                <p className="font-semibold text-lime">Packages from</p>
-                <p className="mt-1 text-6xl font-extrabold tracking-tight">${from}</p>
-                <ul className="mt-7 divide-y divide-off/10 border-y border-off/10">
-                  {packages.map((p) => (
-                    <li key={p.name} className="flex items-center justify-between gap-4 py-4">
-                      <span className="flex items-center gap-3 font-medium">
-                        <Icon name="car" className="h-5 w-5 text-lime" />
-                        {p.name}
-                      </span>
-                      <span className="font-bold">${p.prices.small}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a href="#prices" className="mt-6 inline-flex min-h-11 items-center font-semibold text-lime hover:underline">
-                  See all prices and what&rsquo;s included
                 </a>
               </div>
             </div>
