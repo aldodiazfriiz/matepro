@@ -10,11 +10,11 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Prices", href: "/#prices" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Shop", href: "/shop" },
-  { label: "Car wash", href: "/car-wash" },
+  { label: "Mobile", href: "/#prices" },
+  { label: "Wash Bays", href: "/car-wash" },
+  { label: "Products", href: "/shop" },
   { label: "Franchise", href: "/franchise" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const hero = {
@@ -148,7 +148,7 @@ export const book = {
 };
 
 export const franchise = {
-  badge: "MatePro franchise",
+  badge: "Coming soon",
   title: ["Run your own", "MatePro"],
   text: "We're looking for owner-operators to take MatePro to more Melbourne driveways. Register your interest and we'll call you for a chat.",
   offer: {
@@ -233,7 +233,7 @@ export const shop = {
 };
 
 export const carWash = {
-  badge: "Opening soon",
+  badge: "Coming soon",
   title: ["MatePro", "Car Wash"],
   text: "Wash it yourself in a hand-wash bay, or stay in the car and drive through the touchless automatic. Coming soon to Melbourne.",
   ways: {

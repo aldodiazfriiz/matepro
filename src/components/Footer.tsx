@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <h3 className="font-semibold text-off">Car wash</h3>
+          <h3 className="font-semibold text-off">MatePro</h3>
           <ul className="mt-2">
             {[...nav, { label: "Book a wash", href: "/#book" }].map((item) => (
               <li key={item.href}>
