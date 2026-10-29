@@ -115,6 +115,26 @@ body {
   animation: ticker 40s linear infinite;
 }
 
+@keyframes shine {
+  0%,
+  70% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 45%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(250, 250, 250, 0.45), transparent);
+  animation: shine 4.5s ease-in-out infinite;
+}
+
 .faq summary::-webkit-details-marker {
   display: none;
 }
@@ -122,6 +142,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .rise,
   .ticker-track,
+  .shine::after,
   .underline-lime::after {
     animation: none;
   }

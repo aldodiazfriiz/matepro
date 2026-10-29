@@ -87,15 +87,32 @@ export default function Page() {
                 <p className="mt-2 max-w-md text-lg text-off">{why.home.text}</p>
               </div>
             </Reveal>
-            <Reveal delay={90} className="flex flex-col justify-between rounded-[28px] bg-lime p-7 text-night sm:rounded-[32px] sm:p-9">
-              <div>
-                <p className="font-semibold">Packages from</p>
-                <p className="mt-1 text-6xl font-extrabold tracking-tight sm:text-7xl">${from}</p>
-              </div>
-              <div className="mt-8 sm:mt-10">
-                <h3 className="text-2xl font-extrabold">{why.prices.title}</h3>
-                <p className="mt-2">{why.prices.text}</p>
-              </div>
+            <Reveal delay={90} className="rounded-[28px] sm:rounded-[32px]">
+              <a
+                href="#prices"
+                aria-label={`Packages from $${from}. See prices`}
+                className="shine group relative flex h-full flex-col justify-between overflow-hidden rounded-[28px] bg-lime p-7 text-night transition duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_24px_60px_rgba(203,231,51,0.28)] active:scale-[0.98] sm:rounded-[32px] sm:p-9"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-semibold">Packages from</p>
+                    <p className="mt-1 origin-left text-6xl font-extrabold tracking-tight transition-transform duration-300 group-hover:scale-105 sm:text-7xl">
+                      ${from}
+                    </p>
+                  </div>
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-night text-lime transition duration-300 group-hover:-rotate-45 group-hover:scale-110">
+                    <Icon name="arrow" className="h-5 w-5" />
+                  </span>
+                </div>
+                <div className="mt-8 sm:mt-10">
+                  <h3 className="text-2xl font-extrabold">{why.prices.title}</h3>
+                  <p className="mt-2">{why.prices.text}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 font-semibold">
+                    See prices
+                    <Icon name="arrow" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </a>
             </Reveal>
             <Reveal delay={180} className="group relative min-h-[300px] overflow-hidden rounded-[28px] sm:rounded-[32px]">
               <Image
