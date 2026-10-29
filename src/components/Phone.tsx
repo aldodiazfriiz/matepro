@@ -2,9 +2,10 @@ import Icon from "@/components/Icon";
 
 // Mock app screens for the features section. Ids match features in content.ts.
 
-type Screen = "stops" | "diesel" | "prestart" | "expenses" | "community";
+type Screen = "map" | "stops" | "diesel" | "prestart" | "expenses" | "community";
 
 const titles: Record<Screen, string> = {
+  map: "Your route",
   stops: "Stops near you",
   diesel: "Diesel up the road",
   prestart: "Pre-start",
@@ -26,6 +27,41 @@ function Row({ children, lime = false }: { children: React.ReactNode; lime?: boo
 
 function Tag({ children }: { children: React.ReactNode }) {
   return <span className="rounded-full bg-off/10 px-2 py-0.5 text-[10px] font-medium text-off">{children}</span>;
+}
+
+function RouteMap() {
+  return (
+    <div className="space-y-2.5">
+      <div className="flex gap-1.5">
+        <Tag>4.3 m high</Tag>
+        <Tag>42.5 t</Tag>
+        <Tag>B-double</Tag>
+      </div>
+      <div className="relative h-56 overflow-hidden rounded-2xl bg-charcoal">
+        <svg viewBox="0 0 200 224" className="absolute inset-0 h-full w-full" fill="none" aria-hidden="true">
+          <g stroke="#FAFAFA" strokeOpacity="0.08" strokeWidth="6" strokeLinecap="round">
+            <path d="M-10 60h220M-10 150h220M50-10v240M150-10v240M-10 210 210 20" />
+          </g>
+          <path d="M100 236V170c0-20-50-20-50-40V90c0-25 50-25 50-50V-10" stroke="#FAFAFA" strokeOpacity="0.25" strokeWidth="5" strokeDasharray="2 8" strokeLinecap="round" />
+          <path d="M100 236V170c0-20 50-20 50-40V90c0-25-50-25-50-50V-10" stroke="#CBE733" strokeWidth="5" strokeLinecap="round" />
+          <circle cx="100" cy="196" r="7" fill="#121212" stroke="#CBE733" strokeWidth="3" />
+        </svg>
+        <span className="absolute left-[25%] top-[48%] flex -translate-x-1/2 -translate-y-1/2 items-center gap-1 whitespace-nowrap rounded-full bg-night px-2 py-1 text-[10px] font-bold text-off ring-2 ring-off/60">
+          4.1 m
+        </span>
+        <span className="absolute left-[75%] top-[30%] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-lime px-2 py-1 text-[10px] font-bold text-night">
+          B-double OK
+        </span>
+      </div>
+      <Row lime>
+        <div>
+          <div className="text-sm font-semibold">Low bridge in 2.3 km</div>
+          <div className="text-xs text-night">4.1 m, your rig is 4.3 m. Rerouted.</div>
+        </div>
+        <Icon name="bridge" className="h-6 w-6 shrink-0" />
+      </Row>
+    </div>
+  );
 }
 
 function Stops() {
@@ -154,6 +190,7 @@ function Community() {
 }
 
 const screens: Record<Screen, () => React.ReactNode> = {
+  map: RouteMap,
   stops: Stops,
   diesel: Diesel,
   prestart: Prestart,
@@ -162,6 +199,7 @@ const screens: Record<Screen, () => React.ReactNode> = {
 };
 
 const tabs = [
+  { screen: "map", icon: "route" },
   { screen: "stops", icon: "pin" },
   { screen: "diesel", icon: "fuel" },
   { screen: "prestart", icon: "check" },

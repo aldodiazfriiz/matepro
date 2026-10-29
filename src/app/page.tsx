@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
@@ -7,8 +6,9 @@ import Spotlight from "@/components/Spotlight";
 import Waitlist from "@/components/Waitlist";
 import Features from "@/components/Features";
 import Faq from "@/components/Faq";
+import Phone from "@/components/Phone";
 import StoreBadges from "@/components/StoreBadges";
-import { cta, hero, why } from "@/lib/content";
+import { cta, hero, map, why } from "@/lib/content";
 
 export default function Page() {
   return (
@@ -42,19 +42,31 @@ export default function Page() {
             </div>
 
             <div className="rise rise-3 relative">
-              <div className="float-card">
-                <Image
-                  src="/photos/app-prestart.jpg"
-                  alt="MatePro app: scan a wheel for the pre-start, then see every check marked OK"
-                  width={2048}
-                  height={1360}
-                  priority
-                  sizes="(min-width: 1024px) 860px, 120vw"
-                  className="app-shot -ml-[10%] h-auto w-[120%] max-w-none sm:-ml-[6%] sm:w-[112%] lg:-ml-[4%] lg:w-[118%]"
-                />
+              <div className="float-card mx-auto w-full max-w-[260px] sm:max-w-[320px]">
+                <Phone screen="map" />
               </div>
             </div>
           </div>
+        </section>
+
+        <section id="map" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-24 sm:px-8 sm:py-32">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{map.title}</h2>
+            <p className="mt-4 text-lg text-off">{map.text}</p>
+          </Reveal>
+          <ul className="mt-14 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+            {map.layers.map((l, i) => (
+              <Reveal as="li" key={l.title} delay={(i % 3) * 90}>
+                <Spotlight className="group h-full rounded-3xl border border-off/10 bg-charcoal/60 p-8">
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-lime text-night transition-transform duration-300 group-hover:-translate-y-1">
+                    <Icon name={l.icon} className="h-6 w-6" />
+                  </span>
+                  <h3 className="relative mt-6 text-xl font-semibold">{l.title}</h3>
+                  <p className="relative mt-2 text-off">{l.text}</p>
+                </Spotlight>
+              </Reveal>
+            ))}
+          </ul>
         </section>
 
         <Features />

@@ -41,7 +41,7 @@ function layout(preheader: string, body: string) {
         </tr>
         <tr>
           <td style="padding:28px 4px 0;font:400 13px/1.6 ${FONT};color:#8A8A8A">
-            MatePro &middot; The free app for Aussie truck drivers<br>
+            MatePro &middot; The free truck map for Aussie drivers<br>
             <a href="mailto:${site.email}" style="color:#8A8A8A;text-decoration:none">${site.email}</a>
           </td>
         </tr>
@@ -63,7 +63,7 @@ export function waitlistEmail() {
     <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">You're on the list.</h1>
     <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
       Thanks for signing up. We'll email you the day the MatePro app hits the App Store and Google Play.
-      Truck stops, diesel prices, pre-starts and expenses in one place, free for every driver.
+      Low bridges, load limits and truck routes on one map, plus truck stops, diesel prices and pre-starts. Free for every driver.
     </p>
     `,
   );
