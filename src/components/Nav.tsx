@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Icon from "@/components/Icon";
 import { nav } from "@/lib/content";
@@ -9,6 +10,7 @@ import { nav } from "@/lib/content";
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     let frame = 0;
@@ -43,7 +45,19 @@ export default function Nav() {
           scrolled || open ? "nav-glass-scrolled" : ""
         }`}
       >
-        <Link href="/mobile" aria-label="MatePro home" className="relative flex h-11 items-center">
+        <Link
+          href="/mobile"
+          aria-label="MatePro home"
+          onClick={(e) => {
+            setOpen(false);
+            // Already home: just glide back to the top
+            if (pathname === "/mobile") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="relative flex h-11 items-center"
+        >
           <Image
             src="/brand/matepro-horizontal-on-dark.svg"
             alt="MatePro"

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 // Forms handle their own result hashes (#book-sent, #interest-error etc.) and clear them
-const formResult = /^#(book|interest|notify|opening)-/;
+const formResult = /^#(book|interest|notify|opening|launch)-/;
 
 // Section links (href="#book", or "/mobile#book" while on /mobile) scroll to their section,
 // and a hash that arrives with a page load or navigation is scrolled to and then dropped from the URL.

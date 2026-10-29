@@ -306,3 +306,40 @@ export function teamCarWashEmail(email: string) {
     text: `Car wash sign-up: ${email}`,
   };
 }
+
+// Sent to someone who asks to hear when the app launches
+export function appEmail() {
+  const subject = "You're on the MatePro app list";
+  const html = layout(
+    "We'll send you the link the day the MatePro app is out.",
+    `
+    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
+    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">You're on the list.</h1>
+    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
+      Thanks for signing up. We'll send you the download link the day the MatePro app hits the App Store and Google Play.
+    </p>
+    `,
+  );
+  const text = [
+    "You're on the list.",
+    "",
+    "Thanks for signing up. We'll send you the download link the day the MatePro app hits the App Store and Google Play.",
+  ].join("\n");
+  return { subject, html, text };
+}
+
+// Sent to MatePro for every app sign-up
+export function teamAppEmail(email: string) {
+  return {
+    subject: `App sign-up: ${email}`,
+    html: layout(
+      email,
+      `
+      <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">App list</span>
+      <h1 style="margin:18px 0 0;font:800 24px/1.2 ${FONT};color:${WHITE}">${escape(email)}</h1>
+      <p style="margin:8px 0 0;font:500 15px/1.5 ${FONT};color:${MUTED}">Wants the app when it launches.</p>
+      `,
+    ),
+    text: `App sign-up: ${email}`,
+  };
+}

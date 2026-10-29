@@ -135,6 +135,34 @@ body {
   animation: shine 4.5s ease-in-out infinite;
 }
 
+@keyframes foam-life {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  12% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+}
+
+.foam-bubble {
+  background: radial-gradient(circle at 32% 30%, #fafafa 0 18%, rgba(250, 250, 250, 0.85) 30%, rgba(203, 231, 51, 0.35) 70%, rgba(203, 231, 51, 0.15));
+  border: 1.5px solid rgba(250, 250, 250, 0.7);
+  box-shadow: inset 0 -4px 10px rgba(203, 231, 51, 0.35);
+  translate: -50% -50%;
+  animation: foam-life 1.8s ease-out both;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
 .faq summary::-webkit-details-marker {
   display: none;
 }

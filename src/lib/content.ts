@@ -11,6 +11,7 @@ export const site = {
 
 export const nav = [
   { label: "Mobile", href: "/mobile" },
+  { label: "App", href: "/app" },
   { label: "Wash Bays", href: "/wash-bays" },
   { label: "Products", href: "/products" },
   { label: "Franchise", href: "/franchise" },
@@ -265,5 +266,29 @@ export const carWash = {
   form: {
     title: "Be there on opening day",
     text: "Leave your email and we'll tell you when the MatePro Car Wash opens, and where.",
+  },
+};
+
+export const app = {
+  badge: "Coming soon",
+  title: ["The MatePro", "app"],
+  text: "A home for Melbourne car people. Show off your ride, meet other owners, book a wash in a few taps, and play Foam Frenzy, the game built right in. Coming soon to iPhone and Android.",
+  features: {
+    title: "More than a booking app",
+    items: [
+      { icon: "users", title: "Car community", text: "Post your car, see what other Melbourne owners are driving, and swap tips." },
+      { icon: "pin", title: "Meets and events", text: "Find car meets and MatePro events near you, and see who's going." },
+      { icon: "tick", title: "Book in seconds", text: "Pick your package, car and time. Your details are saved for next time." },
+      { icon: "tag", title: "Points and rewards", text: "Earn points for washes, posts and Foam Frenzy scores, then swap them for money off." },
+    ],
+  },
+  game: {
+    title: "Foam Frenzy",
+    text: "The game built into the MatePro app. Pop the foam bubbles before they dry. Give it a go right here.",
+    note: "In the app, your score will earn points toward money off your next wash.",
+  },
+  form: {
+    title: "Be first to download it",
+    text: "Leave your email and we'll send you the link the day the MatePro app is out.",
   },
 };
