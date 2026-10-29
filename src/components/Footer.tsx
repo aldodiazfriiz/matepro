@@ -58,12 +58,10 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 pb-28 text-xs sm:pb-10 text-off sm:flex-row sm:justify-between sm:px-8">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 px-5 pb-28 text-xs sm:pb-10 text-off sm:px-8">
         <p>&copy; 2026 MatePro. All rights reserved.</p>
-        <div className="flex gap-6">
-          <a href="/terms" className="flex min-h-11 items-center hover:text-lime sm:min-h-0">Terms</a>
-          <a href="/privacy" className="flex min-h-11 items-center hover:text-lime sm:min-h-0">Privacy</a>
-        </div>
+        <a href="/terms" className="flex min-h-11 items-center hover:text-lime">Terms</a>
+        <a href="/privacy" className="flex min-h-11 items-center hover:text-lime">Privacy</a>
       </div>
     </footer>
   );
