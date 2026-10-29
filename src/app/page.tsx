@@ -9,7 +9,7 @@ import Prices from "@/components/Prices";
 import Book from "@/components/Book";
 import Faq from "@/components/Faq";
 import MobileBar from "@/components/MobileBar";
-import { hero, packages, site, steps, why } from "@/lib/content";
+import { hero, packages, site, why } from "@/lib/content";
 
 const from = Math.min(...packages.map((p) => p.prices.small));
 
@@ -115,35 +115,6 @@ export default function Page() {
         </section>
 
         <Prices />
-
-        <section id="how" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-32">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-20">
-            <Reveal className="lg:sticky lg:top-32 lg:self-start">
-              <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">How it works</h2>
-              <p className="mt-4 max-w-md text-lg text-off">Three steps and your car&rsquo;s clean. You don&rsquo;t leave home.</p>
-              <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-[28px] sm:mt-10 sm:rounded-[32px]">
-                <Image
-                  src="/photos/ute-street.jpg"
-                  alt="MatePro ute parked outside a red-brick house in Melbourne"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </Reveal>
-            <ol className="divide-y divide-off/10 border-y border-off/10">
-              {steps.map((s, i) => (
-                <Reveal as="li" key={s.title} delay={i * 90} className="flex gap-5 py-7 sm:gap-10 sm:py-14">
-                  <span className="w-14 shrink-0 text-5xl font-extrabold leading-none tracking-tight text-lime sm:w-auto sm:text-8xl">0{i + 1}</span>
-                  <div className="pt-1 sm:pt-3">
-                    <h3 className="text-xl font-bold sm:text-3xl">{s.title}</h3>
-                    <p className="mt-2 text-off sm:mt-3 sm:text-lg">{s.text}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
-        </section>
 
         <Faq />
 

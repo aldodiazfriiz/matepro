@@ -2,11 +2,11 @@
 
 import { useEffect } from "react";
 
-// Section links (href="#book" etc.) scroll to their section without putting the hash in the URL.
+// Section links (href="#book" or "/#book" on the home page) scroll to their section without putting the hash in the URL.
 export default function SectionLinks() {
   useEffect(() => {
-    // Book handles its own result hashes (#book-sent, #book-error) and clears them
-    if (location.hash && !/^#book-/.test(location.hash)) {
+    // The forms handle their own result hashes (#book-sent, #interest-error etc.) and clear them
+    if (location.hash && !/^#(book|interest)-/.test(location.hash)) {
       // Keep Next's history state, or the router restores the old URL
       history.replaceState(
         history.state,
@@ -25,9 +25,12 @@ export default function SectionLinks() {
         e.altKey
       )
         return;
-      const link = (e.target as Element).closest?.('a[href^="#"]');
+      const link = (e.target as Element).closest?.('a[href^="#"], a[href^="/#"]');
       if (!link) return;
-      const id = link.getAttribute("href")!.slice(1);
+      const href = link.getAttribute("href")!;
+      // "/#book" from another page is a normal link back to the home page
+      if (href.startsWith("/") && location.pathname !== "/") return;
+      const id = href.slice(href.indexOf("#") + 1);
       e.preventDefault();
       if (!id || id === "top") {
         window.scrollTo({ top: 0, behavior: "smooth" });

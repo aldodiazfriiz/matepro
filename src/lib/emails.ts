@@ -165,3 +165,70 @@ export function teamEmail(b: Booking) {
   ].join("\n");
   return { subject, html, text };
 }
+
+export type Interest = {
+  name: string;
+  phone: string;
+  email: string;
+  suburb: string;
+  details: string;
+};
+
+// Sent to someone who registers interest in a franchise
+export function franchiseEmail(f: Interest) {
+  const first = f.name.split(/\s+/)[0];
+  const subject = "Thanks for your interest in MatePro";
+  const html = layout(
+    `Thanks ${first}, we'll call you on ${f.phone} for a chat.`,
+    `
+    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
+    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">Thanks, ${escape(first)}.<br>We've got your details.</h1>
+    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
+      We'll give you a call on <strong style="color:${WHITE}">${escape(f.phone)}</strong> to talk about running a MatePro in ${escape(f.suburb)}.
+      There's no cost and no commitment.
+    </p>
+    `,
+  );
+  const text = [
+    `Thanks, ${first}. We've got your details.`,
+    "",
+    `We'll give you a call on ${f.phone} to talk about running a MatePro in ${f.suburb}. There's no cost and no commitment.`,
+    "",
+    `MatePro, ${site.tagline}`,
+  ].join("\n");
+  return { subject, html, text };
+}
+
+// Sent to MatePro for every franchise enquiry
+export function teamFranchiseEmail(f: Interest) {
+  const tel = `tel:${f.phone.replace(/[^\d+]/g, "")}`;
+  return {
+    subject: `Franchise enquiry: ${f.name}, ${f.suburb}`,
+    html: layout(
+      `${f.name}, ${f.suburb}, ${f.phone}`,
+      `
+      <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">Franchise enquiry</span>
+      <h1 style="margin:18px 0 0;font:800 28px/1.15 ${FONT};color:${WHITE}">${escape(f.name)}</h1>
+      <p style="margin:8px 0 24px;font:500 16px/1.5 ${FONT};color:${MUTED}">Interested in running MatePro in ${escape(f.suburb)}</p>
+      ${button(tel, `Call ${escape(f.phone)}`)}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;border-top:1px solid #333333">
+        ${rows([
+          ["Phone", f.phone],
+          ["Email", f.email],
+          ["Area", f.suburb],
+          ["About them", f.details || "-"],
+        ])}
+      </table>
+      `,
+    ),
+    text: [
+      "Franchise enquiry",
+      "",
+      `Name: ${f.name}`,
+      `Phone: ${f.phone}`,
+      `Email: ${f.email}`,
+      `Area: ${f.suburb}`,
+      `About them: ${f.details || "-"}`,
+    ].join("\n"),
+  };
+}

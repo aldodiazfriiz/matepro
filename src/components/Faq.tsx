@@ -2,16 +2,16 @@ import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
 import { faq } from "@/lib/content";
 
-export default function Faq() {
+export default function Faq({ data = faq }: { data?: typeof faq }) {
   return (
     <section id="faq" className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-32">
       <Reveal className="text-center">
-        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{faq.title}</h2>
-        <p className="mt-4 text-lg text-off">{faq.text}</p>
+        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{data.title}</h2>
+        <p className="mt-4 text-lg text-off">{data.text}</p>
       </Reveal>
 
       <div className="mt-10 space-y-3 sm:mt-12">
-        {faq.items.map((item, i) => (
+        {data.items.map((item, i) => (
           <Reveal key={item.q} delay={i * 40}>
             <details className="faq group rounded-3xl border border-off/10 bg-charcoal/60 transition open:bg-charcoal">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left font-semibold sm:px-7">

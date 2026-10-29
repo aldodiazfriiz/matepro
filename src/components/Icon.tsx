@@ -3,6 +3,10 @@ const paths: Record<string, string> = {
   phone:
     "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z",
   tick: "M5 12.5l4.5 4.5L19 7.5",
+  tag: "M3 12V4h8l10 10-8 8L3 12ZM7.5 8.5h.01",
+  note: "M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6",
+  check: "M9 11.5l2 2 4-4.5M5 4h14v16H5zM8 4V2M16 4V2",
+  card: "M3 6h18v12H3zM3 10h18M7 15h4",
   chevron: "M6 9l6 6 6-6",
 };
 

@@ -10,9 +10,9 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Prices", href: "#prices" },
-  { label: "How it works", href: "#how" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Prices", href: "/#prices" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Franchise", href: "/franchise" },
 ];
 
 export const hero = {
@@ -97,12 +97,6 @@ export const priceNotes = [
   "Very dirty cars, pet hair and oversized vehicles cost extra. We'll tell you before we start.",
 ];
 
-export const steps = [
-  { title: "Book online or call", text: "Pick a package and tell us your car and suburb." },
-  { title: "We confirm a time", text: "We call or text to lock in a day that suits you." },
-  { title: "We come to your home", text: "We wash it in your driveway. You don't go anywhere." },
-];
-
 export const why = {
   title: "Why MatePro?",
   text: "A proper detail without losing your Saturday.",
@@ -149,4 +143,57 @@ export const faq = {
 export const book = {
   title: "Book a wash",
   text: "Tell us your car and suburb. We'll call or text to confirm a time.",
+};
+
+export const franchise = {
+  badge: "MatePro franchise",
+  title: ["Run your own", "MatePro"],
+  text: "We're looking for owner-operators to take MatePro to more Melbourne driveways. Register your interest and we'll call you for a chat.",
+  offer: {
+    title: "What you get",
+    text: "Everything you need to start washing cars under the MatePro name.",
+    items: [
+      { icon: "tag", title: "The MatePro brand", text: "Logo, ute signage and workwear, so customers know who's pulling up." },
+      { icon: "pin", title: "Bookings in your area", text: "Customers book on matepro.com.au and the jobs near you come to you." },
+      { icon: "note", title: "Set packages and prices", text: "Mini, Interior and Full Detail, already priced to win work in Melbourne." },
+      { icon: "card", title: "Payments sorted", text: "Card at the car and PayID invoices, set up from day one." },
+      { icon: "check", title: "The MatePro way", text: "Step by step how we wash and detail each package, so every job looks the same." },
+      { icon: "phone", title: "Someone to call", text: "Questions on a job or a customer? You're not on your own." },
+    ],
+  },
+  who: {
+    title: "Who we're looking for",
+    items: [
+      "You've got a ute or van, or can get one",
+      "You have an ABN, or you're happy to get one",
+      "You're reliable, tidy and good with customers",
+      "You want to be your own boss and set your own hours",
+    ],
+  },
+  faq: {
+    title: "Franchise questions",
+    text: "The things people ask before they get in touch.",
+    items: [
+      {
+        q: "How much does it cost?",
+        a: "We'll go through all the costs on a call. Before you sign anything you'll get a full disclosure document, as the Franchising Code requires.",
+      },
+      {
+        q: "Do I need detailing experience?",
+        a: "No. We'll show you how we do each package. You need to be keen, careful and good with people.",
+      },
+      {
+        q: "Which areas are available?",
+        a: "Suburbs across Melbourne. Tell us where you live in the form and we'll let you know what's open near you.",
+      },
+      {
+        q: "Do I need my own vehicle?",
+        a: "Yes, a ute or van to carry the water tank and gear. We can talk through options if you don't have one yet.",
+      },
+    ],
+  },
+  form: {
+    title: "Register your interest",
+    text: "No cost, no commitment. Leave your details and we'll call you for a chat.",
+  },
 };

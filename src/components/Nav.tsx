@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
 
@@ -33,7 +34,7 @@ export default function Nav() {
           scrolled ? "nav-glass-scrolled" : ""
         }`}
       >
-        <a href="#top" aria-label="MatePro home" className="relative flex h-11 items-center">
+        <Link href="/#top" aria-label="MatePro home" className="relative flex h-11 items-center">
           <Image
             src="/brand/matepro-horizontal-on-dark.svg"
             alt="MatePro"
@@ -42,7 +43,7 @@ export default function Nav() {
             priority
             className="w-[112px] sm:w-[126px]"
           />
-        </a>
+        </Link>
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 text-sm font-medium sm:flex">
           {nav.map((item) => (
@@ -56,12 +57,12 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a
-          href="#book"
+        <Link
+          href="/#book"
           className="inline-flex h-11 items-center rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
         >
           Book a wash
-        </a>
+        </Link>
       </div>
     </header>
   );
