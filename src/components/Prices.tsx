@@ -73,10 +73,10 @@ export default function Prices() {
 
       <ul
         onScroll={onScroll}
-        className="-mx-5 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mx-0 sm:mt-10 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden"
+        className="-mx-5 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 md:mx-auto md:grid md:max-w-5xl md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((p, i) => (
-          <Reveal as="li" key={p.name} delay={i * 80} className="w-[84%] shrink-0 snap-start sm:w-auto">
+          <Reveal as="li" key={p.name} delay={i * 80} className="w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto">
             <div
               className={`flex h-full flex-col rounded-[28px] p-7 ${
                 p.popular ? "bg-lime text-night" : "border border-off/10 bg-charcoal/60"
@@ -114,7 +114,7 @@ export default function Prices() {
         ))}
       </ul>
 
-      <div className="mt-5 flex justify-center gap-2 sm:hidden" aria-hidden="true">
+      <div className="mt-5 flex justify-center gap-2 md:hidden" aria-hidden="true">
         {packages.map((p, i) => (
           <span
             key={p.name}

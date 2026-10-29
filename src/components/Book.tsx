@@ -83,7 +83,7 @@ export default function Book() {
               />
               <input name="suburb" required placeholder="Suburb" autoComplete="address-level2" className={field} />
               <div className="grid gap-3 sm:grid-cols-2">
-                <Select name="service" label="Package" options={[...packages.map((p) => p.name), "Ceramic coating quote"]} />
+                <Select name="service" label="Package" options={packages.map((p) => p.name)} />
                 <Select name="size" label="Car size" options={sizes.map((s) => s.label)} />
               </div>
               <textarea

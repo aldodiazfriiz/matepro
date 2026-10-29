@@ -27,8 +27,8 @@ export const ticker = [
   "Mini Detail",
   "Interior Detail",
   "Full Detail",
-  "Ultimate Detail",
-  "Ceramic coating",
+  "Steam cleaning",
+  "Seat shampoo",
   "We come to your home",
   "Melbourne-wide",
 ];
@@ -55,6 +55,7 @@ export const packages: {
     prices: { small: 89, mid: 99, large: 109 },
     includes: [
       "Snow foam hand wash and dry",
+      "Wheels, tyres and door jambs cleaned",
       "Spray wax sealant",
       "Windows and mirrors cleaned",
       "Seats, carpets and boot vacuumed",
@@ -89,25 +90,11 @@ export const packages: {
       "Dash, console, vents and trims detailed",
     ],
   },
-  {
-    name: "Ultimate Detail",
-    text: "Inside and out, plus a cut and polish.",
-    prices: { small: 309, mid: 359, large: 399 },
-    includes: [
-      "Snow foam hand wash and wax",
-      "Bug and tar removal, paint decontamination",
-      "Cut and polish for light swirls",
-      "Wheel arches, mud flaps and tyres dressed",
-      "Seats, carpets, boot and mats steam cleaned",
-      "Leather, dash, console and pedals detailed",
-    ],
-  },
 ];
 
 export const priceNotes = [
   "Prices include GST.",
   "Very dirty cars, pet hair and oversized vehicles cost extra. We'll tell you before we start.",
-  "Ceramic coating and paint protection: ask for a quote.",
 ];
 
 export const steps = [
@@ -145,8 +132,8 @@ export const faq = {
       a: "The prices are starting prices. A very dirty car, a lot of pet hair or an oversized vehicle costs more. If so, we'll tell you the price before we start, not after.",
     },
     {
-      q: "Do you do ceramic coating?",
-      a: "Yes. It depends on the car and the paint, so send us a booking request and we'll quote it.",
+      q: "Do you do polishing or ceramic coating?",
+      a: "No. We stick to what we do best: hand washing and interior detailing.",
     },
     {
       q: "Do the prices include GST?",
