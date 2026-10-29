@@ -21,6 +21,18 @@ export const hero = {
   text: "Hand wash, interior and full details at your home or work. Pick a package, book a time, and we turn up with everything we need.",
 };
 
+// The scrolling strip under the hero
+export const ticker = [
+  "Hand wash",
+  "Mini Detail",
+  "Interior Detail",
+  "Full Detail",
+  "Ultimate Detail",
+  "Ceramic coating",
+  "We come to you",
+  "Melbourne-wide",
+];
+
 export const sizes = [
   { id: "small", label: "Hatch / Sedan" },
   { id: "mid", label: "Small SUV / Wagon" },
@@ -99,19 +111,17 @@ export const priceNotes = [
 ];
 
 export const steps = [
-  { icon: "note", title: "Book online or call", text: "Pick a package and tell us your car and suburb." },
-  { icon: "check", title: "We confirm a time", text: "We call or text to lock in a day that suits you." },
-  { icon: "pin", title: "We come to you", text: "Home, work or the gym car park. You don't go anywhere." },
+  { title: "Book online or call", text: "Pick a package and tell us your car and suburb." },
+  { title: "We confirm a time", text: "We call or text to lock in a day that suits you." },
+  { title: "We come to you", text: "Home, work or the gym car park. You don't go anywhere." },
 ];
 
 export const why = {
   title: "Why MatePro?",
   text: "A proper detail without losing your Saturday.",
-  items: [
-    { icon: "pin", title: "We come to you", text: "Your driveway, your office car park, wherever the car is. No driving to a car wash and waiting around." },
-    { icon: "tag", title: "Clear prices", text: "Set prices by package and car size, listed right here. You know the cost before we start." },
-    { icon: "drop", title: "Done by hand", text: "Hand washed and detailed panel by panel. No machine brushes near your paint." },
-  ],
+  home: { title: "We come to you", text: "Your driveway, your office car park, wherever the car is. No driving to a car wash and waiting around." },
+  prices: { title: "Clear prices", text: "Set prices by package and car size, listed right here. You know the cost before we start." },
+  hand: { title: "Done by hand", text: "Hand washed and detailed panel by panel. No machine brushes near your paint." },
 };
 
 export const faq = {

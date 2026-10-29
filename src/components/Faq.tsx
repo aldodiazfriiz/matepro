@@ -6,7 +6,7 @@ export default function Faq() {
   return (
     <section id="faq" className="mx-auto max-w-3xl px-5 py-24 sm:px-8 sm:py-32">
       <Reveal className="text-center">
-        <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">{faq.title}</h2>
+        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{faq.title}</h2>
         <p className="mt-4 text-lg text-off">{faq.text}</p>
       </Reveal>
 

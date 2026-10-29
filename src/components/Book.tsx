@@ -57,7 +57,7 @@ export default function Book() {
       <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-[40px] bg-lime px-5 py-14 text-night sm:px-12 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">{book.title}</h2>
+            <h2 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl">{book.title}</h2>
             <p className="mt-4 max-w-md text-lg text-night">{book.text}</p>
             <a href={site.phoneHref} className="mt-6 inline-flex items-center gap-2 text-2xl font-bold hover:underline">
               <Icon name="phone" className="h-6 w-6" />

@@ -35,7 +35,7 @@ export default function Prices() {
   return (
     <section id="prices" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-24 sm:px-8 sm:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Prices</h2>
+        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Prices</h2>
         <p className="mt-4 text-lg text-off">Pick your car size. Every price includes GST.</p>
       </Reveal>
 
@@ -66,32 +66,32 @@ export default function Prices() {
         {packages.map((p, i) => (
           <Reveal as="li" key={p.name} delay={i * 80}>
             <div
-              className={`flex h-full flex-col rounded-3xl border p-7 ${
-                p.popular ? "border-lime/60 bg-charcoal" : "border-off/10 bg-charcoal/60"
+              className={`flex h-full flex-col rounded-[28px] p-7 ${
+                p.popular ? "bg-lime text-night" : "border border-off/10 bg-charcoal/60"
               }`}
             >
               <div className="flex items-center justify-between gap-3">
                 <h3 className="text-xl font-semibold">{p.name}</h3>
                 {p.popular && (
-                  <span className="rounded-full bg-lime px-3 py-1 text-xs font-semibold text-night">Most booked</span>
+                  <span className="rounded-full bg-night px-3 py-1 text-xs font-semibold text-lime">Most booked</span>
                 )}
               </div>
-              <p className="mt-2 text-off">{p.text}</p>
-              <p className="mt-6 text-4xl font-extrabold text-lime">
+              <p className={`mt-2 ${p.popular ? "text-night" : "text-off"}`}>{p.text}</p>
+              <p className={`mt-6 text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
                 <Price value={p.prices[size]} />
               </p>
-              <ul className="mt-6 space-y-2.5 border-t border-off/10 pt-6">
+              <ul className={`mb-8 mt-6 space-y-2.5 border-t pt-6 ${p.popular ? "border-night/15" : "border-off/10"}`}>
                 {p.includes.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-off">
-                    <Icon name="tick" className="mt-0.5 h-5 w-5 shrink-0 text-lime" />
+                  <li key={item} className={`flex gap-2.5 ${p.popular ? "text-night" : "text-off"}`}>
+                    <Icon name="tick" className={`mt-0.5 h-5 w-5 shrink-0 ${p.popular ? "text-night" : "text-lime"}`} />
                     {item}
                   </li>
                 ))}
               </ul>
               <a
                 href="#book"
-                className={`mt-8 inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
-                  p.popular ? "bg-lime text-night hover:brightness-95" : "bg-off/10 text-off hover:bg-off/15"
+                className={`mt-auto inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
+                  p.popular ? "bg-night text-off hover:bg-black" : "bg-off/10 text-off hover:bg-off/15"
                 }`}
               >
                 Book {p.name}
