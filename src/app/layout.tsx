@@ -12,12 +12,12 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "MatePro - Mobile car wash and detailing, Melbourne",
   description:
-    "Mobile car wash and detailing Melbourne-wide. Hand wash, interior and full details at your home or work. Clear prices by car size.",
+    "Mobile car wash and detailing Melbourne-wide. Hand wash, interior and full details in your driveway at home. Clear prices by car size.",
   metadataBase: new URL("https://www.matepro.com.au"),
   openGraph: {
     title: "MatePro - Mobile car wash and detailing, Melbourne",
     description:
-      "Your car detailed in your driveway, Melbourne-wide. Packages from $120.",
+      "Your car detailed in your driveway, Melbourne-wide. Packages from $116.",
     locale: "en_AU",
     type: "website",
   },

@@ -89,7 +89,8 @@ export default function Prices() {
                 )}
               </div>
               <p className={`mt-2 ${p.popular ? "text-night" : "text-off"}`}>{p.text}</p>
-              <p className={`mt-6 text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
+              <p className="mt-6 text-sm font-semibold">From</p>
+              <p className={`text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
                 <Price value={p.prices[size]} />
               </p>
               <ul className={`mb-8 mt-6 space-y-2.5 border-t pt-6 ${p.popular ? "border-night/15" : "border-off/10"}`}>

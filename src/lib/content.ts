@@ -16,9 +16,9 @@ export const nav = [
 ];
 
 export const hero = {
-  badge: "We come to you, Melbourne-wide",
+  badge: "We come to your home, Melbourne-wide",
   title: ["Your car,", "detailed in", "your driveway"],
-  text: "Hand wash, interior and full details at your home or work. Pick a package, book a time, and we turn up with everything we need.",
+  text: "Hand wash, interior and full details in your driveway at home. Pick a package, book a time, and we turn up with everything we need.",
 };
 
 // The scrolling strip under the hero
@@ -29,7 +29,7 @@ export const ticker = [
   "Full Detail",
   "Ultimate Detail",
   "Ceramic coating",
-  "We come to you",
+  "We come to your home",
   "Melbourne-wide",
 ];
 
@@ -41,7 +41,7 @@ export const sizes = [
 
 export type Size = (typeof sizes)[number]["id"];
 
-// Prices in dollars, GST included, by car size
+// Starting prices in dollars, GST included, by car size
 export const packages: {
   name: string;
   text: string;
@@ -52,12 +52,12 @@ export const packages: {
   {
     name: "Mini Detail",
     text: "A quick freshen up inside and out.",
-    prices: { small: 120, mid: 139, large: 157 },
+    prices: { small: 116, mid: 134, large: 152 },
     includes: [
       "Hand wash and wax",
       "Chamois dry",
       "Seats, carpets and boot vacuumed",
-      "Windows inside and out",
+      "Windows inside and out, ashtrays cleaned",
       "Dash, trims and tyres dressed",
       "Interior deodorised",
     ],
@@ -65,7 +65,7 @@ export const packages: {
   {
     name: "Interior Detail",
     text: "Kids, dogs, work gear. We get it all out.",
-    prices: { small: 157, mid: 176, large: 194 },
+    prices: { small: 152, mid: 170, large: 188 },
     includes: [
       "Seats, carpets and boot vacuumed",
       "Seats and carpets shampooed",
@@ -78,7 +78,7 @@ export const packages: {
   {
     name: "Full Detail",
     text: "The lot, inside and out.",
-    prices: { small: 232, mid: 269, large: 306 },
+    prices: { small: 224, mid: 260, large: 296 },
     popular: true,
     includes: [
       "Snow foam hand wash and wax",
@@ -91,35 +91,35 @@ export const packages: {
   },
   {
     name: "Ultimate Detail",
-    text: "Full Detail plus a cut and polish.",
-    prices: { small: 325, mid: 371, large: 418 },
+    text: "Inside and out, plus a cut and polish.",
+    prices: { small: 314, mid: 359, large: 404 },
     includes: [
-      "Everything in the Full Detail",
-      "Bug and tar removal",
-      "Paint decontamination",
+      "Snow foam hand wash and wax",
+      "Bug and tar removal, paint decontamination",
       "Cut and polish for light swirls",
-      "Wheel arches and mud flaps dressed",
-      "Foot pedals cleaned and sanitised",
+      "Wheel arches, mud flaps and tyres dressed",
+      "Seats, carpets, boot and mats steam cleaned",
+      "Leather, dash, console and pedals detailed",
     ],
   },
 ];
 
 export const priceNotes = [
   "Prices include GST.",
-  "Very dirty cars and pet hair cost extra. We'll tell you before we start.",
+  "Very dirty cars, pet hair and oversized vehicles cost extra. We'll tell you before we start.",
   "Ceramic coating and paint protection: ask for a quote.",
 ];
 
 export const steps = [
   { title: "Book online or call", text: "Pick a package and tell us your car and suburb." },
   { title: "We confirm a time", text: "We call or text to lock in a day that suits you." },
-  { title: "We come to you", text: "Home, work or the gym car park. You don't go anywhere." },
+  { title: "We come to your home", text: "We wash it in your driveway. You don't go anywhere." },
 ];
 
 export const why = {
   title: "Why MatePro?",
   text: "A proper detail without losing your Saturday.",
-  home: { title: "We come to you", text: "Your driveway, your office car park, wherever the car is. No driving to a car wash and waiting around." },
+  home: { title: "We come to your home", text: "Right in your driveway. No driving to a car wash and waiting around." },
   prices: { title: "Clear prices", text: "Set prices by package and car size, listed right here. You know the cost before we start." },
   hand: { title: "Done by hand", text: "Hand washed and detailed panel by panel. No machine brushes near your paint." },
 };
@@ -130,7 +130,11 @@ export const faq = {
   items: [
     {
       q: "Where do you go?",
-      a: "All over Melbourne. We come to your home or work. Tell us your suburb when you book.",
+      a: "All over Melbourne. We come to your home and wash the car in your driveway. Tell us your suburb when you book.",
+    },
+    {
+      q: "Can you come to my work?",
+      a: "Not right now. We only do home washes, in your driveway.",
     },
     {
       q: "Which size is my car?",
@@ -138,7 +142,7 @@ export const faq = {
     },
     {
       q: "Can the price change?",
-      a: "Only if the car is very dirty or has a lot of pet hair. If so, we'll tell you the price before we start, not after.",
+      a: "The prices are starting prices. A very dirty car, a lot of pet hair or an oversized vehicle costs more. If so, we'll tell you the price before we start, not after.",
     },
     {
       q: "Do you do ceramic coating?",
