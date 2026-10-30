@@ -34,33 +34,6 @@ export const hero = {
   text: "Hand wash, interior and full details in your driveway at home. Pick a package, book a time, and we turn up with everything we need.",
 };
 
-// The /book page that ads link to
-export const ads = {
-  badge: "Based in Melbourne's south east, we come to all of Melbourne",
-  title: ["Mobile car", "detailing in", "your driveway"],
-  text: "Hand wash, interior and full details at your home. Pick a package, book a time online, and we turn up with everything we need.",
-  points: [
-    "Open 7 days, 7am to 7pm",
-    "Instant booking confirmation",
-    "Pay by card after the job",
-    "Set prices by car size, no hidden costs",
-    "Hand washed, no machine brushes",
-    "We come to your driveway",
-  ],
-  steps: {
-    title: "How it works",
-    items: [
-      { title: "Pick your package", text: "Mini, Interior or Full Detail, priced by your car size." },
-      { title: "Book a time", text: "Choose a day and time online. 7am to 7pm, every day." },
-      { title: "We come to you", text: "We detail your car in your driveway. Pay by card at the car." },
-    ],
-  },
-  cta: {
-    title: "Ready for a clean car?",
-    text: "Pick your package and book online in a minute. Rather talk to someone? Call or text us.",
-  },
-};
-
 // The scrolling strip under the hero
 export const ticker = [
   "Hand wash",
