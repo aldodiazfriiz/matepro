@@ -76,12 +76,15 @@ export default function Prices() {
         className="-mx-5 mt-8 flex items-start snap-x lg:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 lg:mx-auto lg:grid lg:grid-cols-4 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((p, i) => (
-          // The longer Full Detail card spans two grid rows so the other cards keep their own height
+          // The longer Full Detail card spans two grid rows so the other cards keep their own height,
+          // and the short Express Wash card stops at its own content
           <Reveal
             as="li"
             key={p.name}
             delay={i * 80}
-            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-[31%] lg:w-auto ${p.popular ? "lg:row-span-2" : ""}`}
+            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-[31%] lg:w-auto ${p.popular ? "lg:row-span-2" : ""} ${
+              p.short ? "lg:self-start" : ""
+            }`}
           >
             <div
               className={`flex h-full flex-col rounded-[28px] p-6 ${

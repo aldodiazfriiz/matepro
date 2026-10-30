@@ -64,12 +64,14 @@ export const packages: {
   squareId: string;
   includes: { title: "Exterior" | "Interior"; items: string[] }[];
   popular?: boolean;
+  short?: boolean;
 }[] = [
   {
     name: "Express Wash",
     text: "A quick wash on the outside only.",
     prices: { small: 59, mid: 69, large: 79 },
     squareId: "WGXRODUDX46B5V6SEE3NL5UR",
+    short: true,
     includes: [
       {
         title: "Exterior",
