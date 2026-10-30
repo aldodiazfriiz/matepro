@@ -57,7 +57,7 @@ export const packages: {
   name: string;
   text: string;
   prices: Record<Size, number>;
-  includes: string[];
+  includes: { title: "Exterior" | "Interior"; items: string[] }[];
   popular?: boolean;
 }[] = [
   {
@@ -65,17 +65,28 @@ export const packages: {
     text: "A quick freshen up inside and out.",
     prices: { small: 89, mid: 109, large: 119 },
     includes: [
-      "Pre-rinse",
-      "Wheels, tyres and arches cleaned",
-      "Door and boot jambs pressure cleaned and dried",
-      "Snow foam hand wash and dry",
-      "Spray wax sealant",
-      "Tyres glossed",
-      "Windows and mirrors cleaned inside and out",
-      "All interior surfaces wiped down",
-      "Seats, under seats, carpets, boot, mats and compartments vacuumed",
-      "Dash, console, trims and plastics cleaned and dressed",
-      "Interior deodorised",
+      {
+        title: "Exterior",
+        items: [
+          "Pre-rinse",
+          "Wheels, tyres and arches cleaned",
+          "Door and boot jambs pressure cleaned and dried",
+          "Snow foam hand wash and dry",
+          "Spray wax sealant",
+          "Windows and mirrors cleaned",
+          "Tyres glossed",
+        ],
+      },
+      {
+        title: "Interior",
+        items: [
+          "All surfaces wiped down",
+          "Seats, under seats, carpets, boot, mats and compartments vacuumed",
+          "Dash, console, trims and plastics cleaned and dressed",
+          "Windows and mirrors cleaned",
+          "Interior deodorised",
+        ],
+      },
     ],
   },
   {
@@ -83,15 +94,20 @@ export const packages: {
     text: "Kids, dogs, work gear. We get it all out.",
     prices: { small: 139, mid: 159, large: 179 },
     includes: [
-      "All interior surfaces wiped down",
-      "Seats, under seats, carpets, boot, mats and compartments vacuumed",
-      "Seats, carpets, boot and mats shampooed and steam cleaned",
-      "Leather seats cleaned and conditioned",
-      "Dash, console, trims and plastics cleaned and dressed",
-      "Air vents, seat rails and sun visors cleaned",
-      "Foot pedals cleaned",
-      "Windows and mirrors cleaned inside and out",
-      "Interior deodorised",
+      {
+        title: "Interior",
+        items: [
+          "All surfaces wiped down",
+          "Seats, under seats, carpets, boot, mats and compartments vacuumed",
+          "Seats, carpets, boot and mats shampooed and steam cleaned",
+          "Leather seats cleaned and conditioned",
+          "Dash, console, trims and plastics cleaned and dressed",
+          "Air vents, seat rails and sun visors cleaned",
+          "Foot pedals cleaned",
+          "Windows and mirrors cleaned inside and out",
+          "Interior deodorised",
+        ],
+      },
     ],
   },
   {
@@ -100,15 +116,24 @@ export const packages: {
     prices: { small: 229, mid: 269, large: 309 },
     popular: true,
     includes: [
-      "Everything in Interior Detail, plus:",
-      "Pre-rinse",
-      "Bug splatter and road tar removed",
-      "Wheels, tyres and arches cleaned",
-      "Door, boot and fuel door jambs pressure cleaned and dried",
-      "Snow foam hand wash and dry",
-      "Spray wax sealant",
-      "Rubbers and plastics glossed",
-      "Tyres, arches and mud flaps glossed",
+      {
+        title: "Exterior",
+        items: [
+          "Pre-rinse",
+          "Bug splatter and road tar removed",
+          "Wheels, tyres and arches cleaned",
+          "Door, boot and fuel door jambs pressure cleaned and dried",
+          "Snow foam hand wash and dry",
+          "Spray wax sealant",
+          "Rubbers and plastics glossed",
+          "Windows and mirrors cleaned",
+          "Tyres, arches and mud flaps glossed",
+        ],
+      },
+      {
+        title: "Interior",
+        items: ["Everything in Interior Detail"],
+      },
     ],
   },
 ];

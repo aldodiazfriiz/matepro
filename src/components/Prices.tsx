@@ -93,14 +93,21 @@ export default function Prices() {
               <p className={`text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
                 <Price value={p.prices[size]} />
               </p>
-              <ul className={`mb-6 mt-5 space-y-2 border-t pt-5 text-sm ${p.popular ? "border-night/15" : "border-off/10"}`}>
-                {p.includes.map((item) => (
-                  <li key={item} className={`flex gap-2 ${p.popular ? "text-night" : "text-off"}`}>
-                    <Icon name="tick" className={`mt-px h-4 w-4 shrink-0 ${p.popular ? "text-night" : "text-lime"}`} />
-                    {item}
-                  </li>
+              <div className={`mb-6 mt-5 space-y-5 border-t pt-5 text-sm ${p.popular ? "border-night/15" : "border-off/10"}`}>
+                {p.includes.map((group) => (
+                  <div key={group.title}>
+                    <h4 className={`font-semibold ${p.popular ? "text-night" : "text-lime"}`}>{group.title}</h4>
+                    <ul className="mt-2 space-y-2">
+                      {group.items.map((item) => (
+                        <li key={item} className={`flex gap-2 ${p.popular ? "text-night" : "text-off"}`}>
+                          <Icon name="tick" className={`mt-px h-4 w-4 shrink-0 ${p.popular ? "text-night" : "text-lime"}`} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
               <a
                 href="#book"
                 className={`mt-auto inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
