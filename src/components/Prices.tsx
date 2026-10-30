@@ -78,7 +78,7 @@ export default function Prices() {
         {packages.map((p, i) => (
           <Reveal as="li" key={p.name} delay={i * 80} className="w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto">
             <div
-              className={`flex h-full flex-col rounded-[28px] p-7 ${
+              className={`flex h-full flex-col rounded-[28px] p-6 ${
                 p.popular ? "bg-lime text-night" : "border border-off/10 bg-charcoal/60"
               }`}
             >
@@ -89,14 +89,14 @@ export default function Prices() {
                 )}
               </div>
               <p className={`mt-2 ${p.popular ? "text-night" : "text-off"}`}>{p.text}</p>
-              <p className="mt-6 text-sm font-semibold">From</p>
+              <p className="mt-5 text-sm font-semibold">From</p>
               <p className={`text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
                 <Price value={p.prices[size]} />
               </p>
-              <ul className={`mb-8 mt-6 space-y-2.5 border-t pt-6 ${p.popular ? "border-night/15" : "border-off/10"}`}>
+              <ul className={`mb-6 mt-5 space-y-2 border-t pt-5 text-sm ${p.popular ? "border-night/15" : "border-off/10"}`}>
                 {p.includes.map((item) => (
-                  <li key={item} className={`flex gap-2.5 ${p.popular ? "text-night" : "text-off"}`}>
-                    <Icon name="tick" className={`mt-0.5 h-5 w-5 shrink-0 ${p.popular ? "text-night" : "text-lime"}`} />
+                  <li key={item} className={`flex gap-2 ${p.popular ? "text-night" : "text-off"}`}>
+                    <Icon name="tick" className={`mt-px h-4 w-4 shrink-0 ${p.popular ? "text-night" : "text-lime"}`} />
                     {item}
                   </li>
                 ))}

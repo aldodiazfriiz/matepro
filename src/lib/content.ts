@@ -100,6 +100,7 @@ export const packages: {
     prices: { small: 229, mid: 269, large: 309 },
     popular: true,
     includes: [
+      "Everything in Interior Detail, plus:",
       "Pre-rinse",
       "Bug splatter and road tar removed",
       "Wheels, tyres and arches cleaned",
@@ -108,15 +109,6 @@ export const packages: {
       "Spray wax sealant",
       "Rubbers and plastics glossed",
       "Tyres, arches and mud flaps glossed",
-      "Windows and mirrors cleaned inside and out",
-      "All interior surfaces wiped down",
-      "Seats, under seats, carpets, boot, mats and compartments vacuumed",
-      "Seats, carpets, boot and mats shampooed and steam cleaned",
-      "Leather seats cleaned and conditioned",
-      "Dash, console, trims and plastics cleaned and dressed",
-      "Air vents, seat rails and sun visors cleaned",
-      "Foot pedals cleaned",
-      "Interior deodorised",
     ],
   },
 ];
