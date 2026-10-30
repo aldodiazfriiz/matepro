@@ -43,7 +43,7 @@ export default function Prices() {
   return (
     <section id="prices" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Prices</h2>
+        <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Services</h2>
         <p className="mt-4 text-lg text-off">Pick your car size. The price you see is the price you pay.</p>
       </Reveal>
 

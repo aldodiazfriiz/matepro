@@ -197,7 +197,7 @@ export const faq = {
     },
     {
       q: "How do I book?",
-      a: "Pick your package under Prices on the Mobile Wash page and tap Book, then choose your car size and a day and time that suits. Rather talk to someone? Call or text us on 0494 733 274.",
+      a: "Pick your package under Services on the Mobile Wash page and tap Book, then choose your car size and a day and time that suits. Rather talk to someone? Call or text us on 0494 733 274.",
     },
   ],
 };
