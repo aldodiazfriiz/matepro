@@ -174,8 +174,18 @@ export const packages: {
   },
 ];
 
+// Add-ons for Mini, Interior and Full Detail (the Extras modifier set in Square)
+export const extras = {
+  title: "Extras",
+  text: "Add to a Mini, Interior or Full Detail. Tick them when you book.",
+  items: [
+    { name: "Pet hair removal", price: "From $49", text: "Dog and cat hair pulled out of carpets, seats and the boot." },
+    { name: "Engine bay clean", price: "$49", text: "Engine bay degreased, wiped down and plastics dressed." },
+  ],
+};
+
 export const priceNotes = [
-  "Very dirty cars, pet hair and oversized vehicles cost extra. We'll tell you before we start.",
+  "Very dirty cars, heavy pet hair and oversized vehicles cost extra. We'll tell you before we start.",
 ];
 
 export const why = {

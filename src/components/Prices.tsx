@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
-import { packages, priceNotes, site, sizes, type Size } from "@/lib/content";
+import { extras, packages, priceNotes, site, sizes, type Size } from "@/lib/content";
 
 function Price({ value }: { value: number }) {
   const [shown, setShown] = useState(value);
@@ -143,6 +143,22 @@ export default function Prices() {
           />
         ))}
       </div>
+
+      <Reveal className="mx-auto mt-12 max-w-3xl">
+        <h3 className="text-center text-2xl font-extrabold sm:text-3xl">{extras.title}</h3>
+        <p className="mt-2 text-center text-off">{extras.text}</p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          {extras.items.map((x) => (
+            <li key={x.name} className="rounded-3xl border border-off/10 bg-charcoal/60 p-5">
+              <div className="flex items-baseline justify-between gap-3">
+                <h4 className="font-semibold">{x.name}</h4>
+                <span className="shrink-0 font-extrabold text-lime">{x.price}</span>
+              </div>
+              <p className="mt-1.5 text-sm text-off">{x.text}</p>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
 
       <ul className="mx-auto mt-8 flex max-w-3xl flex-col gap-1 text-center text-sm text-off">
         {priceNotes.map((n) => (
