@@ -45,7 +45,7 @@ export default function Page() {
               <p className="rise rise-2 mt-5 max-w-lg text-base text-off sm:mt-6 sm:text-xl">{hero.text}</p>
               <div className="rise rise-3 mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row">
                 <a
-                  href={site.bookingUrl}
+                  href="#prices"
                   className="inline-flex h-14 items-center justify-center rounded-full bg-lime px-8 text-base font-semibold text-night transition hover:brightness-95"
                 >
                   Book a wash

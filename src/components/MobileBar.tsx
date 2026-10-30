@@ -40,7 +40,7 @@ export default function MobileBar() {
         <Icon name="phone" className="h-5 w-5" />
       </a>
       <a
-        href={site.bookingUrl}
+        href="#prices"
         className="flex h-12 flex-1 items-center justify-center rounded-full bg-lime font-semibold text-night"
       >
         Book a wash
