@@ -59,6 +59,8 @@ export const packages: {
   name: string;
   text: string;
   prices: Record<Size, number>;
+  // Square Appointments service id, so Book goes straight to this package
+  squareId: string;
   includes: { title: "Exterior" | "Interior"; items: string[] }[];
   popular?: boolean;
 }[] = [
@@ -66,6 +68,7 @@ export const packages: {
     name: "Mini Detail",
     text: "A quick freshen up inside and out.",
     prices: { small: 89, mid: 109, large: 119 },
+    squareId: "GTHKXINBAZA4V5RVT24362SX",
     includes: [
       {
         title: "Exterior",
@@ -95,6 +98,7 @@ export const packages: {
     name: "Interior Detail",
     text: "Kids, dogs, work gear. We get it all out.",
     prices: { small: 139, mid: 159, large: 179 },
+    squareId: "JLJQVEONQ5JE3I45ZYTDOA3B",
     includes: [
       {
         title: "Interior",
@@ -116,6 +120,7 @@ export const packages: {
     name: "Full Detail",
     text: "The lot, inside and out.",
     prices: { small: 229, mid: 269, large: 309 },
+    squareId: "XBJ6BPWKAUJ5ERKYLLLMUMKC",
     popular: true,
     includes: [
       {

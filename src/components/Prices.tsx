@@ -123,7 +123,7 @@ export default function Prices() {
                 ))}
               </div>
               <a
-                href={site.bookingUrl}
+                href={`${site.bookingUrl}/${p.squareId}`}
                 className={`mt-auto inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
                   p.popular ? "bg-night text-off hover:bg-black" : "bg-off/10 text-off hover:bg-off/15"
                 }`}
