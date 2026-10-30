@@ -11,10 +11,10 @@ export default function Book() {
           <p className="mt-4 text-lg text-night">{book.text}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={site.bookingUrl}
+              href="#prices"
               className="inline-flex h-14 w-full items-center justify-center rounded-full bg-night px-8 text-base font-semibold text-off transition hover:bg-black sm:w-auto"
             >
-              Book online
+              Pick a package
             </a>
             <a
               href={site.phoneHref}
