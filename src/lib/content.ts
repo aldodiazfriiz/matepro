@@ -149,7 +149,6 @@ export const packages: {
 ];
 
 export const priceNotes = [
-  "Prices include GST.",
   "Very dirty cars, pet hair and oversized vehicles cost extra. We'll tell you before we start.",
 ];
 

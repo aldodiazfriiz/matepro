@@ -99,6 +99,14 @@ export default function Prices() {
               <p className={`text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
                 <Price value={p.prices[size]} />
               </p>
+              <p
+                className={`mt-2 inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${
+                  p.popular ? "bg-night text-lime" : "bg-lime text-night"
+                }`}
+              >
+                <Icon name="tick" className="h-3.5 w-3.5" />
+                Includes GST
+              </p>
               <div className={`mb-6 mt-5 space-y-5 border-t pt-5 text-sm ${p.popular ? "border-night/15" : "border-off/10"}`}>
                 {p.includes.map((group) => (
                   <div key={group.title}>
