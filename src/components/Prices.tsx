@@ -44,7 +44,7 @@ export default function Prices() {
     <section id="prices" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">Prices</h2>
-        <p className="mt-4 text-lg text-off">Pick your car size. Every price includes GST.</p>
+        <p className="mt-4 text-lg text-off">Pick your car size. The price you see is the price you pay.</p>
       </Reveal>
 
       <Reveal className="mt-10 flex justify-center">
@@ -105,7 +105,7 @@ export default function Prices() {
                 }`}
               >
                 <Icon name="tick" className="h-3.5 w-3.5" />
-                Includes GST
+                No hidden costs
               </p>
               <div className={`mb-6 mt-5 space-y-5 border-t pt-5 text-sm ${p.popular ? "border-night/15" : "border-off/10"}`}>
                 {p.includes.map((group) => (

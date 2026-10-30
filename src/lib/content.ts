@@ -52,7 +52,7 @@ export const sizes = [
 
 export type Size = (typeof sizes)[number]["id"];
 
-// Starting prices in dollars, GST included, by car size
+// Starting prices in dollars by car size
 export const packages: {
   name: string;
   text: string;
@@ -185,8 +185,8 @@ export const faq = {
       a: "No. We stick to what we do best: hand washing and interior detailing.",
     },
     {
-      q: "Do the prices include GST?",
-      a: "Yes. The price you see is the price you pay.",
+      q: "Are there any extra costs?",
+      a: "No. The price you see is the price you pay. The only time it changes is a very dirty car, a lot of pet hair or an oversized vehicle, and we'll tell you before we start.",
     },
     {
       q: "How do I book?",
@@ -347,7 +347,7 @@ export const app = {
 
 // Terms and privacy pages
 export const legal = {
-  updated: "30 October 2026",
+  updated: "31 October 2026",
   terms: {
     title: "Terms of service",
     text: "The basics of booking a wash or detail with MatePro.",
@@ -369,7 +369,7 @@ export const legal = {
       {
         h: "Prices and payment",
         p: [
-          "Prices on this site are starting prices and include GST. A very dirty car, a lot of pet hair or an oversized vehicle costs more. If so, we'll tell you the price before we start, not after.",
+          "Prices on this site are starting prices. A very dirty car, a lot of pet hair or an oversized vehicle costs more. If so, we'll tell you the price before we start, not after.",
           "Payment is due when the job is done, by card at the car or by invoice.",
         ],
       },
