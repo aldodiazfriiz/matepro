@@ -7,6 +7,8 @@ export const site = {
   phone: "0494 733 274",
   phoneHref: "tel:+61494733274",
   email: "hello@matepro.com.au",
+  // Square Appointments booking site
+  bookingUrl: "https://book.squareup.com/appointments/n7ucco2ah9cp4i/location/L0YZVP4AM257B/services",
 };
 
 // Leave href empty until the account is live; the icon shows without a link
@@ -190,14 +192,14 @@ export const faq = {
     },
     {
       q: "How do I book?",
-      a: "Fill in the form below or call us. We'll get back to you to confirm a day and time.",
+      a: "Book online and pick a day and time that suits, or call us. Rather we call you? Leave your details at the bottom of this page.",
     },
   ],
 };
 
 export const book = {
-  title: "Book a wash",
-  text: "Tell us your car and suburb. We'll call or text to confirm a time.",
+  title: "Rather we call you?",
+  text: "Leave your details and we'll call or text to sort a time. Or book online and pick a time now.",
 };
 
 export const franchise = {

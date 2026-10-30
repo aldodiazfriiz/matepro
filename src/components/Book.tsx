@@ -63,6 +63,14 @@ export default function Book() {
               <Icon name="phone" className="h-6 w-6" />
               {site.phone}
             </a>
+            <div>
+              <a
+                href={site.bookingUrl}
+                className="mt-6 inline-flex h-14 items-center justify-center rounded-full bg-night px-8 text-base font-semibold text-off transition hover:bg-black"
+              >
+                Book online
+              </a>
+            </div>
           </div>
 
           {status === "done" ? (

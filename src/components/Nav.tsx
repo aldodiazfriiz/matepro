@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Icon from "@/components/Icon";
-import { nav } from "@/lib/content";
+import { nav, site } from "@/lib/content";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -81,13 +81,13 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-1.5">
-          <Link
-            href="/mobile-wash#book"
+          <a
+            href={site.bookingUrl}
             onClick={() => setOpen(false)}
             className="inline-flex h-11 items-center whitespace-nowrap rounded-full bg-lime px-4 text-sm font-semibold text-night transition hover:brightness-95 sm:px-5"
           >
             Book<span className="max-[379px]:hidden">&nbsp;a wash</span>
-          </Link>
+          </a>
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}

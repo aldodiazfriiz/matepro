@@ -20,7 +20,7 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-off">MatePro</h3>
           <ul className="mt-2">
-            {[...nav, { label: "Book a wash", href: "/mobile-wash#book" }].map((item) => (
+            {[...nav, { label: "Book a wash", href: site.bookingUrl }].map((item) => (
               <li key={item.href}>
                 <a href={item.href} className="flex min-h-11 items-center text-off hover:text-lime">
                   {item.label}

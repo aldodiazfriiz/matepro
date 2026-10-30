@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
-import { packages, priceNotes, sizes, type Size } from "@/lib/content";
+import { packages, priceNotes, site, sizes, type Size } from "@/lib/content";
 
 function Price({ value }: { value: number }) {
   const [shown, setShown] = useState(value);
@@ -123,7 +123,7 @@ export default function Prices() {
                 ))}
               </div>
               <a
-                href="#book"
+                href={site.bookingUrl}
                 className={`mt-auto inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
                   p.popular ? "bg-night text-off hover:bg-black" : "bg-off/10 text-off hover:bg-off/15"
                 }`}
