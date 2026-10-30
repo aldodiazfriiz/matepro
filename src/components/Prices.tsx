@@ -73,10 +73,16 @@ export default function Prices() {
 
       <ul
         onScroll={onScroll}
-        className="-mx-5 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 md:mx-auto md:grid md:max-w-5xl md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+        className="-mx-5 mt-8 flex items-start snap-x md:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 md:mx-auto md:grid md:max-w-5xl md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((p, i) => (
-          <Reveal as="li" key={p.name} delay={i * 80} className="w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto">
+          // The longer Full Detail card spans two grid rows so the other cards keep their own height
+          <Reveal
+            as="li"
+            key={p.name}
+            delay={i * 80}
+            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto ${p.popular ? "md:row-span-2" : ""}`}
+          >
             <div
               className={`flex h-full flex-col rounded-[28px] p-6 ${
                 p.popular ? "bg-lime text-night" : "border border-off/10 bg-charcoal/60"

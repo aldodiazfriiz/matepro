@@ -132,7 +132,17 @@ export const packages: {
       },
       {
         title: "Interior",
-        items: ["Everything in Interior Detail"],
+        items: [
+          "All surfaces wiped down",
+          "Seats, under seats, carpets, boot, mats and compartments vacuumed",
+          "Seats, carpets, boot and mats shampooed and steam cleaned",
+          "Leather seats cleaned and conditioned",
+          "Dash, console, trims and plastics cleaned and dressed",
+          "Air vents, seat rails and sun visors cleaned",
+          "Foot pedals cleaned",
+          "Windows and mirrors cleaned",
+          "Interior deodorised",
+        ],
       },
     ],
   },
