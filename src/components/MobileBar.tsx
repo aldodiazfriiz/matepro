@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Icon from "@/components/Icon";
 import { site } from "@/lib/content";
 
-// Phones only: call and book buttons that stay in reach once the hero is gone, hidden while the booking form is on screen
-export default function MobileBar() {
+// Phones only: call and book buttons that stay in reach once the hero is gone, hidden while the booking section is on screen.
+// The ads page shows them from the first screen, with the call button spelled out.
+export default function MobileBar({ always = false }: { always?: boolean }) {
   const [pastHero, setPastHero] = useState(false);
   const [atBook, setAtBook] = useState(false);
 
@@ -24,7 +25,7 @@ export default function MobileBar() {
     return () => io.disconnect();
   }, []);
 
-  const shown = pastHero && !atBook;
+  const shown = (always || pastHero) && !atBook;
 
   return (
     <div
@@ -35,9 +36,12 @@ export default function MobileBar() {
       <a
         href={site.phoneHref}
         aria-label={`Call ${site.phone}`}
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-off/10 text-off"
+        className={`flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-off/10 text-off ${
+          always ? "px-5 font-semibold" : "w-12"
+        }`}
       >
         <Icon name="phone" className="h-5 w-5" />
+        {always && "Call"}
       </a>
       <a
         href="#prices"

@@ -36,13 +36,16 @@ export const hero = {
 
 // The /book page that ads link to
 export const ads = {
-  badge: "Mobile car wash, Melbourne",
+  badge: "Based in Melbourne's south east, we come to all of Melbourne",
+  title: ["Mobile car", "detailing in", "your driveway"],
   text: "Hand wash, interior and full details at your home. Pick a package, book a time online, and we turn up with everything we need.",
   points: [
-    "We come to your driveway, Melbourne-wide",
-    "Hand washed, no machine brushes",
+    "Open 7 days, 7am to 7pm",
+    "Instant booking confirmation",
+    "Pay by card after the job",
     "Set prices by car size, no hidden costs",
-    "Book online in a minute",
+    "Hand washed, no machine brushes",
+    "We come to your driveway",
   ],
   steps: {
     title: "How it works",

@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import Prices from "@/components/Prices";
 import Faq from "@/components/Faq";
 import MobileBar from "@/components/MobileBar";
-import { ads, hero, packages, site } from "@/lib/content";
+import { ads, packages, site } from "@/lib/content";
 
 // Landing page for paid ads: no site menu, a photo instead of the video so it loads fast on phones
 export const metadata: Metadata = {
@@ -32,6 +32,7 @@ export default function BookPage() {
               className="inline-flex h-11 items-center gap-2 rounded-full bg-off/10 px-4 text-sm font-semibold text-off transition hover:bg-off/15"
             >
               <Icon name="phone" className="h-4 w-4" />
+              <span className="sm:hidden">Call</span>
               <span className="hidden sm:inline">{site.phone}</span>
             </a>
             <a
@@ -55,7 +56,7 @@ export default function BookPage() {
             className="object-cover object-[78%_center] lg:object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/80 to-night/40 lg:bg-gradient-to-r lg:from-night/95 lg:via-night/70 lg:to-night/30" />
-          <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-36">
+          <div className="relative mx-auto w-full max-w-7xl px-5 pb-24 pt-28 sm:px-8 sm:pb-20 sm:pt-36">
             <span className="rise inline-flex items-center gap-2 rounded-full border border-off/10 bg-charcoal/70 py-1.5 pl-1.5 pr-4 text-sm text-off">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-lime text-night">
                 <Icon name="pin" className="h-4 w-4" />
@@ -63,10 +64,10 @@ export default function BookPage() {
               {ads.badge}
             </span>
             <h1 className="rise rise-2 mt-6 text-[clamp(2.4rem,11vw,3rem)] font-extrabold leading-[1.02] tracking-tight sm:text-7xl">
-              <span className="block">{hero.title[0]}</span>
-              <span className="block">{hero.title[1]}</span>
+              <span className="block">{ads.title[0]}</span>
+              <span className="block">{ads.title[1]}</span>
               <span className="block">
-                <span className="underline-lime">{hero.title[2]}</span>
+                <span className="underline-lime">{ads.title[2]}</span>
               </span>
             </h1>
             <p className="rise rise-2 mt-5 max-w-lg text-base text-off sm:text-xl">{ads.text}</p>
@@ -74,7 +75,7 @@ export default function BookPage() {
               <span className="font-semibold">Packages from</span>
               <span className="text-3xl font-extrabold tracking-tight">${from}</span>
             </p>
-            <ul className="rise rise-3 mt-6 grid max-w-xl gap-2.5 sm:grid-cols-2">
+            <ul className="rise rise-3 mt-6 grid max-w-2xl gap-2.5 sm:grid-cols-2">
               {ads.points.map((point) => (
                 <li key={point} className="flex gap-2.5 text-off">
                   <Icon name="tick" className="mt-0.5 h-5 w-5 shrink-0 text-lime" />
@@ -82,7 +83,8 @@ export default function BookPage() {
                 </li>
               ))}
             </ul>
-            <div className="rise rise-3 mt-8 flex flex-col gap-3 sm:flex-row">
+            {/* Phones get the same two buttons in the sticky bar */}
+            <div className="rise rise-3 mt-8 hidden gap-3 sm:flex">
               <a
                 href="#prices"
                 className="inline-flex h-14 items-center justify-center rounded-full bg-lime px-8 text-base font-semibold text-night transition hover:brightness-95"
@@ -94,13 +96,15 @@ export default function BookPage() {
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-off/20 px-8 text-base font-semibold text-off transition hover:bg-off/10"
               >
                 <Icon name="phone" className="h-5 w-5" />
-                {site.phone}
+                Call {site.phone}
               </a>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+        <Prices />
+
+        <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 sm:pb-24">
           <Reveal className="text-center">
             <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{ads.steps.title}</h2>
           </Reveal>
@@ -116,8 +120,6 @@ export default function BookPage() {
             ))}
           </ol>
         </section>
-
-        <Prices />
 
         <Faq />
 
@@ -154,7 +156,7 @@ export default function BookPage() {
         </div>
       </footer>
 
-      <MobileBar />
+      <MobileBar always />
     </>
   );
 }
