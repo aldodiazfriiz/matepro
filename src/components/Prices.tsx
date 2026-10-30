@@ -73,7 +73,7 @@ export default function Prices() {
 
       <ul
         onScroll={onScroll}
-        className="-mx-5 mt-8 flex items-start snap-x md:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 md:mx-auto md:grid md:max-w-5xl md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
+        className="-mx-5 mt-8 flex items-start snap-x lg:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 lg:mx-auto lg:grid lg:grid-cols-4 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((p, i) => (
           // The longer Full Detail card spans two grid rows so the other cards keep their own height
@@ -81,7 +81,7 @@ export default function Prices() {
             as="li"
             key={p.name}
             delay={i * 80}
-            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto ${p.popular ? "md:row-span-2" : ""}`}
+            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-[31%] lg:w-auto ${p.popular ? "lg:row-span-2" : ""}`}
           >
             <div
               className={`flex h-full flex-col rounded-[28px] p-6 ${
@@ -135,7 +135,7 @@ export default function Prices() {
         ))}
       </ul>
 
-      <div className="mt-5 flex justify-center gap-2 md:hidden" aria-hidden="true">
+      <div className="mt-5 flex justify-center gap-2 lg:hidden" aria-hidden="true">
         {packages.map((p, i) => (
           <span
             key={p.name}

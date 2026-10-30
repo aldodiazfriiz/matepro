@@ -37,6 +37,7 @@ export const hero = {
 // The scrolling strip under the hero
 export const ticker = [
   "Hand wash",
+  "Express Wash",
   "Mini Detail",
   "Interior Detail",
   "Full Detail",
@@ -64,6 +65,24 @@ export const packages: {
   includes: { title: "Exterior" | "Interior"; items: string[] }[];
   popular?: boolean;
 }[] = [
+  {
+    name: "Express Wash",
+    text: "A quick wash on the outside only.",
+    prices: { small: 59, mid: 69, large: 79 },
+    squareId: "WGXRODUDX46B5V6SEE3NL5UR",
+    includes: [
+      {
+        title: "Exterior",
+        items: [
+          "Pre-rinse",
+          "Wheels, tyres and arches cleaned",
+          "Snow foam hand wash and dry",
+          "Windows and mirrors cleaned",
+          "Tyres glossed",
+        ],
+      },
+    ],
+  },
   {
     name: "Mini Detail",
     text: "A quick freshen up inside and out.",
