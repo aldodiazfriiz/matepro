@@ -1,16 +1,6 @@
-// Branded booking emails. Table layout and inline styles so they render in Gmail, Outlook and Apple Mail.
+// Branded emails. Table layout and inline styles so they render in Gmail, Outlook and Apple Mail.
 
 import { site } from "./content";
-
-export type Booking = {
-  name: string;
-  phone: string;
-  email: string;
-  suburb: string;
-  service: string;
-  size: string;
-  details: string;
-};
 
 const SITE_URL = "https://www.matepro.com.au";
 const LIME = "#CBE733";
@@ -85,85 +75,6 @@ function layout(preheader: string, body: string) {
 </table>
 </body>
 </html>`;
-}
-
-// Sent to the customer straight after they send a booking request
-export function customerEmail(b: Booking) {
-  const first = b.name.split(/\s+/)[0];
-  const subject = "We've got your booking request";
-  const html = layout(
-    `Thanks ${first}, we'll be in touch on ${b.phone} soon.`,
-    `
-    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
-    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">Thanks, ${escape(first)}.<br>We've got your request.</h1>
-    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
-      We'll call or text you on <strong style="color:${WHITE}">${escape(b.phone)}</strong> soon to confirm a day and time.
-    </p>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;border-top:1px solid #333333">
-      ${rows([
-        ["Package", b.service],
-        ["Car size", b.size],
-        ["Suburb", b.suburb],
-        ...(b.details ? ([["Details", b.details]] as [string, string][]) : []),
-      ])}
-    </table>
-    <p style="margin:28px 0 20px;font:400 15px/1.6 ${FONT};color:${MUTED}">Need us sooner? Give us a ring.</p>
-    ${button(site.phoneHref, `Call ${site.phone}`)}
-    `,
-  );
-  const text = [
-    `Thanks, ${first}. We've got your request.`,
-    "",
-    `We'll call or text you on ${b.phone} soon to confirm a day and time.`,
-    "",
-    `Package: ${b.service}`,
-    `Car size: ${b.size}`,
-    `Suburb: ${b.suburb}`,
-    ...(b.details ? [`Details: ${b.details}`] : []),
-    "",
-    `Need us sooner? Call ${site.phone}.`,
-    "",
-    `MatePro, ${site.tagline}`,
-  ].join("\n");
-  return { subject, html, text };
-}
-
-// Sent to MatePro for every booking request
-export function teamEmail(b: Booking) {
-  const tel = `tel:${b.phone.replace(/[^\d+]/g, "")}`;
-  const subject = `New booking: ${b.service}, ${b.suburb}`;
-  const html = layout(
-    `${b.name}, ${b.suburb}, ${b.phone}`,
-    `
-    <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">New booking request</span>
-    <h1 style="margin:18px 0 0;font:800 28px/1.15 ${FONT};color:${WHITE}">${escape(b.name)}</h1>
-    <p style="margin:8px 0 24px;font:500 16px/1.5 ${FONT};color:${MUTED}">${escape(b.service)} in ${escape(b.suburb)}</p>
-    ${button(tel, `Call ${escape(b.phone)}`)}
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;border-top:1px solid #333333">
-      ${rows([
-        ["Phone", b.phone],
-        ["Email", b.email],
-        ["Suburb", b.suburb],
-        ["Package", b.service],
-        ["Car size", b.size],
-        ["Details", b.details || "-"],
-      ])}
-    </table>
-    <p style="margin:20px 0 0;font:400 14px/1.6 ${FONT};color:${MUTED}">Hit reply to email ${escape(b.name.split(/\s+/)[0])} directly.</p>
-    `,
-  );
-  const text = [
-    "New booking request",
-    "",
-    `Name: ${b.name}`,
-    `Phone: ${b.phone}`,
-    `Email: ${b.email}`,
-    `Suburb: ${b.suburb}`,
-    `Package: ${b.service}`,
-    `Car size: ${b.size}`,
-    `Details: ${b.details || "-"}`,
-  ].join("\n");
-  return { subject, html, text };
 }
 
 export type Interest = {

@@ -192,14 +192,14 @@ export const faq = {
     },
     {
       q: "How do I book?",
-      a: "Book online and pick a day and time that suits, or call us. Rather we call you? Leave your details at the bottom of this page.",
+      a: "Book online and pick a day and time that suits. Rather talk to someone? Call or text us on 0494 733 274.",
     },
   ],
 };
 
 export const book = {
-  title: "Rather we call you?",
-  text: "Leave your details and we'll call or text to sort a time. Or book online and pick a time now.",
+  title: "Book a wash",
+  text: "Pick your package, car size and a time that suits. Rather talk to someone? Call or text us.",
 };
 
 export const franchise = {
@@ -363,7 +363,7 @@ export const legal = {
       {
         h: "Bookings",
         p: [
-          "Sending the booking form is a request, not a confirmed booking. We'll contact you to confirm the package, price, day and time.",
+          "You book online through Square Appointments, or by calling or texting us. We may contact you to confirm the details before the day.",
           "We only wash cars at home, in your driveway. You need to be allowed to have the car washed there, and the car needs to be unlocked or the keys available for interior work.",
           "If you need to change or cancel, let us know as early as you can.",
         ],
@@ -403,7 +403,7 @@ export const legal = {
       {
         h: "What we collect",
         p: [
-          "When you book a wash we collect your name, phone, email, suburb, the package and car size you pick, and anything you write in the details box, like your car's make and model.",
+          "When you book a wash we collect your name, phone, email, address, the package and car size you pick, and any notes you add, like your car's make and model.",
           "When you sign up for updates we collect your email. When you send a franchise enquiry we collect your name, phone, email, suburb and message.",
         ],
       },
@@ -416,7 +416,7 @@ export const legal = {
       {
         h: "Who else handles it",
         p: [
-          "Form messages are sent to us by email through Resend, and this site is hosted by Vercel. They handle your details only to provide those services to us.",
+          "Online bookings and card payments are handled by Square. Sign-up and enquiry forms are sent to us by email through Resend, and this site is hosted by Vercel. They handle your details only to provide those services to us.",
         ],
       },
       {

@@ -3,10 +3,10 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-// Forms handle their own result hashes (#book-sent, #interest-error etc.) and clear them
-const formResult = /^#(book|interest|notify|opening|launch)-/;
+// Forms handle their own result hashes (#interest-sent, #notify-error etc.) and clear them
+const formResult = /^#(interest|notify|opening|launch)-/;
 
-// Section links (href="#book", or "/mobile-wash#book" while on /mobile-wash) scroll to their section,
+// Section links (href="#prices", or "/mobile-wash#prices" while on /mobile-wash) scroll to their section,
 // and a hash that arrives with a page load or navigation is scrolled to and then dropped from the URL.
 export default function SectionLinks() {
   const pathname = usePathname();
@@ -39,7 +39,7 @@ export default function SectionLinks() {
       if (!link) return;
       const href = link.getAttribute("href")!;
       const path = href.slice(0, href.indexOf("#"));
-      // "/mobile-wash#book" from another page is a normal link to that page
+      // "/mobile-wash#prices" from another page is a normal link to that page
       if (path && path !== location.pathname) return;
       const id = href.slice(href.indexOf("#") + 1);
       e.preventDefault();
