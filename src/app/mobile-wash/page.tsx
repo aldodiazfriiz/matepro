@@ -23,7 +23,7 @@ export default function Page() {
             webm="/video/hero.webm"
             mp4="/video/hero.mp4"
             poster="/video/hero-poster.jpg"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-[78%_center] lg:object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/40 lg:bg-gradient-to-r lg:from-night/90 lg:via-night/60 lg:to-night/30" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night to-transparent" />
