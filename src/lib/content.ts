@@ -96,7 +96,7 @@ export const packages: {
   },
   {
     name: "Interior Detail",
-    text: "Kids, dogs, work gear. We get it all out.",
+    text: "Dog hair, work gear, beach sand. We get it all out.",
     prices: { small: 179, mid: 209, large: 229 },
     squareId: "JLJQVEONQ5JE3I45ZYTDOA3B",
     includes: [
