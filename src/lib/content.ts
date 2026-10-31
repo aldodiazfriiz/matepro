@@ -37,7 +37,6 @@ export const hero = {
 // The scrolling strip under the hero
 export const ticker = [
   "Hand wash",
-  "Express Wash",
   "Mini Detail",
   "Interior Detail",
   "Full Detail",
@@ -64,31 +63,11 @@ export const packages: {
   squareId: string;
   includes: { title: "Exterior" | "Interior"; items: string[] }[];
   popular?: boolean;
-  short?: boolean;
 }[] = [
-  {
-    name: "Express Wash",
-    text: "A quick wash on the outside only.",
-    prices: { small: 59, mid: 69, large: 79 },
-    squareId: "WGXRODUDX46B5V6SEE3NL5UR",
-    short: true,
-    includes: [
-      {
-        title: "Exterior",
-        items: [
-          "Pre-rinse",
-          "Wheels, tyres and arches cleaned",
-          "Snow foam hand wash and dry",
-          "Windows and mirrors cleaned",
-          "Tyres glossed",
-        ],
-      },
-    ],
-  },
   {
     name: "Mini Detail",
     text: "A quick freshen up inside and out.",
-    prices: { small: 89, mid: 109, large: 119 },
+    prices: { small: 119, mid: 139, large: 149 },
     squareId: "GTHKXINBAZA4V5RVT24362SX",
     includes: [
       {
@@ -118,7 +97,7 @@ export const packages: {
   {
     name: "Interior Detail",
     text: "Kids, dogs, work gear. We get it all out.",
-    prices: { small: 139, mid: 159, large: 179 },
+    prices: { small: 179, mid: 199, large: 219 },
     squareId: "JLJQVEONQ5JE3I45ZYTDOA3B",
     includes: [
       {
@@ -140,7 +119,7 @@ export const packages: {
   {
     name: "Full Detail",
     text: "The lot, inside and out.",
-    prices: { small: 229, mid: 269, large: 309 },
+    prices: { small: 289, mid: 339, large: 379 },
     squareId: "XBJ6BPWKAUJ5ERKYLLLMUMKC",
     popular: true,
     includes: [

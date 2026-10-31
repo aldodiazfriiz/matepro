@@ -73,18 +73,15 @@ export default function Prices() {
 
       <ul
         onScroll={onScroll}
-        className="-mx-5 mt-8 flex items-start snap-x xl:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 xl:mx-auto xl:grid xl:grid-cols-4 xl:gap-4 xl:overflow-visible xl:px-0 xl:pb-0 [&::-webkit-scrollbar]:hidden"
+        className="-mx-5 mt-8 flex items-start snap-x md:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-10 md:mx-auto md:grid md:max-w-5xl md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
       >
         {packages.map((p, i) => (
-          // The longer Full Detail card spans two grid rows so the other cards keep their own height,
-          // and the short Express Wash card stops at its own content
+          // The longer Full Detail card spans two grid rows so the other cards keep their own height
           <Reveal
             as="li"
             key={p.name}
             delay={i * 80}
-            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-[31%] xl:w-auto ${p.popular ? "xl:row-span-2" : ""} ${
-              p.short ? "xl:self-start" : ""
-            }`}
+            className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto ${p.popular ? "md:row-span-2" : ""}`}
           >
             <div
               className={`flex h-full flex-col rounded-[28px] p-6 ${
@@ -138,7 +135,7 @@ export default function Prices() {
         ))}
       </ul>
 
-      <div className="mt-5 flex justify-center gap-2 xl:hidden" aria-hidden="true">
+      <div className="mt-5 flex justify-center gap-2 md:hidden" aria-hidden="true">
         {packages.map((p, i) => (
           <span
             key={p.name}
