@@ -11,7 +11,7 @@ export const site = {
   bookingUrl: "https://book.squareup.com/appointments/n7ucco2ah9cp4i/location/L0YZVP4AM257B/services",
 };
 
-// Leave href empty until the account is live; the icon shows without a link
+// Leave href empty until the account is live; the footer hides it until then
 export const socials = [
   { label: "Facebook", icon: "facebook", href: "https://www.facebook.com/mateprocardetailing" },
   { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/mateprocardetailing" },

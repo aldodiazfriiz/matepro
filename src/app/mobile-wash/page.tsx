@@ -9,13 +9,53 @@ import Prices from "@/components/Prices";
 import Book from "@/components/Book";
 import Faq from "@/components/Faq";
 import MobileBar from "@/components/MobileBar";
-import { hero, packages, site, why } from "@/lib/content";
+import type { Metadata } from "next";
+import { hero, packages, site, socials, why } from "@/lib/content";
 
 const from = Math.min(...packages.map((p) => p.prices.small));
+const to = Math.max(...packages.map((p) => p.prices.large));
+
+export const metadata: Metadata = {
+  title: "Mobile Car Wash & Detailing Melbourne | MatePro",
+  description: `Mobile car wash and detailing at your home, Melbourne-wide. Hand wash, interior and full details from $${from}. Book online, 7 days, 7am to 7pm.`,
+  alternates: { canonical: "/mobile-wash" },
+};
+
+// Business details for Google; hours match the Square booking site
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  name: site.name,
+  description: site.tagline,
+  url: "https://www.matepro.com.au/mobile-wash",
+  telephone: site.phoneHref.replace("tel:", ""),
+  email: site.email,
+  logo: "https://www.matepro.com.au/icon.png",
+  image: "https://www.matepro.com.au/photos/ute-door.jpg",
+  priceRange: `$${from}-$${to}`,
+  areaServed: { "@type": "City", name: "Melbourne", containedInPlace: { "@type": "State", name: "Victoria" } },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "07:00",
+    closes: "19:00",
+  },
+  sameAs: socials.filter((s) => s.href).map((s) => s.href),
+  makesOffer: packages.map((p) => ({
+    "@type": "Offer",
+    url: `${site.bookingUrl}/${p.squareId}`,
+    priceSpecification: { "@type": "PriceSpecification", price: p.prices.small, minPrice: p.prices.small, maxPrice: p.prices.large, priceCurrency: "AUD" },
+    itemOffered: { "@type": "Service", name: p.name, description: p.text },
+  })),
+};
 
 export default function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <Nav />
       <main className="overflow-x-clip">
         <section id="top" className="dark-zone relative flex min-h-[min(100svh,880px)] items-center overflow-hidden">
