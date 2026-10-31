@@ -39,9 +39,10 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className="dark-zone fixed inset-x-0 top-4 z-50 px-4 sm:top-6">
+    // The header box also spans the closed menu, so only the bar and the open menu take taps
+    <header className="dark-zone pointer-events-none fixed inset-x-0 top-4 z-50 px-4 sm:top-6">
       <div
-        className={`nav-glass relative mx-auto flex max-w-5xl items-center justify-between rounded-full py-1.5 pl-4 pr-1.5 transition-all sm:pl-5 duration-500 ${
+        className={`nav-glass pointer-events-auto relative mx-auto flex max-w-5xl items-center justify-between rounded-full py-1.5 pl-4 pr-1.5 transition-all sm:pl-5 duration-500 ${
           scrolled || open ? "nav-glass-scrolled" : ""
         }`}
       >
@@ -104,7 +105,7 @@ export default function Nav() {
       <nav
         id="site-menu"
         className={`mx-auto mt-2 max-w-5xl overflow-hidden rounded-[28px] border border-off/10 bg-night p-2 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition duration-300 lg:hidden ${
-          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+          open ? "pointer-events-auto translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
         }`}
       >
         {nav.map((item) => (
