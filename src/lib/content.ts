@@ -67,7 +67,7 @@ export const packages: {
   {
     name: "Mini Detail",
     text: "A quick freshen up inside and out.",
-    prices: { small: 119, mid: 139, large: 149 },
+    prices: { small: 119, mid: 139, large: 159 },
     squareId: "GTHKXINBAZA4V5RVT24362SX",
     includes: [
       {
@@ -97,7 +97,7 @@ export const packages: {
   {
     name: "Interior Detail",
     text: "Kids, dogs, work gear. We get it all out.",
-    prices: { small: 179, mid: 199, large: 219 },
+    prices: { small: 179, mid: 209, large: 229 },
     squareId: "JLJQVEONQ5JE3I45ZYTDOA3B",
     includes: [
       {
@@ -119,7 +119,7 @@ export const packages: {
   {
     name: "Full Detail",
     text: "The lot, inside and out.",
-    prices: { small: 289, mid: 339, large: 379 },
+    prices: { small: 299, mid: 349, large: 399 },
     squareId: "XBJ6BPWKAUJ5ERKYLLLMUMKC",
     popular: true,
     includes: [
