@@ -84,37 +84,55 @@ export default function Prices() {
             className={`w-[84%] shrink-0 snap-start sm:w-[46%] md:w-auto ${p.popular ? "md:row-span-2" : ""}`}
           >
             <div
-              className={`flex h-full flex-col rounded-[28px] p-6 ${
-                p.popular ? "bg-lime text-night" : "border border-off/10 bg-charcoal/60"
+              className={`group relative flex h-full flex-col overflow-hidden rounded-[32px] border bg-gradient-to-b from-charcoal to-night p-6 transition duration-300 hover:-translate-y-1 sm:p-7 ${
+                p.popular
+                  ? "border-lime/60 shadow-[0_0_70px_-20px_rgba(203,231,51,0.55)]"
+                  : "border-off/10 shadow-[inset_0_1px_0_rgba(250,250,250,0.06)] hover:border-lime/30"
               }`}
             >
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="text-xl font-semibold">{p.name}</h3>
+              {p.popular && (
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-lime/20 blur-3xl"
+                />
+              )}
+              <div className="relative flex h-7 items-center justify-between gap-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-lime">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 {p.popular && (
-                  <span className="rounded-full bg-night px-3 py-1 text-xs font-semibold text-lime">Most booked</span>
+                  <span className="rounded-full bg-lime px-3 py-1 text-xs font-semibold text-night">Most booked</span>
                 )}
               </div>
-              <p className={`mt-2 ${p.popular ? "text-night" : "text-off"}`}>{p.text}</p>
-              <p className="mt-5 text-sm font-semibold">From</p>
-              <p className={`text-5xl font-extrabold tracking-tight ${p.popular ? "text-night" : "text-lime"}`}>
-                <Price value={p.prices[size]} />
-              </p>
-              <p
-                className={`mt-2 inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${
-                  p.popular ? "bg-night text-lime" : "bg-lime text-night"
-                }`}
-              >
-                <Icon name="tick" className="h-3.5 w-3.5" />
-                No hidden costs
-              </p>
-              <div className={`mb-6 mt-5 space-y-5 border-t pt-5 text-sm ${p.popular ? "border-night/15" : "border-off/10"}`}>
+              <h3 className="relative mt-3 text-2xl font-bold tracking-tight">{p.name}</h3>
+              <p className="relative mt-1.5 text-off md:min-h-12">{p.text}</p>
+
+              <div className="relative mt-6 rounded-3xl border border-off/10 bg-night/60 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-off">From</p>
+                <p className="mt-1 text-6xl font-extrabold tracking-tight text-lime">
+                  <Price value={p.prices[size]} />
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-semibold">
+                  <span className="rounded-full border border-off/15 px-3 py-1 text-off">
+                    {sizes.find((s) => s.id === size)?.label}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-lime px-3 py-1 text-night">
+                    <Icon name="tick" className="h-3.5 w-3.5" />
+                    No hidden costs
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative mt-6 space-y-5 text-sm">
                 {p.includes.map((group) => (
                   <div key={group.title}>
-                    <h4 className={`font-semibold ${p.popular ? "text-night" : "text-lime"}`}>{group.title}</h4>
-                    <ul className="mt-2 space-y-2">
+                    <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-lime">{group.title}</h4>
+                    <ul className="mt-3 space-y-2.5">
                       {group.items.map((item) => (
-                        <li key={item} className={`flex gap-2 ${p.popular ? "text-night" : "text-off"}`}>
-                          <Icon name="tick" className={`mt-px h-4 w-4 shrink-0 ${p.popular ? "text-night" : "text-lime"}`} />
+                        <li key={item} className="flex gap-2.5 text-off">
+                          <span className="mt-px flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-lime/15 text-lime">
+                            <Icon name="tick" className="h-3 w-3" />
+                          </span>
                           {item}
                         </li>
                       ))}
@@ -122,30 +140,31 @@ export default function Prices() {
                   </div>
                 ))}
               </div>
-              <div
-                className={`mb-6 rounded-2xl border p-4 text-sm ${p.popular ? "border-night/15 bg-night/5" : "border-off/10 bg-off/5"}`}
-              >
-                <h4 className={`font-semibold ${p.popular ? "text-night" : "text-lime"}`}>{extras.title}</h4>
-                <p className={`mt-0.5 text-xs ${p.popular ? "text-night" : "text-off"}`}>{extras.text}</p>
-                <ul className="mt-3 space-y-3">
+
+              <div className="relative mb-6 mt-6 border-t border-dashed border-off/15 pt-5 text-sm">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-lime">{extras.title}</h4>
+                  <span className="text-xs text-off">{extras.text}</span>
+                </div>
+                <ul className="mt-3 space-y-2">
                   {extras.items.map((x) => (
-                    <li key={x.name}>
+                    <li key={x.name} className="rounded-2xl border border-off/10 bg-off/[0.03] px-4 py-3">
                       <div className="flex items-baseline justify-between gap-3">
                         <span className="font-semibold">{x.name}</span>
-                        <span className={`shrink-0 font-extrabold ${p.popular ? "text-night" : "text-lime"}`}>{x.price}</span>
+                        <span className="shrink-0 font-bold text-lime">+ {x.price.replace(/^From /, "from ")}</span>
                       </div>
-                      <p className={`mt-0.5 ${p.popular ? "text-night" : "text-off"}`}>{x.text}</p>
+                      <p className="mt-0.5 text-xs text-off">{x.text}</p>
                     </li>
                   ))}
                 </ul>
               </div>
+
               <a
                 href={`${site.bookingUrl}/${p.squareId}`}
-                className={`mt-auto inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
-                  p.popular ? "bg-night text-off hover:bg-black" : "bg-off/10 text-off hover:bg-off/15"
-                }`}
+                className="relative mt-auto inline-flex h-13 items-center justify-center gap-2 rounded-full bg-lime font-semibold text-night transition hover:brightness-110"
               >
                 Book {p.name}
+                <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
           </Reveal>
