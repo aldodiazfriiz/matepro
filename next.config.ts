@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       { source: "/mobilewash", destination: "/mobile-wash", permanent: true },
       { source: "/car-wash", destination: "/wash-bays", permanent: true },
       { source: "/shop", destination: "/products", permanent: true },
+      { source: "/faq", destination: "/mobile-wash#faq", permanent: true },
     ];
   },
   turbopack: {

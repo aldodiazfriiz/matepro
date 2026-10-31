@@ -25,7 +25,7 @@ export const nav = [
   { label: "Wash Bays", href: "/wash-bays" },
   { label: "Products", href: "/products" },
   { label: "Franchise", href: "/franchise" },
-  { label: "FAQ", href: "/faq" },
+  { label: "FAQ", href: "/mobile-wash#faq" },
 ];
 
 export const hero = {
