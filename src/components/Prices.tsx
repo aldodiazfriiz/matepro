@@ -122,6 +122,23 @@ export default function Prices() {
                   </div>
                 ))}
               </div>
+              <div
+                className={`mb-6 rounded-2xl border p-4 text-sm ${p.popular ? "border-night/15 bg-night/5" : "border-off/10 bg-off/5"}`}
+              >
+                <h4 className={`font-semibold ${p.popular ? "text-night" : "text-lime"}`}>{extras.title}</h4>
+                <p className={`mt-0.5 text-xs ${p.popular ? "text-night" : "text-off"}`}>{extras.text}</p>
+                <ul className="mt-3 space-y-3">
+                  {extras.items.map((x) => (
+                    <li key={x.name}>
+                      <div className="flex items-baseline justify-between gap-3">
+                        <span className="font-semibold">{x.name}</span>
+                        <span className={`shrink-0 font-extrabold ${p.popular ? "text-night" : "text-lime"}`}>{x.price}</span>
+                      </div>
+                      <p className={`mt-0.5 ${p.popular ? "text-night" : "text-off"}`}>{x.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <a
                 href={`${site.bookingUrl}/${p.squareId}`}
                 className={`mt-auto inline-flex h-12 items-center justify-center rounded-full font-semibold transition ${
@@ -143,22 +160,6 @@ export default function Prices() {
           />
         ))}
       </div>
-
-      <Reveal className="mx-auto mt-12 max-w-3xl">
-        <h3 className="text-center text-2xl font-extrabold sm:text-3xl">{extras.title}</h3>
-        <p className="mt-2 text-center text-off">{extras.text}</p>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-          {extras.items.map((x) => (
-            <li key={x.name} className="rounded-3xl border border-off/10 bg-charcoal/60 p-5">
-              <div className="flex items-baseline justify-between gap-3">
-                <h4 className="font-semibold">{x.name}</h4>
-                <span className="shrink-0 font-extrabold text-lime">{x.price}</span>
-              </div>
-              <p className="mt-1.5 text-sm text-off">{x.text}</p>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
 
       <ul className="mx-auto mt-8 flex max-w-3xl flex-col gap-1 text-center text-sm text-off">
         {priceNotes.map((n) => (

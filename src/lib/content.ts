@@ -158,7 +158,7 @@ export const packages: {
 // Add-ons for Mini, Interior and Full Detail (the Extras modifier set in Square)
 export const extras = {
   title: "Extras",
-  text: "Add to a Mini, Interior or Full Detail. Tick them when you book.",
+  text: "Add any of these when you book.",
   items: [
     { name: "Pet hair removal", price: "From $49", text: "Dog and cat hair pulled out of carpets, seats and the boot." },
     { name: "Engine bay clean", price: "$49", text: "Engine bay degreased, wiped down and plastics dressed." },
