@@ -19,7 +19,7 @@ export default function FranchisePage() {
     <>
       <Nav />
       <main className="overflow-x-clip">
-        <section id="top" className="relative flex min-h-[min(88svh,760px)] items-center overflow-hidden">
+        <section id="top" className="dark-zone relative flex min-h-[min(88svh,760px)] items-center overflow-hidden">
           <Image
             src="/photos/ute-street.jpg"
             alt=""

@@ -189,3 +189,35 @@ body {
     transition: none;
   }
 }
+
+/* Light pages; .dark-zone keeps the hero, nav, footer and photo cards dark */
+:root {
+  --color-night: #ffffff;
+  --color-charcoal: #f3f3f1;
+  --color-off: #121212;
+}
+
+.dark-zone {
+  --color-night: #121212;
+  --color-charcoal: #222222;
+  --color-off: #fafafa;
+  color: var(--color-off);
+}
+
+.text-lime {
+  color: #121212;
+}
+
+.dark-zone .text-lime {
+  color: var(--color-lime);
+}
+
+.bg-lime.text-night,
+.bg-lime .text-night {
+  color: #121212;
+}
+
+.dark-zone.nav-glass,
+.dark-zone .nav-glass {
+  background: rgba(18, 18, 18, 0.88);
+}

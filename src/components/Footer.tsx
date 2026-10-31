@@ -4,7 +4,7 @@ import { nav, site, socials } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="border-t border-off/10">
+    <footer id="contact" className="dark-zone border-t border-off/10 bg-night">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:gap-12 sm:py-16 sm:px-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Image

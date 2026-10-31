@@ -18,7 +18,7 @@ export default function CarWashPage() {
     <>
       <Nav />
       <main className="overflow-x-clip">
-        <section id="top" className="relative flex min-h-[min(88svh,760px)] items-center overflow-hidden">
+        <section id="top" className="dark-zone relative flex min-h-[min(88svh,760px)] items-center overflow-hidden">
           <Image src="/carwash/site.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/75 to-night/40 lg:bg-gradient-to-r lg:from-night/90 lg:via-night/60 lg:to-night/20" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night to-transparent" />

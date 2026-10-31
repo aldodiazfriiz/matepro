@@ -28,7 +28,7 @@ export default function MobileBar() {
 
   return (
     <div
-      className={`nav-glass fixed inset-x-4 bottom-4 z-40 flex gap-2 rounded-full p-1.5 transition duration-300 sm:hidden ${
+      className={`dark-zone nav-glass fixed inset-x-4 bottom-4 z-40 flex gap-2 rounded-full p-1.5 transition duration-300 sm:hidden ${
         shown ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-24 opacity-0"
       }`}
     >

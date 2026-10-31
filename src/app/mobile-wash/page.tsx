@@ -18,7 +18,7 @@ export default function Page() {
     <>
       <Nav />
       <main className="overflow-x-clip">
-        <section id="top" className="relative flex min-h-[min(100svh,880px)] items-center overflow-hidden">
+        <section id="top" className="dark-zone relative flex min-h-[min(100svh,880px)] items-center overflow-hidden">
           <BgVideo
             webm="/video/hero.webm"
             mp4="/video/hero.mp4"
@@ -72,7 +72,7 @@ export default function Page() {
             <p className="mt-4 text-lg text-off">{why.text}</p>
           </Reveal>
           <div className="mt-10 grid gap-3 sm:mt-16 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:grid-rows-2">
-            <Reveal className="group relative min-h-[380px] overflow-hidden rounded-[28px] sm:col-span-2 sm:min-h-[460px] sm:rounded-[32px] lg:row-span-2 lg:min-h-[620px]">
+            <Reveal className="dark-zone group relative min-h-[380px] overflow-hidden rounded-[28px] sm:col-span-2 sm:min-h-[460px] sm:rounded-[32px] lg:row-span-2 lg:min-h-[620px]">
               <Image
                 src="/photos/ute-door.jpg"
                 alt="MatePro ute with the logo on the door, outside a client's home"
@@ -116,7 +116,7 @@ export default function Page() {
                 </div>
               </a>
             </Reveal>
-            <Reveal delay={180} className="group relative min-h-[300px] overflow-hidden rounded-[28px] sm:rounded-[32px]">
+            <Reveal delay={180} className="dark-zone group relative min-h-[300px] overflow-hidden rounded-[28px] sm:rounded-[32px]">
               <Image
                 src="/photos/drone-foam.jpg"
                 alt="A supercar covered in snow foam in a Melbourne driveway"

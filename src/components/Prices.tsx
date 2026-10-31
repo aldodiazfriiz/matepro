@@ -1,20 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import Icon from "@/components/Icon";
 import Reveal from "@/components/Reveal";
 import { extras, packages, priceNotes, site, sizes } from "@/lib/content";
 
 export default function Prices() {
-  const [active, setActive] = useState(0);
-
-  // On phones the cards swipe sideways; track which one is in view for the dots
-  function onScroll(e: React.UIEvent<HTMLUListElement>) {
-    const el = e.currentTarget;
-    const card = el.firstElementChild as HTMLElement | null;
-    if (card) setActive(Math.round(el.scrollLeft / (card.offsetWidth + 12)));
-  }
-
   return (
     <section id="prices" className="mx-auto max-w-7xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-24">
       <Reveal className="mx-auto max-w-2xl text-center">
@@ -22,12 +10,9 @@ export default function Prices() {
         <p className="mt-4 text-lg text-off">Pick a package. The price you see is the price you pay.</p>
       </Reveal>
 
-      <ul
-        onScroll={onScroll}
-        className="-mx-5 mt-10 flex items-start snap-x md:items-stretch snap-mandatory gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 [scrollbar-width:none] sm:mt-14 md:mx-auto md:grid md:max-w-6xl md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden"
-      >
+      <ul className="mx-auto mt-10 grid max-w-md gap-6 sm:mt-14 md:max-w-6xl md:grid-cols-3 md:gap-4">
         {packages.map((p, i) => (
-          <Reveal as="li" key={p.name} delay={i * 80} className="w-[86%] shrink-0 snap-start sm:w-[46%] md:w-auto">
+          <Reveal as="li" key={p.name} delay={i * 80}>
             <div
               className={`relative flex h-full flex-col rounded-[28px] border bg-charcoal/60 p-6 sm:p-7 ${
                 p.popular ? "border-lime" : "border-off/10"
@@ -96,15 +81,6 @@ export default function Prices() {
           </Reveal>
         ))}
       </ul>
-
-      <div className="mt-5 flex justify-center gap-2 md:hidden" aria-hidden="true">
-        {packages.map((p, i) => (
-          <span
-            key={p.name}
-            className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-lime" : "w-2 bg-off/25"}`}
-          />
-        ))}
-      </div>
 
       <ul className="mx-auto mt-8 flex max-w-3xl flex-col gap-1 text-center text-sm text-off">
         {priceNotes.map((n) => (
