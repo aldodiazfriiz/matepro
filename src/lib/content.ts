@@ -220,10 +220,6 @@ export const faq = {
       a: "The prices are starting prices. A very dirty car, a lot of pet hair or an oversized vehicle costs more. If so, we'll tell you the price before we start, not after.",
     },
     {
-      q: "Do you do polishing or ceramic coating?",
-      a: "No. We stick to what we do best: hand washing and interior detailing.",
-    },
-    {
       q: "Are there any extra costs?",
       a: "No. The price you see is the price you pay. The only time it changes is a very dirty car, a lot of pet hair or an oversized vehicle, and we'll tell you before we start.",
     },
