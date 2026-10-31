@@ -62,6 +62,8 @@ export default function Page() {
           </div>
         </section>
 
+        <Prices />
+
         <Ticker />
 
         <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-32">
@@ -130,8 +132,6 @@ export default function Page() {
             </Reveal>
           </div>
         </section>
-
-        <Prices />
 
         <Faq />
 
