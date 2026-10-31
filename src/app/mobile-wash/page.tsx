@@ -10,7 +10,7 @@ import Book from "@/components/Book";
 import Faq from "@/components/Faq";
 import MobileBar from "@/components/MobileBar";
 import type { Metadata } from "next";
-import { hero, packages, site, socials, why } from "@/lib/content";
+import { areas, hero, packages, site, socials, why } from "@/lib/content";
 
 const from = Math.min(...packages.map((p) => p.prices.small));
 const to = Math.max(...packages.map((p) => p.prices.large));
@@ -33,7 +33,10 @@ const jsonLd = {
   logo: "https://www.matepro.com.au/icon.png",
   image: "https://www.matepro.com.au/photos/ute-door.jpg",
   priceRange: `$${from}-$${to}`,
-  areaServed: { "@type": "City", name: "Melbourne", containedInPlace: { "@type": "State", name: "Victoria" } },
+  areaServed: [
+    { "@type": "City", name: "Melbourne", containedInPlace: { "@type": "State", name: "Victoria" } },
+    ...areas.suburbs.map((name) => ({ "@type": "Place", name: `${name} VIC` })),
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -171,6 +174,24 @@ export default function Page() {
               </div>
             </Reveal>
           </div>
+        </section>
+
+        <section id="areas" className="mx-auto max-w-4xl scroll-mt-28 px-5 pb-4 text-center sm:px-8">
+          <Reveal>
+            <h2 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{areas.title}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-off">{areas.text}</p>
+            <ul className="mt-8 flex flex-wrap justify-center gap-2">
+              {areas.suburbs.map((name) => (
+                <li
+                  key={name}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-off/10 bg-charcoal/60 px-4 py-2 text-sm font-semibold"
+                >
+                  <Icon name="pin" className="h-4 w-4" />
+                  {name}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </section>
 
         <Faq />

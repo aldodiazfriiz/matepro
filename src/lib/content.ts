@@ -29,7 +29,7 @@ export const nav = [
 ];
 
 export const hero = {
-  badge: "We come to your home, Melbourne-wide",
+  badge: "Mobile car wash & detailing, Melbourne",
   title: ["Your car,", "detailed in", "your driveway"],
   text: "Hand wash, interior and full details in your driveway at home. Pick a package, book a time, and we turn up with everything we need.",
 };
@@ -176,13 +176,36 @@ export const why = {
   hand: { title: "Done by hand", text: "Hand washed and detailed panel by panel. No machine brushes near your paint." },
 };
 
+// Suburbs we most want jobs from; we still travel elsewhere in Melbourne
+export const areas = {
+  title: "Areas we cover",
+  text: "Based in South East Melbourne. Not on the list? Book anyway or give us a call, we're happy to come to other Melbourne suburbs too.",
+  suburbs: [
+    "Toorak",
+    "South Yarra",
+    "Malvern",
+    "Armadale",
+    "Brighton",
+    "Hampton",
+    "Sandringham",
+    "Cheltenham",
+    "Mentone",
+    "Mordialloc",
+    "Glen Waverley",
+    "Mount Waverley",
+    "Wheelers Hill",
+    "Berwick",
+    "Narre Warren",
+  ],
+};
+
 export const faq = {
   title: "Frequently asked questions",
   text: "The stuff people ask us most.",
   items: [
     {
       q: "Where do you go?",
-      a: "All over Melbourne. We come to your home and wash the car in your driveway. Tell us your suburb when you book.",
+      a: "Mostly South East Melbourne: Toorak, Brighton, Mordialloc, Glen Waverley, Berwick and the suburbs around them. Further out? Book anyway or give us a call, we're happy to come to other Melbourne suburbs too. We wash the car in your driveway at home.",
     },
     {
       q: "Can you come to my work?",
@@ -190,7 +213,7 @@ export const faq = {
     },
     {
       q: "Which size is my car?",
-      a: "Hatches and sedans are the smallest price. Small SUVs and wagons are the middle. Large SUVs, 4WDs, utes and 7 seaters are the largest. Not sure? Put the make and model in the form.",
+      a: "Hatches and sedans are the smallest price. Small SUVs and wagons are the middle. Large SUVs, 4WDs, utes and 7 seaters are the largest. Not sure? Add the make and model in the note when you book.",
     },
     {
       q: "Can the price change?",
@@ -203,6 +226,18 @@ export const faq = {
     {
       q: "Are there any extra costs?",
       a: "No. The price you see is the price you pay. The only time it changes is a very dirty car, a lot of pet hair or an oversized vehicle, and we'll tell you before we start.",
+    },
+    {
+      q: "How long does it take?",
+      a: "About 30 minutes to an hour for a Mini Detail, 1 to 1.5 hours for an Interior Detail and 2 to 2.5 hours for a Full Detail, depending on the size of the car.",
+    },
+    {
+      q: "Do I pay when I book?",
+      a: "No. Nothing is charged when you book. You pay on the day by card or phone tap.",
+    },
+    {
+      q: "Can I book for today?",
+      a: "Yes, if there's a free time. We work 7 days, 7am to 7pm, and same-day bookings are open online.",
     },
     {
       q: "How do I book?",
