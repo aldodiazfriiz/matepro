@@ -181,6 +181,43 @@ export function teamShopEmail(email: string) {
   };
 }
 
+// Sent to someone who joins the course list
+export function courseEmail() {
+  const subject = "You're on the MatePro course list";
+  const html = layout(
+    "We'll email you the day the MatePro detailing course is out.",
+    `
+    <div style="width:48px;height:6px;background:${LIME};border-radius:3px;margin-bottom:24px"></div>
+    <h1 style="margin:0;font:800 30px/1.15 ${FONT};color:${WHITE}">You're on the list.</h1>
+    <p style="margin:16px 0 0;font:400 16px/1.6 ${FONT};color:${MUTED}">
+      Thanks for signing up. We'll email you the link the day the MatePro mobile car detailing course is out.
+    </p>
+    `,
+  );
+  const text = [
+    "You're on the list.",
+    "",
+    "Thanks for signing up. We'll email you the link the day the MatePro mobile car detailing course is out.",
+  ].join("\n");
+  return { subject, html, text };
+}
+
+// Sent to MatePro for every course sign-up
+export function teamCourseEmail(email: string) {
+  return {
+    subject: `Course sign-up: ${email}`,
+    html: layout(
+      email,
+      `
+      <span style="display:inline-block;padding:6px 12px;background:${LIME};border-radius:999px;font:700 12px/1 ${FONT};color:${BLACK};letter-spacing:.04em;text-transform:uppercase">Course list</span>
+      <h1 style="margin:18px 0 0;font:800 24px/1.2 ${FONT};color:${WHITE}">${escape(email)}</h1>
+      <p style="margin:8px 0 0;font:500 15px/1.5 ${FONT};color:${MUTED}">Wants to hear when the detailing course is out.</p>
+      `,
+    ),
+    text: `Course sign-up: ${email}`,
+  };
+}
+
 // Sent to someone who asks to hear when the car wash site opens
 export function carWashEmail() {
   const subject = "You're on the MatePro Car Wash list";

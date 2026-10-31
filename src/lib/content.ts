@@ -21,6 +21,7 @@ export const socials = [
 
 export const nav = [
   { label: "Mobile Wash", href: "/mobile-wash" },
+  { label: "Courses", href: "/courses" },
   { label: "App", href: "/app" },
   { label: "Wash Bays", href: "/wash-bays" },
   { label: "Products", href: "/products" },
@@ -297,6 +298,34 @@ export const franchise = {
   form: {
     title: "Register your interest",
     text: "No cost, no commitment. Leave your details and we'll call you for a chat.",
+  },
+};
+
+// Online mobile detailing course, not out yet: the page collects emails for launch day
+export const courses = {
+  badge: "Coming soon",
+  title: ["Learn mobile", "car detailing"],
+  text: "How we wash and detail cars in Melbourne driveways, step by step. Online and at your own pace. Leave your email and we'll tell you the day it's out.",
+  learn: {
+    title: "What you'll learn",
+    items: [
+      { icon: "check", title: "The wash", text: "Pre-rinse, snow foam, a safe hand wash and drying without scratches." },
+      { icon: "note", title: "Interiors", text: "Vacuuming, shampooing and steam cleaning seats and carpets, leather and plastics." },
+      { icon: "tag", title: "The gear", text: "What to buy for a mobile setup, and what you can skip when you're starting out." },
+      { icon: "card", title: "Running the business", text: "Pricing your packages, taking bookings and payments, and finding your first customers." },
+    ],
+  },
+  who: {
+    title: "Who it's for",
+    items: [
+      "Car owners who want a proper detail at home",
+      "Anyone starting a mobile detailing side hustle",
+      "Detailers who want to run it as a real business",
+    ],
+  },
+  form: {
+    title: "Be first to know",
+    text: "Leave your email and we'll send you the link the day the course is out.",
   },
 };
 
